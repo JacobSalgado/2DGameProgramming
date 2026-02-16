@@ -16,6 +16,7 @@ typedef struct Entity_S
 	GFC_Vector2D	position; /**<the entity's position in the world*/
 	float			rotation;
 	GFC_Vector2D	scale;
+	GFC_Vector2D	velocity;	/**<how much an entity's position changes per update>*/
 	float			frame; /*<the current frame of animation for the sprite*/
 	void (*think)(struct Entity_S* self); /*<function to call to make decisions*/
 	void (*update)(struct Entity_S* self); /*function to call to execute those decisions*/
@@ -29,7 +30,7 @@ typedef struct Entity_S
 * @brief initialize the entity management system and queues up cleanup on exit
 * @param max the maximum number of entities that can exist at the same time
 */
-void entity_manager_init(Uint32 max);
+void entity_system_initialize(Uint32 max);
 
 /**
 * @brief clean up all active entities

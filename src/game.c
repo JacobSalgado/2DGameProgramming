@@ -5,6 +5,7 @@
 #include "gf2d_sprite.h"
 
 #include "entity.h"
+#include "enemy.h"
 #include "player.h"
 
 int main(int argc, char * argv[])
@@ -19,6 +20,7 @@ int main(int argc, char * argv[])
     Sprite *mouse;
     GFC_Color mouseGFC_Color = gfc_color8(100,180,250,200);
     Entity *player;
+    Entity* enemy;
     
     /*program initializtion*/
     init_logger("gf2d.log",0);
@@ -40,6 +42,7 @@ int main(int argc, char * argv[])
     sprite = gf2d_sprite_load_image("images/backgrounds/puck_guts.jpg");
     mouse = gf2d_sprite_load_all("images/pointer.png",32,32,16,0);
     player = player_new();
+    enemy = enemy_new();
     slog("press [escape] to quit");
     /*main game loop*/
     while(!done)
@@ -77,6 +80,7 @@ int main(int argc, char * argv[])
         if (keys[SDL_SCANCODE_ESCAPE])done = 1; // exit condition
         //slog("Rendering at %f FPS",gf2d_graphics_get_frames_per_second());
     }
+    entity_free(enemy);
     entity_free(player);
     slog("---==== END ====---");
     return 0;
