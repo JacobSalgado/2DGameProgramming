@@ -3,25 +3,7 @@
   "WorkspaceRootPath": "C:\\Users\\Jake\\git\\School\\2DGameProgramming\\2dgameprogramming\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{8705DF3F-B6F9-4336-ABA0-B86561E049A2}|2dgameprogramming\\2dgameprogramming.vcxproj|C:\\Users\\Jake\\git\\School\\2DGameProgramming\\src\\enemy.c||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
-    },
-    {
       "AbsoluteMoniker": "D:0:0:{8705DF3F-B6F9-4336-ABA0-B86561E049A2}|2dgameprogramming\\2dgameprogramming.vcxproj|C:\\Users\\Jake\\git\\School\\2DGameProgramming\\src\\player.c||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{8705DF3F-B6F9-4336-ABA0-B86561E049A2}|2dgameprogramming\\2dgameprogramming.vcxproj|C:\\USERS\\JAKE\\VISUALSTUDIO_DEVLIB\\SDL2-2.32.10\\INCLUDE\\SDL_STDINC.H||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{8705DF3F-B6F9-4336-ABA0-B86561E049A2}|2dgameprogramming\\2dgameprogramming.vcxproj|C:\\Users\\Jake\\git\\School\\2DGameProgramming\\include\\enemy.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{8705DF3F-B6F9-4336-ABA0-B86561E049A2}|2dgameprogramming\\2dgameprogramming.vcxproj|C:\\Users\\Jake\\git\\School\\2DGameProgramming\\src\\game.c||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{8705DF3F-B6F9-4336-ABA0-B86561E049A2}|2dgameprogramming\\2dgameprogramming.vcxproj|C:\\USERS\\JAKE\\VISUALSTUDIO_DEVLIB\\SDL2-2.32.10\\INCLUDE\\SDL_MOUSE.H||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{8705DF3F-B6F9-4336-ABA0-B86561E049A2}|2dgameprogramming\\2dgameprogramming.vcxproj|C:\\Users\\Jake\\git\\School\\2DGameProgramming\\src\\entity.c||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{8705DF3F-B6F9-4336-ABA0-B86561E049A2}|2dgameprogramming\\2dgameprogramming.vcxproj|C:\\Users\\Jake\\git\\School\\2DGameProgramming\\include\\entity.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
@@ -30,22 +12,79 @@
       "AbsoluteMoniker": "D:0:0:{8705DF3F-B6F9-4336-ABA0-B86561E049A2}|2dgameprogramming\\2dgameprogramming.vcxproj|C:\\Users\\Jake\\git\\School\\2DGameProgramming\\include\\player.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
     },
     {
+      "AbsoluteMoniker": "D:0:0:{8705DF3F-B6F9-4336-ABA0-B86561E049A2}|2dgameprogramming\\2dgameprogramming.vcxproj|C:\\Users\\Jake\\git\\School\\2DGameProgramming\\src\\game.c||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{8705DF3F-B6F9-4336-ABA0-B86561E049A2}|2dgameprogramming\\2dgameprogramming.vcxproj|C:\\USERS\\JAKE\\VISUALSTUDIO_DEVLIB\\SDL2-2.32.10\\INCLUDE\\SDL_KEYBOARD.H||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{8705DF3F-B6F9-4336-ABA0-B86561E049A2}|2dgameprogramming\\2dgameprogramming.vcxproj|C:\\Users\\Jake\\git\\School\\2DGameProgramming\\src\\entity.c||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{8705DF3F-B6F9-4336-ABA0-B86561E049A2}|2dgameprogramming\\2dgameprogramming.vcxproj|C:\\Users\\Jake\\git\\School\\2DGameProgramming\\src\\level.c||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{8705DF3F-B6F9-4336-ABA0-B86561E049A2}|2dgameprogramming\\2dgameprogramming.vcxproj|C:\\Users\\Jake\\git\\School\\2DGameProgramming\\include\\gf2d_sprite.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{8705DF3F-B6F9-4336-ABA0-B86561E049A2}|2dgameprogramming\\2dgameprogramming.vcxproj|C:\\Users\\Jake\\git\\School\\2DGameProgramming\\include\\level.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{8705DF3F-B6F9-4336-ABA0-B86561E049A2}|2dgameprogramming\\2dgameprogramming.vcxproj|C:\\USERS\\JAKE\\VISUALSTUDIO_DEVLIB\\SDL2-2.32.10\\INCLUDE\\SDL_MOUSE.H||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{8705DF3F-B6F9-4336-ABA0-B86561E049A2}|2dgameprogramming\\2dgameprogramming.vcxproj|C:\\Users\\Jake\\git\\School\\2DGameProgramming\\gfc\\include\\gfc_audio.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
+    },
+    {
       "AbsoluteMoniker": "D:0:0:{8705DF3F-B6F9-4336-ABA0-B86561E049A2}|2dgameprogramming\\2dgameprogramming.vcxproj|C:\\Users\\Jake\\git\\School\\2DGameProgramming\\gfc\\include\\gfc_actions.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{8705DF3F-B6F9-4336-ABA0-B86561E049A2}|2dgameprogramming\\2dgameprogramming.vcxproj|C:\\USERS\\JAKE\\VISUALSTUDIO_DEVLIB\\SDL2-2.32.10\\INCLUDE\\SDL_EVENTS.H||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
+      "AbsoluteMoniker": "D:0:0:{8705DF3F-B6F9-4336-ABA0-B86561E049A2}|2dgameprogramming\\2dgameprogramming.vcxproj|C:\\Users\\Jake\\git\\School\\2DGameProgramming\\include\\gf2d_graphics.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{8705DF3F-B6F9-4336-ABA0-B86561E049A2}|2dgameprogramming\\2dgameprogramming.vcxproj|C:\\Users\\Jake\\git\\School\\2DGameProgramming\\gfc\\include\\gfc_vector.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{8705DF3F-B6F9-4336-ABA0-B86561E049A2}|2dgameprogramming\\2dgameprogramming.vcxproj|C:\\Users\\Jake\\git\\School\\2DGameProgramming\\gfc\\include\\gfc_input.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{8705DF3F-B6F9-4336-ABA0-B86561E049A2}|2dgameprogramming\\2dgameprogramming.vcxproj|C:\\Users\\Jake\\git\\School\\2DGameProgramming\\gfc\\include\\gfc_list.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{8705DF3F-B6F9-4336-ABA0-B86561E049A2}|2dgameprogramming\\2dgameprogramming.vcxproj|C:\\Users\\Jake\\git\\School\\2DGameProgramming\\gfc\\include\\gfc_pak.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{8705DF3F-B6F9-4336-ABA0-B86561E049A2}|2dgameprogramming\\2dgameprogramming.vcxproj|C:\\Users\\Jake\\git\\School\\2DGameProgramming\\gfc\\include\\gfc_primitives.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{8705DF3F-B6F9-4336-ABA0-B86561E049A2}|2dgameprogramming\\2dgameprogramming.vcxproj|C:\\Users\\Jake\\git\\School\\2DGameProgramming\\gfc\\include\\gfc_shape.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{8705DF3F-B6F9-4336-ABA0-B86561E049A2}|2dgameprogramming\\2dgameprogramming.vcxproj|C:\\Users\\Jake\\git\\School\\2DGameProgramming\\gfc\\include\\gfc_text.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{8705DF3F-B6F9-4336-ABA0-B86561E049A2}|2dgameprogramming\\2dgameprogramming.vcxproj|C:\\Users\\Jake\\git\\School\\2DGameProgramming\\gfc\\include\\gfc_types.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{8705DF3F-B6F9-4336-ABA0-B86561E049A2}|2dgameprogramming\\2dgameprogramming.vcxproj|C:\\Users\\Jake\\git\\School\\2DGameProgramming\\gfc\\src\\gfc_hashmap.c||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{8705DF3F-B6F9-4336-ABA0-B86561E049A2}|2dgameprogramming\\2dgameprogramming.vcxproj|C:\\Users\\Jake\\git\\School\\2DGameProgramming\\src\\enemy.c||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{8705DF3F-B6F9-4336-ABA0-B86561E049A2}|2dgameprogramming\\2dgameprogramming.vcxproj|C:\\USERS\\JAKE\\VISUALSTUDIO_DEVLIB\\SDL2-2.32.10\\INCLUDE\\SDL_STDINC.H||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{8705DF3F-B6F9-4336-ABA0-B86561E049A2}|2dgameprogramming\\2dgameprogramming.vcxproj|C:\\Users\\Jake\\git\\School\\2DGameProgramming\\include\\enemy.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{8705DF3F-B6F9-4336-ABA0-B86561E049A2}|2dgameprogramming\\2dgameprogramming.vcxproj|C:\\USERS\\JAKE\\VISUALSTUDIO_DEVLIB\\SDL2-2.32.10\\INCLUDE\\SDL_EVENTS.H||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{8705DF3F-B6F9-4336-ABA0-B86561E049A2}|2dgameprogramming\\2dgameprogramming.vcxproj|C:\\Users\\Jake\\git\\School\\2DGameProgramming\\gfc\\include\\gfc_config.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{8705DF3F-B6F9-4336-ABA0-B86561E049A2}|2dgameprogramming\\2dgameprogramming.vcxproj|C:\\USERS\\JAKE\\VISUALSTUDIO_DEVLIB\\SDL2-2.32.10\\INCLUDE\\SDL_KEYCODE.H||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{8705DF3F-B6F9-4336-ABA0-B86561E049A2}|2dgameprogramming\\2dgameprogramming.vcxproj|C:\\USERS\\JAKE\\VISUALSTUDIO_DEVLIB\\SDL2-2.32.10\\INCLUDE\\SDL_KEYBOARD.H||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{8705DF3F-B6F9-4336-ABA0-B86561E049A2}|2dgameprogramming\\2dgameprogramming.vcxproj|C:\\Users\\Jake\\git\\School\\2DGameProgramming\\src\\gf2d_draw.c||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
@@ -90,19 +129,7 @@
       "AbsoluteMoniker": "D:0:0:{8705DF3F-B6F9-4336-ABA0-B86561E049A2}|2dgameprogramming\\2dgameprogramming.vcxproj|C:\\USERS\\JAKE\\VISUALSTUDIO_DEVLIB\\SDL2-2.32.10\\INCLUDE\\SDL_CONFIG_MINIMAL.H||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{8705DF3F-B6F9-4336-ABA0-B86561E049A2}|2dgameprogramming\\2dgameprogramming.vcxproj|C:\\Users\\Jake\\git\\School\\2DGameProgramming\\gfc\\include\\gfc_list.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
-    },
-    {
       "AbsoluteMoniker": "D:0:0:{8705DF3F-B6F9-4336-ABA0-B86561E049A2}|2dgameprogramming\\2dgameprogramming.vcxproj|C:\\Users\\Jake\\git\\School\\2DGameProgramming\\gfc\\simple_json\\src\\simple_json.c||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{8705DF3F-B6F9-4336-ABA0-B86561E049A2}|2dgameprogramming\\2dgameprogramming.vcxproj|C:\\Users\\Jake\\git\\School\\2DGameProgramming\\gfc\\include\\gfc_input.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{8705DF3F-B6F9-4336-ABA0-B86561E049A2}|2dgameprogramming\\2dgameprogramming.vcxproj|C:\\Users\\Jake\\git\\School\\2DGameProgramming\\gfc\\include\\gfc_types.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{8705DF3F-B6F9-4336-ABA0-B86561E049A2}|2dgameprogramming\\2dgameprogramming.vcxproj|C:\\Users\\Jake\\git\\School\\2DGameProgramming\\gfc\\include\\gfc_text.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{8705DF3F-B6F9-4336-ABA0-B86561E049A2}|2dgameprogramming\\2dgameprogramming.vcxproj|C:\\Users\\Jake\\git\\School\\2DGameProgramming\\gfc\\include\\gfc_string.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
@@ -111,13 +138,7 @@
       "AbsoluteMoniker": "D:0:0:{8705DF3F-B6F9-4336-ABA0-B86561E049A2}|2dgameprogramming\\2dgameprogramming.vcxproj|C:\\Users\\Jake\\git\\School\\2DGameProgramming\\gfc\\include\\gfc_noise.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{8705DF3F-B6F9-4336-ABA0-B86561E049A2}|2dgameprogramming\\2dgameprogramming.vcxproj|C:\\Users\\Jake\\git\\School\\2DGameProgramming\\gfc\\include\\gfc_shape.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
-    },
-    {
       "AbsoluteMoniker": "D:0:0:{8705DF3F-B6F9-4336-ABA0-B86561E049A2}|2dgameprogramming\\2dgameprogramming.vcxproj|C:\\Users\\Jake\\git\\School\\2DGameProgramming\\include\\gf2d_draw.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{8705DF3F-B6F9-4336-ABA0-B86561E049A2}|2dgameprogramming\\2dgameprogramming.vcxproj|C:\\Users\\Jake\\git\\School\\2DGameProgramming\\include\\gf2d_sprite.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{8705DF3F-B6F9-4336-ABA0-B86561E049A2}|2dgameprogramming\\2dgameprogramming.vcxproj|C:\\Users\\Jake\\git\\School\\2DGameProgramming\\gfc\\src\\gfc_vector.c||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
@@ -130,7 +151,7 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 2,
+          "SelectedChildIndex": 7,
           "Children": [
             {
               "$type": "Bookmark",
@@ -142,414 +163,182 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 0,
-              "Title": "enemy.c",
-              "DocumentMoniker": "C:\\Users\\Jake\\git\\School\\2DGameProgramming\\src\\enemy.c",
-              "RelativeDocumentMoniker": "..\\src\\enemy.c",
-              "ToolTip": "C:\\Users\\Jake\\git\\School\\2DGameProgramming\\src\\enemy.c",
-              "RelativeToolTip": "..\\src\\enemy.c",
-              "ViewState": "AgIAAAMAAAAAAAAAAAAAABwAAABTAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000423|",
-              "WhenOpened": "2026-02-16T19:01:29.209Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 1,
-              "Title": "player.c",
-              "DocumentMoniker": "C:\\Users\\Jake\\git\\School\\2DGameProgramming\\src\\player.c",
-              "RelativeDocumentMoniker": "..\\src\\player.c",
-              "ToolTip": "C:\\Users\\Jake\\git\\School\\2DGameProgramming\\src\\player.c",
-              "RelativeToolTip": "..\\src\\player.c",
-              "ViewState": "AgIAACoAAAAAAAAAAAAAAD0AAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000423|",
-              "WhenOpened": "2026-02-01T23:17:56.143Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 3,
-              "Title": "enemy.h",
-              "DocumentMoniker": "C:\\Users\\Jake\\git\\School\\2DGameProgramming\\include\\enemy.h",
-              "RelativeDocumentMoniker": "..\\include\\enemy.h",
-              "ToolTip": "C:\\Users\\Jake\\git\\School\\2DGameProgramming\\include\\enemy.h",
-              "RelativeToolTip": "..\\include\\enemy.h",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAkAAAAIAAAAAAAAAA==",
+              "DocumentIndex": 13,
+              "Title": "gfc_vector.h",
+              "DocumentMoniker": "C:\\Users\\Jake\\git\\School\\2DGameProgramming\\gfc\\include\\gfc_vector.h",
+              "RelativeDocumentMoniker": "..\\gfc\\include\\gfc_vector.h",
+              "ToolTip": "C:\\Users\\Jake\\git\\School\\2DGameProgramming\\gfc\\include\\gfc_vector.h",
+              "RelativeToolTip": "..\\gfc\\include\\gfc_vector.h",
+              "ViewState": "AgIAAAQBAAAAAAAAAAArwDsBAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000680|",
-              "WhenOpened": "2026-02-16T16:54:42.992Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 9,
-              "Title": "gfc_actions.h",
-              "DocumentMoniker": "C:\\Users\\Jake\\git\\School\\2DGameProgramming\\gfc\\include\\gfc_actions.h",
-              "RelativeDocumentMoniker": "..\\gfc\\include\\gfc_actions.h",
-              "ToolTip": "C:\\Users\\Jake\\git\\School\\2DGameProgramming\\gfc\\include\\gfc_actions.h",
-              "RelativeToolTip": "..\\gfc\\include\\gfc_actions.h",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000680|",
-              "WhenOpened": "2026-02-16T16:36:36.092Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 8,
-              "Title": "player.h",
-              "DocumentMoniker": "C:\\Users\\Jake\\git\\School\\2DGameProgramming\\include\\player.h",
-              "RelativeDocumentMoniker": "..\\include\\player.h",
-              "ToolTip": "C:\\Users\\Jake\\git\\School\\2DGameProgramming\\include\\player.h",
-              "RelativeToolTip": "..\\include\\player.h",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAUAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000680|",
-              "WhenOpened": "2026-02-01T23:18:35.684Z",
-              "EditorCaption": ""
+              "WhenOpened": "2026-02-02T01:41:14.248Z"
             },
             {
               "$type": "Document",
               "DocumentIndex": 5,
-              "Title": "SDL_mouse.h",
-              "DocumentMoniker": "C:\\Users\\Jake\\VisualStudio_DevLib\\SDL2-2.32.10\\include\\SDL_mouse.h",
-              "RelativeDocumentMoniker": "..\\..\\..\\..\\VisualStudio_DevLib\\SDL2-2.32.10\\include\\SDL_mouse.h",
-              "ToolTip": "C:\\Users\\Jake\\VisualStudio_DevLib\\SDL2-2.32.10\\include\\SDL_mouse.h",
-              "RelativeToolTip": "..\\..\\..\\..\\VisualStudio_DevLib\\SDL2-2.32.10\\include\\SDL_mouse.h",
-              "ViewState": "AgIAAFUAAAAAAAAAAAArwGcAAAAwAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000680|",
-              "WhenOpened": "2026-02-15T03:32:08.765Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 6,
               "Title": "entity.c",
               "DocumentMoniker": "C:\\Users\\Jake\\git\\School\\2DGameProgramming\\src\\entity.c",
               "RelativeDocumentMoniker": "..\\src\\entity.c",
               "ToolTip": "C:\\Users\\Jake\\git\\School\\2DGameProgramming\\src\\entity.c",
               "RelativeToolTip": "..\\src\\entity.c",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAFUAAAABAAAAAAAAAA==",
+              "ViewState": "AgIAAGAAAAAAAAAAAAAAAE4AAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000423|",
               "WhenOpened": "2026-02-01T23:16:31.797Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 4,
-              "Title": "game.c",
-              "DocumentMoniker": "C:\\Users\\Jake\\git\\School\\2DGameProgramming\\src\\game.c",
-              "RelativeDocumentMoniker": "..\\src\\game.c",
-              "ToolTip": "C:\\Users\\Jake\\git\\School\\2DGameProgramming\\src\\game.c",
-              "RelativeToolTip": "..\\src\\game.c",
-              "ViewState": "AgIAACQAAAAAAAAAAAAAAFIAAAAXAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000423|",
-              "WhenOpened": "2026-02-01T23:14:32.571Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 2,
-              "Title": "SDL_stdinc.h",
-              "DocumentMoniker": "C:\\Users\\Jake\\VisualStudio_DevLib\\SDL2-2.32.10\\include\\SDL_stdinc.h",
-              "RelativeDocumentMoniker": "..\\..\\..\\..\\VisualStudio_DevLib\\SDL2-2.32.10\\include\\SDL_stdinc.h",
-              "ToolTip": "C:\\Users\\Jake\\VisualStudio_DevLib\\SDL2-2.32.10\\include\\SDL_stdinc.h",
-              "RelativeToolTip": "..\\..\\..\\..\\VisualStudio_DevLib\\SDL2-2.32.10\\include\\SDL_stdinc.h",
-              "ViewState": "AgIAACYCAAAAAAAAAAAqwDcCAAANAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000680|",
-              "WhenOpened": "2026-02-03T18:44:07.911Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 10,
-              "Title": "SDL_events.h",
-              "DocumentMoniker": "C:\\Users\\Jake\\VisualStudio_DevLib\\SDL2-2.32.10\\include\\SDL_events.h",
-              "RelativeDocumentMoniker": "..\\..\\..\\..\\VisualStudio_DevLib\\SDL2-2.32.10\\include\\SDL_events.h",
-              "ToolTip": "C:\\Users\\Jake\\VisualStudio_DevLib\\SDL2-2.32.10\\include\\SDL_events.h",
-              "RelativeToolTip": "..\\..\\..\\..\\VisualStudio_DevLib\\SDL2-2.32.10\\include\\SDL_events.h",
-              "ViewState": "AgIAAOADAAAAAAAAAAArwO8DAAAYAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000680|",
-              "WhenOpened": "2026-02-15T04:38:52.507Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 7,
+              "DocumentIndex": 1,
               "Title": "entity.h",
               "DocumentMoniker": "C:\\Users\\Jake\\git\\School\\2DGameProgramming\\include\\entity.h",
               "RelativeDocumentMoniker": "..\\include\\entity.h",
               "ToolTip": "C:\\Users\\Jake\\git\\School\\2DGameProgramming\\include\\entity.h",
               "RelativeToolTip": "..\\include\\entity.h",
-              "ViewState": "AgIAABUAAAAAAAAAAAAAACAAAAAqAAAAAAAAAA==",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAMAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000680|",
               "WhenOpened": "2026-02-01T23:18:33.478Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 12,
-              "Title": "gfc_config.h",
-              "DocumentMoniker": "C:\\Users\\Jake\\git\\School\\2DGameProgramming\\gfc\\include\\gfc_config.h",
-              "RelativeDocumentMoniker": "..\\gfc\\include\\gfc_config.h",
-              "ToolTip": "C:\\Users\\Jake\\git\\School\\2DGameProgramming\\gfc\\include\\gfc_config.h",
-              "RelativeToolTip": "..\\gfc\\include\\gfc_config.h",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "DocumentIndex": 2,
+              "Title": "player.h",
+              "DocumentMoniker": "C:\\Users\\Jake\\git\\School\\2DGameProgramming\\include\\player.h",
+              "RelativeDocumentMoniker": "..\\include\\player.h",
+              "ToolTip": "C:\\Users\\Jake\\git\\School\\2DGameProgramming\\include\\player.h",
+              "RelativeToolTip": "..\\include\\player.h",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAB0AAAAgAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000680|",
-              "WhenOpened": "2026-02-15T04:44:15.295Z"
+              "WhenOpened": "2026-02-01T23:18:35.684Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 11,
-              "Title": "gfc_vector.h",
-              "DocumentMoniker": "C:\\Users\\Jake\\git\\School\\2DGameProgramming\\gfc\\include\\gfc_vector.h",
-              "RelativeDocumentMoniker": "..\\gfc\\include\\gfc_vector.h",
-              "ToolTip": "C:\\Users\\Jake\\git\\School\\2DGameProgramming\\gfc\\include\\gfc_vector.h",
-              "RelativeToolTip": "..\\gfc\\include\\gfc_vector.h",
-              "ViewState": "AgIAABYBAAAAAAAAAAArwCgBAAAYAAAAAAAAAA==",
+              "DocumentIndex": 3,
+              "Title": "game.c",
+              "DocumentMoniker": "C:\\Users\\Jake\\git\\School\\2DGameProgramming\\src\\game.c",
+              "RelativeDocumentMoniker": "..\\src\\game.c",
+              "ToolTip": "C:\\Users\\Jake\\git\\School\\2DGameProgramming\\src\\game.c",
+              "RelativeToolTip": "..\\src\\game.c",
+              "ViewState": "AgIAADAAAAAAAAAAAAAAAEcAAAApAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000423|",
+              "WhenOpened": "2026-02-01T23:14:32.571Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "player.c",
+              "DocumentMoniker": "C:\\Users\\Jake\\git\\School\\2DGameProgramming\\src\\player.c",
+              "RelativeDocumentMoniker": "..\\src\\player.c",
+              "ToolTip": "C:\\Users\\Jake\\git\\School\\2DGameProgramming\\src\\player.c",
+              "RelativeToolTip": "..\\src\\player.c",
+              "ViewState": "AgIAADYAAAAAAAAAAAAAAFQAAAAPAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000423|",
+              "WhenOpened": "2026-02-01T23:17:56.143Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 9,
+              "Title": "SDL_mouse.h",
+              "DocumentMoniker": "C:\\Users\\Jake\\VisualStudio_DevLib\\SDL2-2.32.10\\include\\SDL_mouse.h",
+              "RelativeDocumentMoniker": "..\\..\\..\\..\\VisualStudio_DevLib\\SDL2-2.32.10\\include\\SDL_mouse.h",
+              "ToolTip": "C:\\Users\\Jake\\VisualStudio_DevLib\\SDL2-2.32.10\\include\\SDL_mouse.h",
+              "RelativeToolTip": "..\\..\\..\\..\\VisualStudio_DevLib\\SDL2-2.32.10\\include\\SDL_mouse.h",
+              "ViewState": "AgIAAGYAAAAAAAAAAAAAwGcAAAAfAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000680|",
-              "WhenOpened": "2026-02-02T01:41:14.248Z"
+              "WhenOpened": "2026-02-15T03:32:08.765Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 15,
-              "Title": "gf2d_draw.c",
-              "DocumentMoniker": "C:\\Users\\Jake\\git\\School\\2DGameProgramming\\src\\gf2d_draw.c",
-              "RelativeDocumentMoniker": "..\\src\\gf2d_draw.c",
-              "ToolTip": "C:\\Users\\Jake\\git\\School\\2DGameProgramming\\src\\gf2d_draw.c",
-              "RelativeToolTip": "..\\src\\gf2d_draw.c",
-              "ViewState": "AgIAADkAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000423|",
-              "WhenOpened": "2026-02-02T04:26:06.004Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 16,
-              "Title": "gf2d_graphics.c",
-              "DocumentMoniker": "C:\\Users\\Jake\\git\\School\\2DGameProgramming\\src\\gf2d_graphics.c",
-              "RelativeDocumentMoniker": "..\\src\\gf2d_graphics.c",
-              "ToolTip": "C:\\Users\\Jake\\git\\School\\2DGameProgramming\\src\\gf2d_graphics.c",
-              "RelativeToolTip": "..\\src\\gf2d_graphics.c",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000423|",
-              "WhenOpened": "2026-02-15T04:21:34.588Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 17,
-              "Title": "gfc_audio.c",
-              "DocumentMoniker": "C:\\Users\\Jake\\git\\School\\2DGameProgramming\\gfc\\src\\gfc_audio.c",
-              "RelativeDocumentMoniker": "..\\gfc\\src\\gfc_audio.c",
-              "ToolTip": "C:\\Users\\Jake\\git\\School\\2DGameProgramming\\gfc\\src\\gfc_audio.c",
-              "RelativeToolTip": "..\\gfc\\src\\gfc_audio.c",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000423|",
-              "WhenOpened": "2026-02-15T04:21:32.9Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 18,
-              "Title": "gfc_string.c",
-              "DocumentMoniker": "C:\\Users\\Jake\\git\\School\\2DGameProgramming\\gfc\\src\\gfc_string.c",
-              "RelativeDocumentMoniker": "..\\gfc\\src\\gfc_string.c",
-              "ToolTip": "C:\\Users\\Jake\\git\\School\\2DGameProgramming\\gfc\\src\\gfc_string.c",
-              "RelativeToolTip": "..\\gfc\\src\\gfc_string.c",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000423|",
-              "WhenOpened": "2026-02-15T04:21:26.317Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 13,
-              "Title": "SDL_keycode.h",
-              "DocumentMoniker": "C:\\Users\\Jake\\VisualStudio_DevLib\\SDL2-2.32.10\\include\\SDL_keycode.h",
-              "RelativeDocumentMoniker": "..\\..\\..\\..\\VisualStudio_DevLib\\SDL2-2.32.10\\include\\SDL_keycode.h",
-              "ToolTip": "C:\\Users\\Jake\\VisualStudio_DevLib\\SDL2-2.32.10\\include\\SDL_keycode.h",
-              "RelativeToolTip": "..\\..\\..\\..\\VisualStudio_DevLib\\SDL2-2.32.10\\include\\SDL_keycode.h",
-              "ViewState": "AgIAABcAAAAAAAAAAAArwCkAAAAHAAAAAAAAAA==",
+              "DocumentIndex": 7,
+              "Title": "gf2d_sprite.h",
+              "DocumentMoniker": "C:\\Users\\Jake\\git\\School\\2DGameProgramming\\include\\gf2d_sprite.h",
+              "RelativeDocumentMoniker": "..\\include\\gf2d_sprite.h",
+              "ToolTip": "C:\\Users\\Jake\\git\\School\\2DGameProgramming\\include\\gf2d_sprite.h",
+              "RelativeToolTip": "..\\include\\gf2d_sprite.h",
+              "ViewState": "AgIAAFUAAAAAAAAAAAAAwGUAAAAOAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000680|",
-              "WhenOpened": "2026-02-15T03:31:51.671Z"
+              "WhenOpened": "2026-02-02T18:58:28.597Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 14,
+              "DocumentIndex": 4,
               "Title": "SDL_keyboard.h",
               "DocumentMoniker": "C:\\Users\\Jake\\VisualStudio_DevLib\\SDL2-2.32.10\\include\\SDL_keyboard.h",
               "RelativeDocumentMoniker": "..\\..\\..\\..\\VisualStudio_DevLib\\SDL2-2.32.10\\include\\SDL_keyboard.h",
               "ToolTip": "C:\\Users\\Jake\\VisualStudio_DevLib\\SDL2-2.32.10\\include\\SDL_keyboard.h",
               "RelativeToolTip": "..\\..\\..\\..\\VisualStudio_DevLib\\SDL2-2.32.10\\include\\SDL_keyboard.h",
-              "ViewState": "AgIAADgBAAAAAAAAAAAAAEAAAAAsAAAAAAAAAA==",
+              "ViewState": "AgIAAEQBAAAAAAAAAAAAAEMAAAA3AAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000680|",
-              "WhenOpened": "2026-02-15T03:16:20.022Z"
+              "WhenOpened": "2026-02-15T03:16:20.022Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 19,
-              "Title": "gfc_shape.c",
-              "DocumentMoniker": "C:\\Users\\Jake\\git\\School\\2DGameProgramming\\gfc\\src\\gfc_shape.c",
-              "RelativeDocumentMoniker": "..\\gfc\\src\\gfc_shape.c",
-              "ToolTip": "C:\\Users\\Jake\\git\\School\\2DGameProgramming\\gfc\\src\\gfc_shape.c",
-              "RelativeToolTip": "..\\gfc\\src\\gfc_shape.c",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "DocumentIndex": 8,
+              "Title": "level.h",
+              "DocumentMoniker": "C:\\Users\\Jake\\git\\School\\2DGameProgramming\\include\\level.h",
+              "RelativeDocumentMoniker": "..\\include\\level.h",
+              "ToolTip": "C:\\Users\\Jake\\git\\School\\2DGameProgramming\\include\\level.h",
+              "RelativeToolTip": "..\\include\\level.h",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAcAAAAUAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000680|",
+              "WhenOpened": "2026-02-21T19:12:06.075Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 6,
+              "Title": "level.c",
+              "DocumentMoniker": "C:\\Users\\Jake\\git\\School\\2DGameProgramming\\src\\level.c",
+              "RelativeDocumentMoniker": "..\\src\\level.c",
+              "ToolTip": "C:\\Users\\Jake\\git\\School\\2DGameProgramming\\src\\level.c",
+              "RelativeToolTip": "..\\src\\level.c",
+              "ViewState": "AgIAABAAAAAAAAAAAAAAwCMAAAANAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000423|",
-              "WhenOpened": "2026-02-15T04:21:25.196Z"
+              "WhenOpened": "2026-02-21T19:16:35.622Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 20,
-              "Title": "gfc_actions.c",
-              "DocumentMoniker": "C:\\Users\\Jake\\git\\School\\2DGameProgramming\\gfc\\src\\gfc_actions.c",
-              "RelativeDocumentMoniker": "..\\gfc\\src\\gfc_actions.c",
-              "ToolTip": "C:\\Users\\Jake\\git\\School\\2DGameProgramming\\gfc\\src\\gfc_actions.c",
-              "RelativeToolTip": "..\\gfc\\src\\gfc_actions.c",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAABQAAAAZAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000423|",
-              "WhenOpened": "2026-02-15T04:21:07.642Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 22,
-              "Title": "SDL_image.h",
-              "DocumentMoniker": "C:\\Users\\Jake\\VisualStudio_DevLib\\SDL2_image-2.8.6\\include\\SDL_image.h",
-              "RelativeDocumentMoniker": "..\\..\\..\\..\\VisualStudio_DevLib\\SDL2_image-2.8.6\\include\\SDL_image.h",
-              "ToolTip": "C:\\Users\\Jake\\VisualStudio_DevLib\\SDL2_image-2.8.6\\include\\SDL_image.h",
-              "RelativeToolTip": "..\\..\\..\\..\\VisualStudio_DevLib\\SDL2_image-2.8.6\\include\\SDL_image.h",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAABsAAAADAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000680|",
-              "WhenOpened": "2026-02-15T03:32:33.51Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 23,
-              "Title": "SDL_gesture.h",
-              "DocumentMoniker": "C:\\Users\\Jake\\VisualStudio_DevLib\\SDL2-2.32.10\\include\\SDL_gesture.h",
-              "RelativeDocumentMoniker": "..\\..\\..\\..\\VisualStudio_DevLib\\SDL2-2.32.10\\include\\SDL_gesture.h",
-              "ToolTip": "C:\\Users\\Jake\\VisualStudio_DevLib\\SDL2-2.32.10\\include\\SDL_gesture.h",
-              "RelativeToolTip": "..\\..\\..\\..\\VisualStudio_DevLib\\SDL2-2.32.10\\include\\SDL_gesture.h",
+              "DocumentIndex": 12,
+              "Title": "gf2d_graphics.h",
+              "DocumentMoniker": "C:\\Users\\Jake\\git\\School\\2DGameProgramming\\include\\gf2d_graphics.h",
+              "RelativeDocumentMoniker": "..\\include\\gf2d_graphics.h",
+              "ToolTip": "C:\\Users\\Jake\\git\\School\\2DGameProgramming\\include\\gf2d_graphics.h",
+              "RelativeToolTip": "..\\include\\gf2d_graphics.h",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000680|",
-              "WhenOpened": "2026-02-15T03:32:24.993Z"
+              "WhenOpened": "2026-02-17T18:28:02.226Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 24,
-              "Title": "SDL_filesystem.h",
-              "DocumentMoniker": "C:\\Users\\Jake\\VisualStudio_DevLib\\SDL2-2.32.10\\include\\SDL_filesystem.h",
-              "RelativeDocumentMoniker": "..\\..\\..\\..\\VisualStudio_DevLib\\SDL2-2.32.10\\include\\SDL_filesystem.h",
-              "ToolTip": "C:\\Users\\Jake\\VisualStudio_DevLib\\SDL2-2.32.10\\include\\SDL_filesystem.h",
-              "RelativeToolTip": "..\\..\\..\\..\\VisualStudio_DevLib\\SDL2-2.32.10\\include\\SDL_filesystem.h",
-              "ViewState": "AgIAABIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000680|",
-              "WhenOpened": "2026-02-15T03:17:23.935Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 21,
-              "Title": "gfc_input.c",
-              "DocumentMoniker": "C:\\Users\\Jake\\git\\School\\2DGameProgramming\\gfc\\src\\gfc_input.c",
-              "RelativeDocumentMoniker": "..\\gfc\\src\\gfc_input.c",
-              "ToolTip": "C:\\Users\\Jake\\git\\School\\2DGameProgramming\\gfc\\src\\gfc_input.c",
-              "RelativeToolTip": "..\\gfc\\src\\gfc_input.c",
-              "ViewState": "AgIAAK0BAAAAAAAAAAAAAJwBAAAFAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000423|",
-              "WhenOpened": "2026-02-15T02:28:08.728Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 25,
-              "Title": "SDL_gamecontroller.h",
-              "DocumentMoniker": "C:\\Users\\Jake\\VisualStudio_DevLib\\SDL2-2.32.10\\include\\SDL_gamecontroller.h",
-              "RelativeDocumentMoniker": "..\\..\\..\\..\\VisualStudio_DevLib\\SDL2-2.32.10\\include\\SDL_gamecontroller.h",
-              "ToolTip": "C:\\Users\\Jake\\VisualStudio_DevLib\\SDL2-2.32.10\\include\\SDL_gamecontroller.h",
-              "RelativeToolTip": "..\\..\\..\\..\\VisualStudio_DevLib\\SDL2-2.32.10\\include\\SDL_gamecontroller.h",
+              "DocumentIndex": 10,
+              "Title": "gfc_audio.h",
+              "DocumentMoniker": "C:\\Users\\Jake\\git\\School\\2DGameProgramming\\gfc\\include\\gfc_audio.h",
+              "RelativeDocumentMoniker": "..\\gfc\\include\\gfc_audio.h",
+              "ToolTip": "C:\\Users\\Jake\\git\\School\\2DGameProgramming\\gfc\\include\\gfc_audio.h",
+              "RelativeToolTip": "..\\gfc\\include\\gfc_audio.h",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000680|",
-              "WhenOpened": "2026-02-15T03:17:22.735Z"
+              "WhenOpened": "2026-02-17T18:28:12.032Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 26,
-              "Title": "SDL_config_windows.h",
-              "DocumentMoniker": "C:\\Users\\Jake\\VisualStudio_DevLib\\SDL2-2.32.10\\include\\SDL_config_windows.h",
-              "RelativeDocumentMoniker": "..\\..\\..\\..\\VisualStudio_DevLib\\SDL2-2.32.10\\include\\SDL_config_windows.h",
-              "ToolTip": "C:\\Users\\Jake\\VisualStudio_DevLib\\SDL2-2.32.10\\include\\SDL_config_windows.h",
-              "RelativeToolTip": "..\\..\\..\\..\\VisualStudio_DevLib\\SDL2-2.32.10\\include\\SDL_config_windows.h",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "DocumentIndex": 14,
+              "Title": "gfc_input.h",
+              "DocumentMoniker": "C:\\Users\\Jake\\git\\School\\2DGameProgramming\\gfc\\include\\gfc_input.h",
+              "RelativeDocumentMoniker": "..\\gfc\\include\\gfc_input.h",
+              "ToolTip": "C:\\Users\\Jake\\git\\School\\2DGameProgramming\\gfc\\include\\gfc_input.h",
+              "RelativeToolTip": "..\\gfc\\include\\gfc_input.h",
+              "ViewState": "AgIAAFEAAAAAAAAAAAAAAIwAAAAqAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000680|",
-              "WhenOpened": "2026-02-15T03:17:18.752Z"
+              "WhenOpened": "2026-02-15T02:25:47.992Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 27,
-              "Title": "SDL_config_ngage.h",
-              "DocumentMoniker": "C:\\Users\\Jake\\VisualStudio_DevLib\\SDL2-2.32.10\\include\\SDL_config_ngage.h",
-              "RelativeDocumentMoniker": "..\\..\\..\\..\\VisualStudio_DevLib\\SDL2-2.32.10\\include\\SDL_config_ngage.h",
-              "ToolTip": "C:\\Users\\Jake\\VisualStudio_DevLib\\SDL2-2.32.10\\include\\SDL_config_ngage.h",
-              "RelativeToolTip": "..\\..\\..\\..\\VisualStudio_DevLib\\SDL2-2.32.10\\include\\SDL_config_ngage.h",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000680|",
-              "WhenOpened": "2026-02-15T03:17:16.707Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 28,
-              "Title": "SDL_config_minimal.h",
-              "DocumentMoniker": "C:\\Users\\Jake\\VisualStudio_DevLib\\SDL2-2.32.10\\include\\SDL_config_minimal.h",
-              "RelativeDocumentMoniker": "..\\..\\..\\..\\VisualStudio_DevLib\\SDL2-2.32.10\\include\\SDL_config_minimal.h",
-              "ToolTip": "C:\\Users\\Jake\\VisualStudio_DevLib\\SDL2-2.32.10\\include\\SDL_config_minimal.h",
-              "RelativeToolTip": "..\\..\\..\\..\\VisualStudio_DevLib\\SDL2-2.32.10\\include\\SDL_config_minimal.h",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000680|",
-              "WhenOpened": "2026-02-15T03:17:15.552Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 30,
-              "Title": "simple_json.c",
-              "DocumentMoniker": "C:\\Users\\Jake\\git\\School\\2DGameProgramming\\gfc\\simple_json\\src\\simple_json.c",
-              "RelativeDocumentMoniker": "..\\gfc\\simple_json\\src\\simple_json.c",
-              "ToolTip": "C:\\Users\\Jake\\git\\School\\2DGameProgramming\\gfc\\simple_json\\src\\simple_json.c",
-              "RelativeToolTip": "..\\gfc\\simple_json\\src\\simple_json.c",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000423|",
-              "WhenOpened": "2026-02-15T02:28:03.252Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 32,
-              "Title": "gfc_types.h",
-              "DocumentMoniker": "C:\\Users\\Jake\\git\\School\\2DGameProgramming\\gfc\\include\\gfc_types.h",
-              "RelativeDocumentMoniker": "..\\gfc\\include\\gfc_types.h",
-              "ToolTip": "C:\\Users\\Jake\\git\\School\\2DGameProgramming\\gfc\\include\\gfc_types.h",
-              "RelativeToolTip": "..\\gfc\\include\\gfc_types.h",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000680|",
-              "WhenOpened": "2026-02-15T02:27:39.825Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 33,
-              "Title": "gfc_text.h",
-              "DocumentMoniker": "C:\\Users\\Jake\\git\\School\\2DGameProgramming\\gfc\\include\\gfc_text.h",
-              "RelativeDocumentMoniker": "..\\gfc\\include\\gfc_text.h",
-              "ToolTip": "C:\\Users\\Jake\\git\\School\\2DGameProgramming\\gfc\\include\\gfc_text.h",
-              "RelativeToolTip": "..\\gfc\\include\\gfc_text.h",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000680|",
-              "WhenOpened": "2026-02-15T02:27:39.077Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 34,
-              "Title": "gfc_string.h",
-              "DocumentMoniker": "C:\\Users\\Jake\\git\\School\\2DGameProgramming\\gfc\\include\\gfc_string.h",
-              "RelativeDocumentMoniker": "..\\gfc\\include\\gfc_string.h",
-              "ToolTip": "C:\\Users\\Jake\\git\\School\\2DGameProgramming\\gfc\\include\\gfc_string.h",
-              "RelativeToolTip": "..\\gfc\\include\\gfc_string.h",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000680|",
-              "WhenOpened": "2026-02-15T02:27:38.038Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 29,
+              "DocumentIndex": 15,
               "Title": "gfc_list.h",
               "DocumentMoniker": "C:\\Users\\Jake\\git\\School\\2DGameProgramming\\gfc\\include\\gfc_list.h",
               "RelativeDocumentMoniker": "..\\gfc\\include\\gfc_list.h",
@@ -561,31 +350,91 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 31,
-              "Title": "gfc_input.h",
-              "DocumentMoniker": "C:\\Users\\Jake\\git\\School\\2DGameProgramming\\gfc\\include\\gfc_input.h",
-              "RelativeDocumentMoniker": "..\\gfc\\include\\gfc_input.h",
-              "ToolTip": "C:\\Users\\Jake\\git\\School\\2DGameProgramming\\gfc\\include\\gfc_input.h",
-              "RelativeToolTip": "..\\gfc\\include\\gfc_input.h",
-              "ViewState": "AgIAAFoAAAAAAAAAAAAAAIwAAAAqAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000680|",
-              "WhenOpened": "2026-02-15T02:25:47.992Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 35,
-              "Title": "gfc_noise.h",
-              "DocumentMoniker": "C:\\Users\\Jake\\git\\School\\2DGameProgramming\\gfc\\include\\gfc_noise.h",
-              "RelativeDocumentMoniker": "..\\gfc\\include\\gfc_noise.h",
-              "ToolTip": "C:\\Users\\Jake\\git\\School\\2DGameProgramming\\gfc\\include\\gfc_noise.h",
-              "RelativeToolTip": "..\\gfc\\include\\gfc_noise.h",
+              "DocumentIndex": 11,
+              "Title": "gfc_actions.h",
+              "DocumentMoniker": "C:\\Users\\Jake\\git\\School\\2DGameProgramming\\gfc\\include\\gfc_actions.h",
+              "RelativeDocumentMoniker": "..\\gfc\\include\\gfc_actions.h",
+              "ToolTip": "C:\\Users\\Jake\\git\\School\\2DGameProgramming\\gfc\\include\\gfc_actions.h",
+              "RelativeToolTip": "..\\gfc\\include\\gfc_actions.h",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000680|",
-              "WhenOpened": "2026-02-15T02:27:37.051Z"
+              "WhenOpened": "2026-02-16T16:36:36.092Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 36,
+              "DocumentIndex": 16,
+              "Title": "gfc_pak.h",
+              "DocumentMoniker": "C:\\Users\\Jake\\git\\School\\2DGameProgramming\\gfc\\include\\gfc_pak.h",
+              "RelativeDocumentMoniker": "..\\gfc\\include\\gfc_pak.h",
+              "ToolTip": "C:\\Users\\Jake\\git\\School\\2DGameProgramming\\gfc\\include\\gfc_pak.h",
+              "RelativeToolTip": "..\\gfc\\include\\gfc_pak.h",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000680|",
+              "WhenOpened": "2026-02-17T17:51:12.237Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 17,
+              "Title": "gfc_primitives.h",
+              "DocumentMoniker": "C:\\Users\\Jake\\git\\School\\2DGameProgramming\\gfc\\include\\gfc_primitives.h",
+              "RelativeDocumentMoniker": "..\\gfc\\include\\gfc_primitives.h",
+              "ToolTip": "C:\\Users\\Jake\\git\\School\\2DGameProgramming\\gfc\\include\\gfc_primitives.h",
+              "RelativeToolTip": "..\\gfc\\include\\gfc_primitives.h",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000680|",
+              "WhenOpened": "2026-02-17T17:51:11.014Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 20,
+              "Title": "gfc_types.h",
+              "DocumentMoniker": "C:\\Users\\Jake\\git\\School\\2DGameProgramming\\gfc\\include\\gfc_types.h",
+              "RelativeDocumentMoniker": "..\\gfc\\include\\gfc_types.h",
+              "ToolTip": "C:\\Users\\Jake\\git\\School\\2DGameProgramming\\gfc\\include\\gfc_types.h",
+              "RelativeToolTip": "..\\gfc\\include\\gfc_types.h",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000680|",
+              "WhenOpened": "2026-02-15T02:27:39.825Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 21,
+              "Title": "gfc_hashmap.c",
+              "DocumentMoniker": "C:\\Users\\Jake\\git\\School\\2DGameProgramming\\gfc\\src\\gfc_hashmap.c",
+              "RelativeDocumentMoniker": "..\\gfc\\src\\gfc_hashmap.c",
+              "ToolTip": "C:\\Users\\Jake\\git\\School\\2DGameProgramming\\gfc\\src\\gfc_hashmap.c",
+              "RelativeToolTip": "..\\gfc\\src\\gfc_hashmap.c",
+              "ViewState": "AgIAACEAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000423|",
+              "WhenOpened": "2026-02-17T17:48:08.107Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 22,
+              "Title": "enemy.c",
+              "DocumentMoniker": "C:\\Users\\Jake\\git\\School\\2DGameProgramming\\src\\enemy.c",
+              "RelativeDocumentMoniker": "..\\src\\enemy.c",
+              "ToolTip": "C:\\Users\\Jake\\git\\School\\2DGameProgramming\\src\\enemy.c",
+              "RelativeToolTip": "..\\src\\enemy.c",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABwAAABTAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000423|",
+              "WhenOpened": "2026-02-16T19:01:29.209Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 19,
+              "Title": "gfc_text.h",
+              "DocumentMoniker": "C:\\Users\\Jake\\git\\School\\2DGameProgramming\\gfc\\include\\gfc_text.h",
+              "RelativeDocumentMoniker": "..\\gfc\\include\\gfc_text.h",
+              "ToolTip": "C:\\Users\\Jake\\git\\School\\2DGameProgramming\\gfc\\include\\gfc_text.h",
+              "RelativeToolTip": "..\\gfc\\include\\gfc_text.h",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000680|",
+              "WhenOpened": "2026-02-15T02:27:39.077Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 18,
               "Title": "gfc_shape.h",
               "DocumentMoniker": "C:\\Users\\Jake\\git\\School\\2DGameProgramming\\gfc\\include\\gfc_shape.h",
               "RelativeDocumentMoniker": "..\\gfc\\include\\gfc_shape.h",
@@ -597,7 +446,271 @@
             },
             {
               "$type": "Document",
+              "DocumentIndex": 24,
+              "Title": "enemy.h",
+              "DocumentMoniker": "C:\\Users\\Jake\\git\\School\\2DGameProgramming\\include\\enemy.h",
+              "RelativeDocumentMoniker": "..\\include\\enemy.h",
+              "ToolTip": "C:\\Users\\Jake\\git\\School\\2DGameProgramming\\include\\enemy.h",
+              "RelativeToolTip": "..\\include\\enemy.h",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAkAAAAIAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000680|",
+              "WhenOpened": "2026-02-16T16:54:42.992Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 23,
+              "Title": "SDL_stdinc.h",
+              "DocumentMoniker": "C:\\Users\\Jake\\VisualStudio_DevLib\\SDL2-2.32.10\\include\\SDL_stdinc.h",
+              "RelativeDocumentMoniker": "..\\..\\..\\..\\VisualStudio_DevLib\\SDL2-2.32.10\\include\\SDL_stdinc.h",
+              "ToolTip": "C:\\Users\\Jake\\VisualStudio_DevLib\\SDL2-2.32.10\\include\\SDL_stdinc.h",
+              "RelativeToolTip": "..\\..\\..\\..\\VisualStudio_DevLib\\SDL2-2.32.10\\include\\SDL_stdinc.h",
+              "ViewState": "AgIAACYCAAAAAAAAAAAqwDcCAAANAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000680|",
+              "WhenOpened": "2026-02-03T18:44:07.911Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 25,
+              "Title": "SDL_events.h",
+              "DocumentMoniker": "C:\\Users\\Jake\\VisualStudio_DevLib\\SDL2-2.32.10\\include\\SDL_events.h",
+              "RelativeDocumentMoniker": "..\\..\\..\\..\\VisualStudio_DevLib\\SDL2-2.32.10\\include\\SDL_events.h",
+              "ToolTip": "C:\\Users\\Jake\\VisualStudio_DevLib\\SDL2-2.32.10\\include\\SDL_events.h",
+              "RelativeToolTip": "..\\..\\..\\..\\VisualStudio_DevLib\\SDL2-2.32.10\\include\\SDL_events.h",
+              "ViewState": "AgIAAOADAAAAAAAAAAArwO8DAAAYAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000680|",
+              "WhenOpened": "2026-02-15T04:38:52.507Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 26,
+              "Title": "gfc_config.h",
+              "DocumentMoniker": "C:\\Users\\Jake\\git\\School\\2DGameProgramming\\gfc\\include\\gfc_config.h",
+              "RelativeDocumentMoniker": "..\\gfc\\include\\gfc_config.h",
+              "ToolTip": "C:\\Users\\Jake\\git\\School\\2DGameProgramming\\gfc\\include\\gfc_config.h",
+              "RelativeToolTip": "..\\gfc\\include\\gfc_config.h",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000680|",
+              "WhenOpened": "2026-02-15T04:44:15.295Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 28,
+              "Title": "gf2d_draw.c",
+              "DocumentMoniker": "C:\\Users\\Jake\\git\\School\\2DGameProgramming\\src\\gf2d_draw.c",
+              "RelativeDocumentMoniker": "..\\src\\gf2d_draw.c",
+              "ToolTip": "C:\\Users\\Jake\\git\\School\\2DGameProgramming\\src\\gf2d_draw.c",
+              "RelativeToolTip": "..\\src\\gf2d_draw.c",
+              "ViewState": "AgIAADkAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000423|",
+              "WhenOpened": "2026-02-02T04:26:06.004Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 29,
+              "Title": "gf2d_graphics.c",
+              "DocumentMoniker": "C:\\Users\\Jake\\git\\School\\2DGameProgramming\\src\\gf2d_graphics.c",
+              "RelativeDocumentMoniker": "..\\src\\gf2d_graphics.c",
+              "ToolTip": "C:\\Users\\Jake\\git\\School\\2DGameProgramming\\src\\gf2d_graphics.c",
+              "RelativeToolTip": "..\\src\\gf2d_graphics.c",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000423|",
+              "WhenOpened": "2026-02-15T04:21:34.588Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 30,
+              "Title": "gfc_audio.c",
+              "DocumentMoniker": "C:\\Users\\Jake\\git\\School\\2DGameProgramming\\gfc\\src\\gfc_audio.c",
+              "RelativeDocumentMoniker": "..\\gfc\\src\\gfc_audio.c",
+              "ToolTip": "C:\\Users\\Jake\\git\\School\\2DGameProgramming\\gfc\\src\\gfc_audio.c",
+              "RelativeToolTip": "..\\gfc\\src\\gfc_audio.c",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000423|",
+              "WhenOpened": "2026-02-15T04:21:32.9Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 31,
+              "Title": "gfc_string.c",
+              "DocumentMoniker": "C:\\Users\\Jake\\git\\School\\2DGameProgramming\\gfc\\src\\gfc_string.c",
+              "RelativeDocumentMoniker": "..\\gfc\\src\\gfc_string.c",
+              "ToolTip": "C:\\Users\\Jake\\git\\School\\2DGameProgramming\\gfc\\src\\gfc_string.c",
+              "RelativeToolTip": "..\\gfc\\src\\gfc_string.c",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000423|",
+              "WhenOpened": "2026-02-15T04:21:26.317Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 27,
+              "Title": "SDL_keycode.h",
+              "DocumentMoniker": "C:\\Users\\Jake\\VisualStudio_DevLib\\SDL2-2.32.10\\include\\SDL_keycode.h",
+              "RelativeDocumentMoniker": "..\\..\\..\\..\\VisualStudio_DevLib\\SDL2-2.32.10\\include\\SDL_keycode.h",
+              "ToolTip": "C:\\Users\\Jake\\VisualStudio_DevLib\\SDL2-2.32.10\\include\\SDL_keycode.h",
+              "RelativeToolTip": "..\\..\\..\\..\\VisualStudio_DevLib\\SDL2-2.32.10\\include\\SDL_keycode.h",
+              "ViewState": "AgIAABcAAAAAAAAAAAArwCkAAAAHAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000680|",
+              "WhenOpened": "2026-02-15T03:31:51.671Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 32,
+              "Title": "gfc_shape.c",
+              "DocumentMoniker": "C:\\Users\\Jake\\git\\School\\2DGameProgramming\\gfc\\src\\gfc_shape.c",
+              "RelativeDocumentMoniker": "..\\gfc\\src\\gfc_shape.c",
+              "ToolTip": "C:\\Users\\Jake\\git\\School\\2DGameProgramming\\gfc\\src\\gfc_shape.c",
+              "RelativeToolTip": "..\\gfc\\src\\gfc_shape.c",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000423|",
+              "WhenOpened": "2026-02-15T04:21:25.196Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 33,
+              "Title": "gfc_actions.c",
+              "DocumentMoniker": "C:\\Users\\Jake\\git\\School\\2DGameProgramming\\gfc\\src\\gfc_actions.c",
+              "RelativeDocumentMoniker": "..\\gfc\\src\\gfc_actions.c",
+              "ToolTip": "C:\\Users\\Jake\\git\\School\\2DGameProgramming\\gfc\\src\\gfc_actions.c",
+              "RelativeToolTip": "..\\gfc\\src\\gfc_actions.c",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABQAAAAZAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000423|",
+              "WhenOpened": "2026-02-15T04:21:07.642Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 35,
+              "Title": "SDL_image.h",
+              "DocumentMoniker": "C:\\Users\\Jake\\VisualStudio_DevLib\\SDL2_image-2.8.6\\include\\SDL_image.h",
+              "RelativeDocumentMoniker": "..\\..\\..\\..\\VisualStudio_DevLib\\SDL2_image-2.8.6\\include\\SDL_image.h",
+              "ToolTip": "C:\\Users\\Jake\\VisualStudio_DevLib\\SDL2_image-2.8.6\\include\\SDL_image.h",
+              "RelativeToolTip": "..\\..\\..\\..\\VisualStudio_DevLib\\SDL2_image-2.8.6\\include\\SDL_image.h",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABsAAAADAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000680|",
+              "WhenOpened": "2026-02-15T03:32:33.51Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 36,
+              "Title": "SDL_gesture.h",
+              "DocumentMoniker": "C:\\Users\\Jake\\VisualStudio_DevLib\\SDL2-2.32.10\\include\\SDL_gesture.h",
+              "RelativeDocumentMoniker": "..\\..\\..\\..\\VisualStudio_DevLib\\SDL2-2.32.10\\include\\SDL_gesture.h",
+              "ToolTip": "C:\\Users\\Jake\\VisualStudio_DevLib\\SDL2-2.32.10\\include\\SDL_gesture.h",
+              "RelativeToolTip": "..\\..\\..\\..\\VisualStudio_DevLib\\SDL2-2.32.10\\include\\SDL_gesture.h",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000680|",
+              "WhenOpened": "2026-02-15T03:32:24.993Z"
+            },
+            {
+              "$type": "Document",
               "DocumentIndex": 37,
+              "Title": "SDL_filesystem.h",
+              "DocumentMoniker": "C:\\Users\\Jake\\VisualStudio_DevLib\\SDL2-2.32.10\\include\\SDL_filesystem.h",
+              "RelativeDocumentMoniker": "..\\..\\..\\..\\VisualStudio_DevLib\\SDL2-2.32.10\\include\\SDL_filesystem.h",
+              "ToolTip": "C:\\Users\\Jake\\VisualStudio_DevLib\\SDL2-2.32.10\\include\\SDL_filesystem.h",
+              "RelativeToolTip": "..\\..\\..\\..\\VisualStudio_DevLib\\SDL2-2.32.10\\include\\SDL_filesystem.h",
+              "ViewState": "AgIAABIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000680|",
+              "WhenOpened": "2026-02-15T03:17:23.935Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 34,
+              "Title": "gfc_input.c",
+              "DocumentMoniker": "C:\\Users\\Jake\\git\\School\\2DGameProgramming\\gfc\\src\\gfc_input.c",
+              "RelativeDocumentMoniker": "..\\gfc\\src\\gfc_input.c",
+              "ToolTip": "C:\\Users\\Jake\\git\\School\\2DGameProgramming\\gfc\\src\\gfc_input.c",
+              "RelativeToolTip": "..\\gfc\\src\\gfc_input.c",
+              "ViewState": "AgIAAK0BAAAAAAAAAAAAAJwBAAAFAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000423|",
+              "WhenOpened": "2026-02-15T02:28:08.728Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 38,
+              "Title": "SDL_gamecontroller.h",
+              "DocumentMoniker": "C:\\Users\\Jake\\VisualStudio_DevLib\\SDL2-2.32.10\\include\\SDL_gamecontroller.h",
+              "RelativeDocumentMoniker": "..\\..\\..\\..\\VisualStudio_DevLib\\SDL2-2.32.10\\include\\SDL_gamecontroller.h",
+              "ToolTip": "C:\\Users\\Jake\\VisualStudio_DevLib\\SDL2-2.32.10\\include\\SDL_gamecontroller.h",
+              "RelativeToolTip": "..\\..\\..\\..\\VisualStudio_DevLib\\SDL2-2.32.10\\include\\SDL_gamecontroller.h",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000680|",
+              "WhenOpened": "2026-02-15T03:17:22.735Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 39,
+              "Title": "SDL_config_windows.h",
+              "DocumentMoniker": "C:\\Users\\Jake\\VisualStudio_DevLib\\SDL2-2.32.10\\include\\SDL_config_windows.h",
+              "RelativeDocumentMoniker": "..\\..\\..\\..\\VisualStudio_DevLib\\SDL2-2.32.10\\include\\SDL_config_windows.h",
+              "ToolTip": "C:\\Users\\Jake\\VisualStudio_DevLib\\SDL2-2.32.10\\include\\SDL_config_windows.h",
+              "RelativeToolTip": "..\\..\\..\\..\\VisualStudio_DevLib\\SDL2-2.32.10\\include\\SDL_config_windows.h",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000680|",
+              "WhenOpened": "2026-02-15T03:17:18.752Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 40,
+              "Title": "SDL_config_ngage.h",
+              "DocumentMoniker": "C:\\Users\\Jake\\VisualStudio_DevLib\\SDL2-2.32.10\\include\\SDL_config_ngage.h",
+              "RelativeDocumentMoniker": "..\\..\\..\\..\\VisualStudio_DevLib\\SDL2-2.32.10\\include\\SDL_config_ngage.h",
+              "ToolTip": "C:\\Users\\Jake\\VisualStudio_DevLib\\SDL2-2.32.10\\include\\SDL_config_ngage.h",
+              "RelativeToolTip": "..\\..\\..\\..\\VisualStudio_DevLib\\SDL2-2.32.10\\include\\SDL_config_ngage.h",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000680|",
+              "WhenOpened": "2026-02-15T03:17:16.707Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 41,
+              "Title": "SDL_config_minimal.h",
+              "DocumentMoniker": "C:\\Users\\Jake\\VisualStudio_DevLib\\SDL2-2.32.10\\include\\SDL_config_minimal.h",
+              "RelativeDocumentMoniker": "..\\..\\..\\..\\VisualStudio_DevLib\\SDL2-2.32.10\\include\\SDL_config_minimal.h",
+              "ToolTip": "C:\\Users\\Jake\\VisualStudio_DevLib\\SDL2-2.32.10\\include\\SDL_config_minimal.h",
+              "RelativeToolTip": "..\\..\\..\\..\\VisualStudio_DevLib\\SDL2-2.32.10\\include\\SDL_config_minimal.h",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000680|",
+              "WhenOpened": "2026-02-15T03:17:15.552Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 42,
+              "Title": "simple_json.c",
+              "DocumentMoniker": "C:\\Users\\Jake\\git\\School\\2DGameProgramming\\gfc\\simple_json\\src\\simple_json.c",
+              "RelativeDocumentMoniker": "..\\gfc\\simple_json\\src\\simple_json.c",
+              "ToolTip": "C:\\Users\\Jake\\git\\School\\2DGameProgramming\\gfc\\simple_json\\src\\simple_json.c",
+              "RelativeToolTip": "..\\gfc\\simple_json\\src\\simple_json.c",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000423|",
+              "WhenOpened": "2026-02-15T02:28:03.252Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 43,
+              "Title": "gfc_string.h",
+              "DocumentMoniker": "C:\\Users\\Jake\\git\\School\\2DGameProgramming\\gfc\\include\\gfc_string.h",
+              "RelativeDocumentMoniker": "..\\gfc\\include\\gfc_string.h",
+              "ToolTip": "C:\\Users\\Jake\\git\\School\\2DGameProgramming\\gfc\\include\\gfc_string.h",
+              "RelativeToolTip": "..\\gfc\\include\\gfc_string.h",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000680|",
+              "WhenOpened": "2026-02-15T02:27:38.038Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 44,
+              "Title": "gfc_noise.h",
+              "DocumentMoniker": "C:\\Users\\Jake\\git\\School\\2DGameProgramming\\gfc\\include\\gfc_noise.h",
+              "RelativeDocumentMoniker": "..\\gfc\\include\\gfc_noise.h",
+              "ToolTip": "C:\\Users\\Jake\\git\\School\\2DGameProgramming\\gfc\\include\\gfc_noise.h",
+              "RelativeToolTip": "..\\gfc\\include\\gfc_noise.h",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000680|",
+              "WhenOpened": "2026-02-15T02:27:37.051Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 45,
               "Title": "gf2d_draw.h",
               "DocumentMoniker": "C:\\Users\\Jake\\git\\School\\2DGameProgramming\\include\\gf2d_draw.h",
               "RelativeDocumentMoniker": "..\\include\\gf2d_draw.h",
@@ -609,19 +722,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 38,
-              "Title": "gf2d_sprite.h",
-              "DocumentMoniker": "C:\\Users\\Jake\\git\\School\\2DGameProgramming\\include\\gf2d_sprite.h",
-              "RelativeDocumentMoniker": "..\\include\\gf2d_sprite.h",
-              "ToolTip": "C:\\Users\\Jake\\git\\School\\2DGameProgramming\\include\\gf2d_sprite.h",
-              "RelativeToolTip": "..\\include\\gf2d_sprite.h",
-              "ViewState": "AgIAABUAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000680|",
-              "WhenOpened": "2026-02-02T18:58:28.597Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 39,
+              "DocumentIndex": 46,
               "Title": "gfc_vector.c",
               "DocumentMoniker": "C:\\Users\\Jake\\git\\School\\2DGameProgramming\\gfc\\src\\gfc_vector.c",
               "RelativeDocumentMoniker": "..\\gfc\\src\\gfc_vector.c",

@@ -59,11 +59,32 @@ void player_update(Entity* self)
 	if (self->frame >= 16) self->frame = 0;
 
 	gfc_vector2d_add(self->position,self->position,  self->velocity);
-
-	
-
 }
 void player_free(Entity* self)
 {
 	if (!self) return;
+}
+
+void player_input(Entity* self, SDL_Event* event)
+{
+	if (!self || !event) return;
+
+	if (event->type == SDL_KEYDOWN)
+	{
+		switch (event->key.keysym.sym)
+		{
+			case SDLK_w:
+				self->position.y -= 10; // positive y is downwards
+				break;
+			case SDLK_a:
+				self->position.x -= 10;
+				break;
+			case SDLK_s:
+				self->position.y += 10;
+				break;
+			case SDLK_d:
+				self->position.x += 10;
+				break;
+		}
+	}
 }
