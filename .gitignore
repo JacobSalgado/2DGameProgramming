@@ -60,4 +60,7 @@ gf2d
 #visual studio folder
 *.vs/
 
+#x64 folder
+x64/
+
 makefile.dep

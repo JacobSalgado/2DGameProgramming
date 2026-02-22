@@ -20,10 +20,10 @@ Entity *player_new()
 	}
 
 	self->sprite = gf2d_sprite_load_all(
-		"images/ed210.png",
-		128,
-		128,
-		16,
+		"images/sonic.png",
+		94,
+		130,
+		13,
 		0
 	);
 	self->frame = 0; /*<the current frame of animation for the sprite*/
@@ -55,8 +55,8 @@ void player_think(Entity* self)
 void player_update(Entity* self)
 {
 	if (!self) return;
-	self->frame += 0.1;
-	if (self->frame >= 16) self->frame = 0;
+	self->frame += 0.1; // how fast the frame plays
+	if (self->frame >= 13) self->frame = 0;
 
 	gfc_vector2d_add(self->position,self->position,  self->velocity);
 }
