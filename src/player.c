@@ -75,6 +75,7 @@ void player_input(Entity* self, SDL_Event* event)
 		{
 			case SDLK_w:
 				self->position.y -= 10; // positive y is downwards
+				slog("w key pressed!");
 				break;
 			case SDLK_a:
 				self->position.x -= 10;
