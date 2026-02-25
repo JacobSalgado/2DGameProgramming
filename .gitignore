@@ -63,4 +63,7 @@ gf2d
 #x64 folder
 x64/
 
+# temp files
+*.user
+
 makefile.dep

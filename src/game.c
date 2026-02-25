@@ -7,6 +7,7 @@
 #include "entity.h"
 #include "enemy.h"
 #include "player.h"
+#include "ring.h"
 
 int main(int argc, char * argv[])
 {
@@ -21,6 +22,7 @@ int main(int argc, char * argv[])
     GFC_Color mouseGFC_Color = gfc_color8(100,180,250,200);
     Entity *player;
     Entity* enemy;
+    Entity* ring;
     
     /*program initializtion*/
     init_logger("gf2d.log",0);
@@ -41,8 +43,9 @@ int main(int argc, char * argv[])
     /*demo setup*/
     sprite = gf2d_sprite_load_image("images/backgrounds/puck_guts.jpg");
     mouse = gf2d_sprite_load_all("images/pointer.png",32,32,16,0);
-    player = player_new();
-    enemy = enemy_new();
+    player = player_new(); /* initialize the player */
+    enemy = enemy_new(); /* initialize the enemy */
+    ring = ring_new(); /* initialize rings */
     slog("press [escape] to quit");
     /*main game loop*/
     while(!done)
@@ -71,6 +74,7 @@ int main(int argc, char * argv[])
             }*/
             player_input(player, &event);
         }
+        //player_move(player);
 
         entity_system_think();
         entity_system_update();
@@ -98,6 +102,7 @@ int main(int argc, char * argv[])
         if (keys[SDL_SCANCODE_ESCAPE])done = 1; // exit condition
         //slog("Rendering at %f FPS",gf2d_graphics_get_frames_per_second());
     }
+    entity_free(ring);
     entity_free(enemy);
     entity_free(player);
     slog("---==== END ====---");

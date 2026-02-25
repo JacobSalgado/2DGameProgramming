@@ -28,6 +28,7 @@ Entity *player_new()
 	);
 	self->frame = 0; /*<the current frame of animation for the sprite*/
 	self->position = gfc_vector2d(0, 0); /**<the entity's position in the world*/
+	self->velocity = gfc_vector2d(0, 0);
 	
 
 	self->think = player_think;
@@ -43,19 +44,19 @@ void player_think(Entity* self)
 	Sint32 mx = 0, my = 0;
 	if (!self) return;
 	
-	/*SDL_GetMouseState(&mx, &my);
+	/*/SDL_GetMouseState(&mx, &my);
 	if (self->position.x < mx)dir.x = 1;
 	if (self->position.y < my)dir.y = 1;
 	if (self->position.x > mx)dir.x = -1;
 	if (self->position.y > my)dir.y = -1;
-	gfc_vector2d_normalize(&dir);*/
+	gfc_vector2d_normalize(&dir);
 
-	gfc_vector2d_scale(self->velocity, dir, 3);
+	gfc_vector2d_scale(self->velocity, dir, 3);*/
 }
 void player_update(Entity* self)
 {
 	if (!self) return;
-	self->frame += 0.1; // how fast the frame plays
+	self->frame += 0.2; // how fast the frame plays
 	if (self->frame >= 13) self->frame = 0;
 
 	gfc_vector2d_add(self->position,self->position,  self->velocity);
@@ -69,23 +70,51 @@ void player_input(Entity* self, SDL_Event* event)
 {
 	if (!self || !event) return;
 
-	if (event->type == SDL_KEYDOWN)
+	if (event->type == SDL_KEYDOWN && event->key.repeat == 0)
+	{
+		// SWITCH VELOCITY
+		switch (event->key.keysym.sym)
+		{
+			case SDLK_UP:
+				self->velocity.y -= 10; break; // positive y is downwards
+				slog("up key pressed down");
+			case SDLK_DOWN:
+				self->velocity.y += 10; break;
+			case SDLK_LEFT:
+				self->velocity.x -= 10; break;
+			case SDLK_RIGHT:
+				self->velocity.x += 10; break;
+		}
+	}
+	// slow player down
+	else if (event->type == SDL_KEYUP && event->key.repeat == 0)
 	{
 		switch (event->key.keysym.sym)
 		{
-			case SDLK_w:
-				self->position.y -= 10; // positive y is downwards
-				slog("w key pressed!");
-				break;
-			case SDLK_a:
-				self->position.x -= 10;
-				break;
-			case SDLK_s:
-				self->position.y += 10;
-				break;
-			case SDLK_d:
-				self->position.x += 10;
-				break;
+		case SDLK_UP:
+			slog("Up key released");
+			self->velocity.y += 10; break; // positive y is downwards
+		case SDLK_DOWN:
+			self->velocity.y -= 10; break;
+		case SDLK_LEFT:
+			self->velocity.x += 10; break;
+		case SDLK_RIGHT:
+			self->velocity.x -= 10; break;
 		}
 	}
 }
+
+/*/void player_move(Entity* self)
+{
+	int pPositionX = self->position.x;
+	int pVelocityX = self->velocity.x;
+
+	int pPositionY = self->position.y;
+	int pVelocityY = self->velocity.y;
+
+	// move player left or right
+	pPositionX += pVelocityX;
+
+	// move player up or down
+	pPositionY += pVelocityY;
+}*/

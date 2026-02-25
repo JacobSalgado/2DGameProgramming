@@ -19,9 +19,9 @@ Entity* enemy_new()
 
 	enemy->sprite = gf2d_sprite_load_all
 	(
-		"images/space_bug.png",
-		128,
-		128,
+		"images/shadow.png",
+		51.875,
+		49.2,
 		16,
 		0
 	);
