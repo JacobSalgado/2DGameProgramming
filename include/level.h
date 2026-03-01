@@ -6,12 +6,17 @@
 typedef struct
 {
 	Sprite* background;		/**<background image for the world>*/
+	Sprite* tileLayer;		/**<prerendered sprite layer>*/
 	Sprite* tileSet;		/**<sprite containing the tiles for the world>*/
 	Uint8* tileMap;			/**<the tiles that make up the world>*/
 	Uint32 tileHeight;		/**<how many tiles tall the map is>*/
 	Uint32 tileWidth;		/**<how many tiles wide the map is>*/
 }
 World;
+
+void world_tile_layer_build();
+
+World* world_test_new();
 
 /**
 * @brief create a brand new world

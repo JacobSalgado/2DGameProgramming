@@ -47,4 +47,6 @@ void ring_update(Entity* ring)
 void ring_free(Entity* ring)
 {
 	if (!ring) return;
+
+	//entity_free(ring);
 }

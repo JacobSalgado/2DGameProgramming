@@ -8,13 +8,16 @@
 #include "enemy.h"
 #include "player.h"
 #include "ring.h"
+#include "level.h"
 
 int main(int argc, char * argv[])
 {
     /*variable declarations*/
     int done = 0;
     const Uint8 * keys;
-    Sprite *sprite;
+    //Sprite *sprite;
+
+    World* level;
     
     int mx,my;
     float mf = 0;
@@ -41,9 +44,10 @@ int main(int argc, char * argv[])
     SDL_ShowCursor(SDL_DISABLE);
     
     /*demo setup*/
-    sprite = gf2d_sprite_load_image("images/backgrounds/puck_guts.jpg");
+    //sprite = gf2d_sprite_load_image("images/backgrounds/puck_guts.jpg");
     mouse = gf2d_sprite_load_all("images/pointer.png",32,32,16,0);
     player = player_new(); /* initialize the player */
+    level = world_test_new();
     enemy = enemy_new(); /* initialize the enemy */
     ring = ring_new(); /* initialize rings */
     slog("press [escape] to quit");
@@ -64,6 +68,14 @@ int main(int argc, char * argv[])
             {
                 done = true;
             }
+            else if (event.type == SDL_KEYDOWN)
+            {
+                switch (event.key.keysym.sym)
+                {
+                    case SDLK_RIGHT:
+                        ring_free(&ring);
+                }
+            }
             /*else if (event.type == SDL_KEYDOWN)
             {
                 switch (event.key.keysym.sym)
@@ -82,7 +94,8 @@ int main(int argc, char * argv[])
         gf2d_graphics_clear_screen();// clears drawing buffers
         // all drawing should happen betweem clear_screen and next_frame
             //backgrounds drawn first
-            gf2d_sprite_draw_image(sprite,gfc_vector2d(0,0));
+            //gf2d_sprite_draw_image(sprite,gfc_vector2d(0,0));
+            draw_world(level);
 
             entity_system_draw();
             
@@ -105,6 +118,7 @@ int main(int argc, char * argv[])
     entity_free(ring);
     entity_free(enemy);
     entity_free(player);
+    free_world(level);
     slog("---==== END ====---");
     return 0;
 }

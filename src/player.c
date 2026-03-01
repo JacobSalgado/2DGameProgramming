@@ -8,6 +8,9 @@ void player_think(Entity* self);
 void player_update(Entity* self);
 void player_free(Entity* self);
 
+int movementVelocity = 5;
+int slowDown = 4;
+
 Entity *player_new()
 {
 	Entity *self;
@@ -76,14 +79,13 @@ void player_input(Entity* self, SDL_Event* event)
 		switch (event->key.keysym.sym)
 		{
 			case SDLK_UP:
-				self->velocity.y -= 10; break; // positive y is downwards
-				slog("up key pressed down");
+				self->velocity.y -= movementVelocity; break; // positive y is downwards
 			case SDLK_DOWN:
-				self->velocity.y += 10; break;
+				self->velocity.y += movementVelocity; break;
 			case SDLK_LEFT:
-				self->velocity.x -= 10; break;
+				self->velocity.x -= movementVelocity; break;
 			case SDLK_RIGHT:
-				self->velocity.x += 10; break;
+				self->velocity.x += movementVelocity; break;
 		}
 	}
 	// slow player down
@@ -92,14 +94,13 @@ void player_input(Entity* self, SDL_Event* event)
 		switch (event->key.keysym.sym)
 		{
 		case SDLK_UP:
-			slog("Up key released");
-			self->velocity.y += 10; break; // positive y is downwards
+			self->velocity.y += slowDown; break; // positive y is downwards
 		case SDLK_DOWN:
-			self->velocity.y -= 10; break;
+			self->velocity.y -= slowDown; break;
 		case SDLK_LEFT:
-			self->velocity.x += 10; break;
+			self->velocity.x += slowDown; break;
 		case SDLK_RIGHT:
-			self->velocity.x -= 10; break;
+			self->velocity.x -= slowDown; break;
 		}
 	}
 }
