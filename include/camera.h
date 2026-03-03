@@ -1,6 +1,8 @@
 #ifndef __CAMERA_H__
 #define __CAMERA_H__
 
+#include "gfc_shape.h"
+
 /**
 * @brief get the camera's position in world space
 * @return the position
@@ -29,9 +31,13 @@ void camera_set_position(GFC_Vector2D position);
 */
 void camera_apply_bounds();
 
-
+/**
+* @brief set the camera world bounds
+*/
 void camera_set_bounds(GFC_Rect bounds);
 
 void camera_enable_binding(Bool bindCamera);
+
+void camera_center_on(GFC_Vector2D target);
 
 #endif

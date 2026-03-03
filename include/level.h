@@ -14,9 +14,14 @@ typedef struct
 }
 World;
 
-void world_tile_layer_build();
+void world_tile_layer_build(World* world);
 
 World* world_test_new();
+
+/**
+* @brief set the camera bounds to the world size
+*/
+void world_setup_camera(World* world);
 
 /**
 * @brief create a brand new world

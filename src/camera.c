@@ -38,15 +38,21 @@ GFC_Vector2D camera_get_offset()
 void camera_set_position(GFC_Vector2D position)
 {
 	gfc_vector2d_copy(_camera.position, position);
-	if (_camera.bindCamera)
-	{
-		camera_apply_bounds();
-	}
+	if (_camera.bindCamera) camera_apply_bounds();
 }
 
 void camera_set_size(GFC_Vector2D size)
 {
 	gfc_vector2d_copy(_camera.size, size);
+}
+
+void camera_center_on(GFC_Vector2D target)
+{
+	GFC_Vector2D position;
+	position.x = target.x - (_camera.size.x * 0.5);
+	position.y = target.y - (_camera.size.y * 0.5);
+	camera_set_position(position);
+	if (_camera.bindCamera) camera_apply_bounds();
 }
 
 void camera_apply_bounds()

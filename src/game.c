@@ -4,6 +4,7 @@
 #include "gf2d_graphics.h"
 #include "gf2d_sprite.h"
 
+#include "camera.h"
 #include "entity.h"
 #include "enemy.h"
 #include "player.h"
@@ -25,7 +26,6 @@ int main(int argc, char * argv[])
     GFC_Color mouseGFC_Color = gfc_color8(100,180,250,200);
     Entity *player;
     Entity* enemy;
-    Entity* ring;
     
     /*program initializtion*/
     init_logger("gf2d.log",0);
@@ -42,6 +42,7 @@ int main(int argc, char * argv[])
     gf2d_sprite_init(1024);
     entity_system_initialize(1024);
     SDL_ShowCursor(SDL_DISABLE);
+    camera_set_size(gfc_vector2d(1200, 720));
     
     /*demo setup*/
     //sprite = gf2d_sprite_load_image("images/backgrounds/puck_guts.jpg");
@@ -49,7 +50,9 @@ int main(int argc, char * argv[])
     player = player_new(); /* initialize the player */
     level = world_test_new();
     enemy = enemy_new(); /* initialize the enemy */
-    ring = ring_new(); /* initialize rings */
+    //ring  = ring_new(player->position.x, player->position.y); /* initialize rings */
+
+    world_setup_camera(level);
     slog("press [escape] to quit");
     /*main game loop*/
     while(!done)
@@ -72,8 +75,9 @@ int main(int argc, char * argv[])
             {
                 switch (event.key.keysym.sym)
                 {
-                    case SDLK_RIGHT:
-                        ring_free(&ring);
+                    case SDLK_SPACE:
+                        ring_new(player);
+                        break;
                 }
             }
             /*else if (event.type == SDL_KEYDOWN)
@@ -115,8 +119,9 @@ int main(int argc, char * argv[])
         if (keys[SDL_SCANCODE_ESCAPE])done = 1; // exit condition
         //slog("Rendering at %f FPS",gf2d_graphics_get_frames_per_second());
     }
-    entity_free(ring);
-    entity_free(enemy);
+    //entity_free(ring);
+    //entity_free(enemy);
+    entity_clear_all(player);
     entity_free(player);
     free_world(level);
     slog("---==== END ====---");

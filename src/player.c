@@ -2,6 +2,7 @@
 
 #include "simple_logger.h"
 
+#include "camera.h"
 #include "player.h"
 
 void player_think(Entity* self);
@@ -63,6 +64,8 @@ void player_update(Entity* self)
 	if (self->frame >= 13) self->frame = 0;
 
 	gfc_vector2d_add(self->position,self->position,  self->velocity);
+
+	camera_center_on(self->position);
 }
 void player_free(Entity* self)
 {

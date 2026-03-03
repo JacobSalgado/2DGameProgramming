@@ -2,7 +2,7 @@
 
 #include "ring.h"
 
-Entity* ring_new()
+Entity* ring_new(Entity* player)
 {
 	Entity* ring;
 	ring = entity_new();
@@ -21,7 +21,7 @@ Entity* ring_new()
 		0
 	);
 	ring->frame = 0; /*<the current frame of animation for the sprite>*/
-	ring->position = gfc_vector2d(200, 200);
+	ring->position = gfc_vector2d(player->position.x, player->position.y);
 
 	ring->update = ring_update;
 	ring->free = ring_free;
@@ -40,13 +40,18 @@ void ring_update(Entity* ring)
 
 	ring->frame += 0;
 	if (ring->frame >= 10) ring->frame = 0;
+	ring->velocity.x += 0.5;
 
 	gfc_vector2d_add(ring->position, ring->position, ring->velocity);
+}
+
+void ring_destroy(Entity* ring)
+{
+	if (!ring) return;
+	gf2d_sprite_delete(ring);
 }
 
 void ring_free(Entity* ring)
 {
 	if (!ring) return;
-
-	//entity_free(ring);
 }
