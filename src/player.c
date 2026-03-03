@@ -33,6 +33,8 @@ Entity *player_new()
 	self->frame = 0; /*<the current frame of animation for the sprite*/
 	self->position = gfc_vector2d(0, 0); /**<the entity's position in the world*/
 	self->velocity = gfc_vector2d(0, 0);
+	self->width = 94;
+	self->height = 130;
 	
 
 	self->think = player_think;
@@ -108,17 +110,10 @@ void player_input(Entity* self, SDL_Event* event)
 	}
 }
 
-/*/void player_move(Entity* self)
+SDL_Rect player_rect(Entity* player)
 {
-	int pPositionX = self->position.x;
-	int pVelocityX = self->velocity.x;
+	if (!player) return;
+	SDL_Rect playerRect = { player->position.x, player->position.y, 128, 128 };
 
-	int pPositionY = self->position.y;
-	int pVelocityY = self->velocity.y;
-
-	// move player left or right
-	pPositionX += pVelocityX;
-
-	// move player up or down
-	pPositionY += pVelocityY;
-}*/
+	return playerRect;
+}

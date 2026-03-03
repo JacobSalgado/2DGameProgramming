@@ -9,6 +9,7 @@
 #include "enemy.h"
 #include "player.h"
 #include "ring.h"
+#include "collision.h"
 #include "level.h"
 
 int main(int argc, char * argv[])
@@ -49,7 +50,7 @@ int main(int argc, char * argv[])
     mouse = gf2d_sprite_load_all("images/pointer.png",32,32,16,0);
     player = player_new(); /* initialize the player */
     level = world_test_new();
-    enemy = enemy_new(); /* initialize the enemy */
+    enemy = enemy_new(1000, 200); /* initialize the enemy */
     //ring  = ring_new(player->position.x, player->position.y); /* initialize rings */
 
     world_setup_camera(level);
@@ -80,20 +81,14 @@ int main(int argc, char * argv[])
                         break;
                 }
             }
-            /*else if (event.type == SDL_KEYDOWN)
-            {
-                switch (event.key.keysym.sym)
-                {
-                    case SDLK_RIGHT:
-                        slog("right key pressed!");
-                }
-            }*/
             player_input(player, &event);
         }
         //player_move(player);
 
         entity_system_think();
         entity_system_update();
+
+        check_collision(player, enemy);
         
         gf2d_graphics_clear_screen();// clears drawing buffers
         // all drawing should happen betweem clear_screen and next_frame

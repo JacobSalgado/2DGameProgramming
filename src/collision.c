@@ -1,8 +1,22 @@
 #include "simple_logger.h"
 
 #include "collision.h"
+#include "player.h"
+#include "enemy.h"
 
-int collision_check(SDL_Rect a, SDL_Rect b)
+int check_collision(Entity* player, Entity* enemy)
 {
-	return SDL_HasIntersection(&a, &b);
+	SDL_Rect playerRect = player_rect(player);
+	SDL_Rect enemyRect = enemy_rect(enemy);
+	
+	int result = SDL_HasIntersection(&playerRect, &enemyRect);
+
+	if (result)
+	{
+		//gf2d_sprite_delete(enemy);
+		slog("COLLISION DETECTED!");
+	}
+
+	return result;
+	
 }

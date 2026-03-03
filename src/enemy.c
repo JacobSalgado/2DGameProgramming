@@ -6,7 +6,7 @@ void enemy_think(Entity* enemy);
 void enemy_update(Entity* enemy);
 void enemy_free(Entity* enemy);
 
-Entity* enemy_new()
+Entity* enemy_new(Uint16 posX, Uint16 posY)
 {
 	Entity* enemy;
 	enemy = entity_new();
@@ -19,14 +19,17 @@ Entity* enemy_new()
 
 	enemy->sprite = gf2d_sprite_load_all
 	(
-		"images/shadow.png",
-		51.875,
-		49.2,
+		"images/space_bug.png",
+		128,
+		128,
 		16,
 		0
 	);
 	enemy->frame = 0; /*<the current frame of animation for the sprite*/
-	enemy->position = gfc_vector2d(100, 100); /**<the entity's position in the world*/
+	enemy->position = gfc_vector2d(posX, posY); /**<the entity's position in the world*/
+
+	enemy->width = 128;
+	enemy->height = 128 ;
 
 	enemy->think = enemy_think;
 	enemy->update = enemy_update;
@@ -39,6 +42,7 @@ void enemy_think(Entity* enemy)
 {
 	GFC_Vector2D dir = { 0 };
 	Sint32 mx = 0, my = 0;
+	enemy->lifeTime = 4.0f;
 	if (!enemy) return;
 
 	gfc_vector2d_scale(enemy->velocity, dir, 3);
@@ -58,5 +62,10 @@ void enemy_free(Entity* enemy)
 	if (!enemy) return;
 }
 
+SDL_Rect enemy_rect(Entity* enemy)
+{
+	if (!enemy) return;
+	SDL_Rect enemyRect = { enemy->position.x, enemy->position.y, 128, 128 };
 
-
+	return enemyRect;
+}

@@ -2,12 +2,13 @@
 #define __COLLISION_H__
 
 #include "SDL.h"
+#include "entity.h"
 
 /**
 * @brief checks for collision between two rectangles
 * @param a first rectangle collision object
 * @param b second rectangle collision object
 */
-int collision_check(SDL_Rect a, SDL_Rect b);
+int check_collision(Entity* player, Entity* enemy);
 
 #endif

@@ -34,10 +34,7 @@ void player_free(Entity* self);
 */
 void player_input(Entity* self, SDL_Event* event);
 
-/**
-* @brief makes the player move
-* @param self the player to move
-*/
-void player_move(Entity* self);
+
+SDL_Rect player_rect(Entity* player);
 
 #endif

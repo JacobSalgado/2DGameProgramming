@@ -18,6 +18,10 @@ typedef struct Entity_S
 	GFC_Vector2D	scale;
 	GFC_Vector2D	velocity;	/**<how much an entity's position changes per update>*/
 	float			frame; /*<the current frame of animation for the sprite*/
+	float			lifeTime; /*<how long the entity will live>*/
+	Uint8			width; /*width of the entity*/
+	Uint8			height; /*height of the entity*/
+
 	void (*think)(struct Entity_S* self); /*<function to call to make decisions*/
 	void (*update)(struct Entity_S* self); /*function to call to execute those decisions*/
 	void (*free) (struct Entity_S* self); /*clean upp any custom allocated data*/

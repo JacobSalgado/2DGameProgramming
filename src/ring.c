@@ -4,6 +4,8 @@
 
 Entity* ring_new(Entity* player)
 {
+	//GFC_Color ringColor = gfc_color8();
+
 	Entity* ring;
 	ring = entity_new();
 
@@ -40,7 +42,7 @@ void ring_update(Entity* ring)
 
 	ring->frame += 0;
 	if (ring->frame >= 10) ring->frame = 0;
-	ring->velocity.x += 0.5;
+	ring->velocity.x += 0.1;
 
 	gfc_vector2d_add(ring->position, ring->position, ring->velocity);
 }
