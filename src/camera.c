@@ -60,12 +60,12 @@ void camera_apply_bounds()
 	// exceeding camera width
 	if ((_camera.position.x + _camera.size.x) > (_camera.bounds.x + _camera.bounds.w))
 	{
-		_camera.position.x = (_camera.bounds.x + _camera.bounds.x) - _camera.size.x; 
+		_camera.position.x = (_camera.bounds.x + _camera.bounds.w) - _camera.size.x; 
 	}
 	// exceeding camera height
 	if ((_camera.position.y + _camera.size.y) > (_camera.bounds.y + _camera.bounds.h))
 	{
-		_camera.position.y = (_camera.bounds.y + _camera.bounds.y) - _camera.size.y;
+		_camera.position.y = (_camera.bounds.y + _camera.bounds.h) - _camera.size.y;
 	} 
 	if (_camera.position.x < _camera.bounds.x) _camera.position.x = _camera.bounds.x; // snap camera into the world so you cant escape
 	if (_camera.position.y < _camera.bounds.y) _camera.position.y = _camera.bounds.y; 
