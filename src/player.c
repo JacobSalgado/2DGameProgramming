@@ -4,6 +4,7 @@
 
 #include "camera.h"
 #include "player.h"
+#include "ring.h"
 
 void player_think(Entity* self);
 void player_update(Entity* self);
@@ -23,6 +24,7 @@ Entity *player_new()
 		return NULL;
 	}
 
+	self->type = ENTITY_TYPE_PLAYER;
 	self->sprite = gf2d_sprite_load_all(
 		"images/sonic.png",
 		94,
@@ -91,6 +93,8 @@ void player_input(Entity* self, SDL_Event* event)
 			self->velocity.x -= movementVelocity; break;
 		case SDLK_RIGHT:
 			self->velocity.x += movementVelocity; break;
+		case SDLK_SPACE:
+			ring_new(self);
 		}
 	}
 	// slow player down

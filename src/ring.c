@@ -22,6 +22,8 @@ Entity* ring_new(Entity* player)
 		1,
 		0
 	);
+
+	ring->type = ENTITY_TYPE_RING;
 	ring->frame = 0; /*<the current frame of animation for the sprite>*/
 	ring->position = gfc_vector2d(player->position.x, player->position.y);
 

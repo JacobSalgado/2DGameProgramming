@@ -1,6 +1,7 @@
 #include "simple_logger.h"
 
 #include "collision.h"
+#include "entity.h"
 #include "player.h"
 #include "enemy.h"
 
@@ -14,10 +15,10 @@ int check_collision(Entity* player, Entity* enemy)
 	if (result)
 	{
 		//gf2d_sprite_delete(enemy);
+		entity_destroy(enemy);
 		slog("COLLISION DETECTED!");
+		return result;
 	}
-
-	return result;
 	
 }
 

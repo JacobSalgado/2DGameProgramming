@@ -25,6 +25,8 @@ Entity* enemy_new(Uint16 posX, Uint16 posY)
 		16,
 		0
 	);
+
+	enemy->type = ENTITY_TYPE_ENEMY;
 	enemy->frame = 0; /*<the current frame of animation for the sprite*/
 	enemy->position = gfc_vector2d(posX, posY); /**<the entity's position in the world*/
 

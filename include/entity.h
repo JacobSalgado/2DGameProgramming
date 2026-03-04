@@ -9,8 +9,16 @@
 *  @purpose whats the point of this file
 */
 
+typedef enum
+{
+	ENTITY_TYPE_PLAYER,
+	ENTITY_TYPE_ENEMY,
+	ENTITY_TYPE_RING,
+}EntityType;
+
 typedef struct Entity_S
 {
+	EntityType		type;
 	Uint8			_inuse; /**<this is the flag for keeping track of memory usage*/
 	Sprite			*sprite; /*<the entity's graphic if it has one*/
 	GFC_Vector2D	position; /**<the entity's position in the world*/
@@ -55,6 +63,10 @@ Entity* entity_new();
 */
 void entity_free(Entity* self);
 
+void entity_destroy(Entity* self);
+
+void entity_manager_remove(Entity* self);
+
 /**
 * @brief run the think functions for all active entities
 */
@@ -69,5 +81,7 @@ void entity_system_update();
 * @brief draw all active entities
 */
 void entity_system_draw();
+
+void entity_check_collisions(Entity* player);
 
 #endif#pragma once

@@ -2,6 +2,7 @@
 
 #include "camera.h"
 #include "entity.h"
+#include "collision.h"
 
 typedef struct
 {
@@ -84,6 +85,37 @@ void entity_free(Entity* self)
 	gf2d_sprite_free(self->sprite);
 	// anything else you allocate for an entity would get cleaned up here
 	if (self->free)self->free(self->data);
+}
+
+void entity_destroy(Entity* self)
+{
+	entity_free(self);
+	entity_manager_remove(self);
+}
+
+void entity_manager_remove(Entity* self)
+{
+	int i;
+	for (i = 0; i < _entity_manager.entity_max; i++)
+	{
+		if (&_entity_manager.entity_list[i] == self)
+		{
+			_entity_manager.entity_list[i]._inuse = 0;
+			return;
+		}
+	}
+}
+
+void entity_check_collisions(Entity* player)
+{
+	int i;
+	for (i = 0; i < _entity_manager.entity_max; i++)
+	{
+		if (!_entity_manager.entity_list[i]._inuse) continue; // if the entity is gone, SKIP
+		//if (&_entity_manager.entity_list[i] == player) continue;
+		if (_entity_manager.entity_list[i].type != ENTITY_TYPE_ENEMY) continue; 
+		check_collision(player, &_entity_manager.entity_list[i]);
+	}
 }
 
 void entity_think(Entity* self)

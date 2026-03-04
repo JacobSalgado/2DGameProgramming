@@ -27,6 +27,8 @@ int main(int argc, char * argv[])
     GFC_Color mouseGFC_Color = gfc_color8(100,180,250,200);
     Entity *player;
     Entity* enemy;
+    Entity* enemy2;
+    Entity* enemy3;
     
     /*program initializtion*/
     init_logger("gf2d.log",0);
@@ -51,6 +53,8 @@ int main(int argc, char * argv[])
     player = player_new(); /* initialize the player */
     level = world_load("maps/testworld.json");
     enemy = enemy_new(1000, 200); /* initialize the enemy */
+    enemy = enemy_new(800, 300);
+    enemy = enemy_new(1000, 500);
     //ring  = ring_new(player->position.x, player->position.y); /* initialize rings */
 
     world_setup_camera(level);
@@ -72,15 +76,6 @@ int main(int argc, char * argv[])
             {
                 done = true;
             }
-            else if (event.type == SDL_KEYDOWN)
-            {
-                switch (event.key.keysym.sym)
-                {
-                    case SDLK_SPACE:
-                        ring_new(player);
-                        break;
-                }
-            }
             player_input(player, &event);
         }
         //player_move(player);
@@ -88,7 +83,7 @@ int main(int argc, char * argv[])
         entity_system_think();
         entity_system_update();
 
-        check_collision(player, enemy);
+        entity_check_collisions(player);
         
         gf2d_graphics_clear_screen();// clears drawing buffers
         // all drawing should happen betweem clear_screen and next_frame
