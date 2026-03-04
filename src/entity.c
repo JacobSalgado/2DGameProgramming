@@ -183,3 +183,9 @@ void entity_system_draw()
 		entity_draw(&_entity_manager.entity_list[i]);
 	}
 }
+
+void apply_gravity(Entity* self, float deltaTime)
+{
+	const float gravity = 9.81f; // constant gravity value
+	self->velocity.y += gravity * deltaTime; // Update vertical gravity
+}

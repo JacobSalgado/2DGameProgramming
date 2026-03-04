@@ -27,6 +27,7 @@ typedef struct Entity_S
 	GFC_Vector2D	velocity;	/**<how much an entity's position changes per update>*/
 	float			frame; /*<the current frame of animation for the sprite*/
 	float			lifeTime; /*<how long the entity will live>*/
+	float			mass; /*<mass of the entity>*/
 	Uint8			width; /*width of the entity*/
 	Uint8			height; /*height of the entity*/
 
@@ -83,5 +84,12 @@ void entity_system_update();
 void entity_system_draw();
 
 void entity_check_collisions(Entity* player);
+
+/**
+* @brief applies gravity to the entity
+* @@param self the entity to apply gravity to
+* Credit to: https://peerdh.com/blogs/programming-insights/implementing-a-simple-physics-engine-in-c-with-sdl
+*/
+void apply_gravity(Entity* self, float deltaTime);
 
 #endif#pragma once
