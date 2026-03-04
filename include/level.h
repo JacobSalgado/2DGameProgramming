@@ -23,8 +23,6 @@ void world_tile_layer_build(World* world);
 */
 World* world_load(const char* filename);
 
-World* world_test_new();
-
 /**
 * @brief set the camera bounds to the world size
 */

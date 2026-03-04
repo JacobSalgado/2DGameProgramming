@@ -20,3 +20,4 @@ int check_collision(Entity* player, Entity* enemy)
 	return result;
 	
 }
+

@@ -151,39 +151,6 @@ World* world_load(const char* filename)
 	sj_free(json);
 	return world;
 }
-World* world_test_new()
-{
-	int i;
-	int width = 75, height = 45;
-
-	World* world;
-
-	world = new_world(width, height);
-
-	if (!world) return NULL;
-
-	world->background = gf2d_sprite_load_image("images/backgrounds/greenhill.jpg");
-	world->tileSet = gf2d_sprite_load_all(
-		"images/backgrounds/tileset.png",
-		16,
-		16,
-		1,
-		1);
-
-	for (i = 0; i < width; i++)
-	{
-		world->tileMap[i] = 1;
-		world->tileMap[i + ((height - 1) * width)] = 1;
-	}
-	for (i = 0; i < height; i++)
-	{
-		world->tileMap[i*width] = 1;
-		world->tileMap[i * width + (width - 1)] = 1;
-	}
-	world_tile_layer_build(world);
-
-	return world;
-}
 
 World* new_world(Uint32 width, Uint32 height)
 {

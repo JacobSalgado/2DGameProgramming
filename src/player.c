@@ -31,7 +31,7 @@ Entity *player_new()
 		0
 	);
 	self->frame = 0; /*<the current frame of animation for the sprite*/
-	self->position = gfc_vector2d(0, 0); /**<the entity's position in the world*/
+	self->position = gfc_vector2d(100, 100); /**<the entity's position in the world*/
 	self->velocity = gfc_vector2d(0, 0);
 	self->width = 94;
 	self->height = 130;
