@@ -83,14 +83,14 @@ void player_input(Entity* self, SDL_Event* event)
 		// SWITCH VELOCITY
 		switch (event->key.keysym.sym)
 		{
-			case SDLK_UP:
-				self->velocity.y -= movementVelocity; break; // positive y is downwards
-			case SDLK_DOWN:
-				self->velocity.y += movementVelocity; break;
-			case SDLK_LEFT:
-				self->velocity.x -= movementVelocity; break;
-			case SDLK_RIGHT:
-				self->velocity.x += movementVelocity; break;
+		case SDLK_UP:
+			self->velocity.y -= movementVelocity; break; // positive y is downwards
+		case SDLK_DOWN:
+			self->velocity.y += movementVelocity; break;
+		case SDLK_LEFT:
+			self->velocity.x -= movementVelocity; break;
+		case SDLK_RIGHT:
+			self->velocity.x += movementVelocity; break;
 		}
 	}
 	// slow player down

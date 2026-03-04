@@ -13,6 +13,9 @@
       <UniqueIdentifier>{67DA6AB6-F800-4c08-8B7A-83BB121AAD01}</UniqueIdentifier>
       <Extensions>rc;ico;cur;bmp;dlg;rc2;rct;bin;rgs;gif;jpg;jpeg;jpe;resx;tiff;tif;png;wav;mfcribbon-ms</Extensions>
     </Filter>
+    <Filter Include="maps">
+      <UniqueIdentifier>{c9bdc914-6361-4d00-95d2-e2bd7978a021}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="..\..\src\game.c">
@@ -254,5 +257,10 @@
     <ClInclude Include="..\..\include\camera.h">
       <Filter>Header Files</Filter>
     </ClInclude>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="..\..\maps\testworld.json">
+      <Filter>maps</Filter>
+    </None>
   </ItemGroup>
 </Project>

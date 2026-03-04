@@ -49,7 +49,7 @@ int main(int argc, char * argv[])
     //sprite = gf2d_sprite_load_image("images/backgrounds/puck_guts.jpg");
     mouse = gf2d_sprite_load_all("images/pointer.png",32,32,16,0);
     player = player_new(); /* initialize the player */
-    level = world_test_new();
+    level = world_load("maps/testworld.json");
     enemy = enemy_new(1000, 200); /* initialize the enemy */
     //ring  = ring_new(player->position.x, player->position.y); /* initialize rings */
 

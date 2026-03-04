@@ -216,6 +216,9 @@
     <ClInclude Include="..\..\include\player.h" />
     <ClInclude Include="..\..\include\ring.h" />
   </ItemGroup>
+  <ItemGroup>
+    <None Include="..\..\maps\testworld.json" />
+  </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
   </ImportGroup>
