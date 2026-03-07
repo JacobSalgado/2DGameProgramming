@@ -1,8 +1,12 @@
+#include <SDL.h>
+
+#include "player.h"
+#include "enemy.h"
+
 /* Set up for C function definitions, even when using C++ */
 #ifdef __cplusplus
 extern "C"
 {
-    #include <SDL.h>
     #include "simple_logger.h"
 
     #include "gf2d_graphics.h"
@@ -10,8 +14,6 @@ extern "C"
 
     #include "camera.h"
     #include "entity.h"
-    #include "enemy.h"
-    #include "player.h"
     #include "ring.h"
     #include "collision.h"
     #include "level.h"
@@ -34,10 +36,8 @@ int main(int argc, char * argv[])
     float mf = 0;
     Sprite *mouse;
     GFC_Color mouseGFC_Color = gfc_color8(100,180,250,200);
-    Entity *player;
-    Entity* enemy;
-    Entity* enemy2;
-    Entity* enemy3;
+    //Entity *player;
+    //Entity* enemy;
     //Enemy* e;
 
     Uint32 lastSpawnTime = SDL_GetTicks();
@@ -63,7 +63,8 @@ int main(int argc, char * argv[])
     /*demo setup*/
     //sprite = gf2d_sprite_load_image("images/backgrounds/puck_guts.jpg");
     //mouse = gf2d_sprite_load_all("images/pointer.png",32,32,16,0);
-    player = player_new(); /* initialize the player */
+    //player = player_new(); /* initialize the player */
+    Player* sonic =  Player::create_instance(1000, 200);
     level = world_load("maps/testworld.json");
     //enemy = enemy_new(1000, 200); /* initialize the enemy */
     //enemy = enemy_new(800, 300);
@@ -91,7 +92,7 @@ int main(int argc, char * argv[])
             {
                 done = true;
             }
-            player_input(player, &event);
+            sonic->handle_input(&event);
         }
         //player_move(player);
 
@@ -100,8 +101,8 @@ int main(int argc, char * argv[])
 
         //apply_gravity(player, 0.016f);
 
-        entity_check_collisions(player);
-        entity_surface_collision(level, player);
+        //entity_check_collisions(sonic);
+        //entity_surface_collision(level, player);
 
         if (currentTime - lastSpawnTime >= spawnDelay)
         {
@@ -136,8 +137,9 @@ int main(int argc, char * argv[])
     }
     //entity_free(ring);
     //entity_free(enemy);
-    entity_clear_all(player);
-    entity_free(player);
+    //entity_clear_all(sonic);
+    //entity_free(player);
+    sonic->~Player();
     free_world(level);
     slog("---==== END ====---");
     return 0;

@@ -1,6 +1,13 @@
-#include "simple_logger.h"
-
 #include "enemy.h"
+
+/* Set up for C function definitions, even when using C++ */
+#ifdef __cplusplus
+extern "C"
+{
+	#include "simple_logger.h"
+
+}
+#endif
 
 Enemy::Enemy(int x, int y)
 {

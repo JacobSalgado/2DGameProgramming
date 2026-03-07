@@ -3,7 +3,7 @@
 #include "collision.h"
 #include "level.h"
 #include "entity.h"
-#include "player.h"
+//#include "player.h"
 //#include "enemy.h"
 
 /*/int check_collision(Entity* player, Entity* enemy)
@@ -22,7 +22,7 @@
 	}
 }*/
 
-int check_surface_collision(World* level, Entity* player)
+/*/int check_surface_collision(World* level, Entity* player)
 {
 	int pX = player->position.x, pY = player->position.y, pW = player->width, pH = player->height;
 
@@ -44,6 +44,6 @@ int check_surface_collision(World* level, Entity* player)
 		return 1;
 	}
 	slog("no surface collision");
-	return 0;*/
-}
+	return 0;
+}*/
 

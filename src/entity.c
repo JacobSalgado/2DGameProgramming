@@ -119,10 +119,10 @@ void entity_check_collisions(Entity* player)
 	}
 }
 
-void entity_surface_collision(World* world, Entity* player)
+/*void entity_surface_collision(World* world, Entity* player)
 {
 	check_surface_collision(world, player);
-}
+}*/
 
 void entity_think(Entity* self)
 {

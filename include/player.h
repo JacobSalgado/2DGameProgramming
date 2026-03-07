@@ -1,50 +1,70 @@
 #ifndef __PLAYER_H__
 #define __PLAYER_H__
 
-#include "entity.h"
-
 /* Set up for C function definitions, even when using C++ */
 #ifdef __cplusplus
 extern "C" 
 {
-	
+	#include "entity.h"
 }
 #endif
 
-
-
 /**
-* @brief spawn a player
-* @return NULL on error, or a pointer to the player otherwise
+* @brief represents the player entity in the game
+* @note singleton class, use get_instance() to access it
 */
-Entity *player_new();
+class Player
+{
+public:
+	Entity* entity; /// < pointer into existing C pool
 
-/**
-* @brief what the player should do
-* @param self the player
-*/
-void player_think(Entity* self);
+	/**
+	* @brief deconstructor, cleans up the player entity and frees the singleton instance
+	*/
+	virtual ~Player();
 
-/**
-* @brief the player to update
-* @param self the player
-*/
-void player_update(Entity* self);
+	/**
+	* @brief destroys the singleton instance and frees all associated memory
+	*/
+	static Player* create_instance(int x, int y);
 
-/**
-* @brief free the player
-* @param self the player to free
-*/
-void player_free(Entity* self);
+	/**
+	* @brief destroys the singleton instance and frees all associated memory
+	*/
+	static void destroy_instance();
 
-/**
-* @brief handles any play input commands
-* @param self the player to control
-* @param event the event pointer address
-*/
-void player_input(Entity* self, SDL_Event* event);
+	/**
+	* @brief handles player decision making logic each game tick
+	*/
+	virtual void think();
 
+	/**
+	* @brief updates player position, animation, and state each game tick
+	*/
+	virtual void update();
 
-SDL_Rect player_rect(Entity* player);
+	/**
+	* @brief processes SDL input events for player control
+	* @param event pointer to the SDL_Event to process
+	*/
+	virtual void handle_input(SDL_Event* event);
+
+	/**
+	* @brief returns the player's current bounding rectangle for collision
+	* @return SDL_Rect representing the player's position and dimensions
+	*/
+	virtual SDL_Rect rect();
+
+private:
+	/**
+	* @brief private constructor, prevents direct instantiation
+	* @note use get_instance() instead
+	* @param x the starting x position
+	* @param y the starting y position
+	*/
+	Player(int x, int y);	
+
+	static Player* _instance; /// < the single instance of the player
+};
 
 #endif

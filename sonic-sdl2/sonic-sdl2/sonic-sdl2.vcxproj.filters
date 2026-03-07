@@ -51,7 +51,7 @@
     <ClCompile Include="..\..\src\level.c">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="..\..\src\player.c">
+    <ClCompile Include="..\..\src\player.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
     <ClCompile Include="..\..\src\ring.c">
