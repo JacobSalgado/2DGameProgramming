@@ -115,7 +115,7 @@ void entity_check_collisions(Entity* player)
 		if (!_entity_manager.entity_list[i]._inuse) continue; // if the entity is gone, SKIP
 		//if (&_entity_manager.entity_list[i] == player) continue;
 		if (_entity_manager.entity_list[i].type != ENTITY_TYPE_ENEMY) continue; 
-		check_collision(player, &_entity_manager.entity_list[i]);
+		//check_collision(player, &_entity_manager.entity_list[i]);
 	}
 }
 

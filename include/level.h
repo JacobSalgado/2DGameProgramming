@@ -1,7 +1,15 @@
 #ifndef __LEVEL_H__
 #define __LEVEL_H__
 
+/* Set up for C function definitions, even when using C++ */
+#ifdef __cplusplus
+extern "C" 
+{
+	
+}
+#endif
 #include "gf2d_sprite.h"
+
 
 typedef struct
 {

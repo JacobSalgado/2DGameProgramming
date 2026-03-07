@@ -39,13 +39,13 @@
     <ClCompile Include="..\..\src\collision.c">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="..\..\src\enemy.c">
+    <ClCompile Include="..\..\src\enemy.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
     <ClCompile Include="..\..\src\entity.c">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="..\..\src\game.c">
+    <ClCompile Include="..\..\src\game.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
     <ClCompile Include="..\..\src\level.c">

@@ -7,6 +7,14 @@
 
 #include "level.h"
 
+/* Set up for C function definitions, even when using C++ */
+#ifdef __cplusplus
+extern "C" 
+{
+	
+}
+#endif
+
 /**
 *  @purpose whats the point of this file
 */

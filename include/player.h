@@ -3,6 +3,16 @@
 
 #include "entity.h"
 
+/* Set up for C function definitions, even when using C++ */
+#ifdef __cplusplus
+extern "C" 
+{
+	
+}
+#endif
+
+
+
 /**
 * @brief spawn a player
 * @return NULL on error, or a pointer to the player otherwise

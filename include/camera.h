@@ -3,6 +3,16 @@
 
 #include "gfc_shape.h"
 
+/* Set up for C function definitions, even when using C++ */
+#ifdef __cplusplus
+extern "C" 
+{
+	
+}
+#endif
+
+
+
 /**
 * @brief get the camera's position in world space
 * @return the position

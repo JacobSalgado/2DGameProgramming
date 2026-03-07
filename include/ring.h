@@ -3,6 +3,14 @@
 
 #include "entity.h"
 
+/* Set up for C function definitions, even when using C++ */
+#ifdef __cplusplus
+extern "C" 
+{
+	
+}
+#endif
+
 /**
 * @brief spawn a ring in a specific position
 * @return NULL on error, or a pointer to a ring

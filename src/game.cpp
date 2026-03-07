@@ -1,16 +1,24 @@
-#include <SDL.h>
-#include "simple_logger.h"
+/* Set up for C function definitions, even when using C++ */
+#ifdef __cplusplus
+extern "C"
+{
+    #include <SDL.h>
+    #include "simple_logger.h"
 
-#include "gf2d_graphics.h"
-#include "gf2d_sprite.h"
+    #include "gf2d_graphics.h"
+    #include "gf2d_sprite.h"
 
-#include "camera.h"
-#include "entity.h"
-#include "enemy.h"
-#include "player.h"
-#include "ring.h"
-#include "collision.h"
-#include "level.h"
+    #include "camera.h"
+    #include "entity.h"
+    #include "enemy.h"
+    #include "player.h"
+    #include "ring.h"
+    #include "collision.h"
+    #include "level.h"
+}
+#endif
+
+
 
 int main(int argc, char * argv[])
 {
@@ -18,6 +26,7 @@ int main(int argc, char * argv[])
     int done = 0;
     const Uint8 * keys;
     //Sprite *sprite;
+    const char* windowName = "Sonic";
 
     World* level;
     
@@ -29,6 +38,7 @@ int main(int argc, char * argv[])
     Entity* enemy;
     Entity* enemy2;
     Entity* enemy3;
+    //Enemy* e;
 
     Uint32 lastSpawnTime = SDL_GetTicks();
     Uint32 spawnDelay = 3000; // 3 seconds in milliseconds
@@ -37,7 +47,7 @@ int main(int argc, char * argv[])
     init_logger("gf2d.log",0);
     slog("---==== BEGIN ====---");
     gf2d_graphics_initialize(
-        "gf2d",
+        "Sonic",
         1200,
         720,
         1200,
@@ -55,9 +65,9 @@ int main(int argc, char * argv[])
     //mouse = gf2d_sprite_load_all("images/pointer.png",32,32,16,0);
     player = player_new(); /* initialize the player */
     level = world_load("maps/testworld.json");
-    enemy = enemy_new(1000, 200); /* initialize the enemy */
-    enemy = enemy_new(800, 300);
-    enemy = enemy_new(1000, 500);
+    //enemy = enemy_new(1000, 200); /* initialize the enemy */
+    //enemy = enemy_new(800, 300);
+    //enemy = enemy_new(1000, 500);
     //ring  = ring_new(player->position.x, player->position.y); /* initialize rings */
 
     world_setup_camera(level);
@@ -95,7 +105,8 @@ int main(int argc, char * argv[])
 
         if (currentTime - lastSpawnTime >= spawnDelay)
         {
-            enemy_new((rand() % 651 + 50), (rand() % 200 + 50));
+            //enemy_new((rand() % 651 + 50), (rand() % 200 + 50));
+            Enemy* e = new Enemy((rand() % 651 + 50), (rand() % 200 + 50));
             lastSpawnTime = currentTime;
         }
         

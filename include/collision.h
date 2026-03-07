@@ -5,12 +5,20 @@
 #include "level.h"
 #include "entity.h"
 
+/* Set up for C function definitions, even when using C++ */
+#ifdef __cplusplus
+extern "C" 
+{
+
+}
+#endif
+
 /**
 * @brief checks for collision between two rectangles
 * @param a first rectangle collision object
 * @param b second rectangle collision object
 */
-int check_collision(Entity* player, Entity* enemy);
+//int check_collision(Entity* player, Entity* enemy);
 
 int check_surface_collision(World* world, Entity* player);
 

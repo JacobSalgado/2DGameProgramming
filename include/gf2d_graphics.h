@@ -17,7 +17,7 @@
  * @param fullscreen if you want the window to render full screen or not
  */
 void gf2d_graphics_initialize(
-    char *windowName,
+    const char *windowName,
     int viewWidth,
     int viewHeight,
     int renderWidth,
