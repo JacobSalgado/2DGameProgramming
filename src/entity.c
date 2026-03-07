@@ -1,6 +1,7 @@
 #include "simple_logger.h"
 
 #include "camera.h"
+#include "level.h"
 #include "entity.h"
 #include "collision.h"
 
@@ -116,6 +117,11 @@ void entity_check_collisions(Entity* player)
 		if (_entity_manager.entity_list[i].type != ENTITY_TYPE_ENEMY) continue; 
 		check_collision(player, &_entity_manager.entity_list[i]);
 	}
+}
+
+void entity_surface_collision(World* world, Entity* player)
+{
+	check_surface_collision(world, player);
 }
 
 void entity_think(Entity* self)

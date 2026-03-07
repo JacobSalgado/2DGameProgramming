@@ -101,6 +101,9 @@
     <ClInclude Include="..\..\include\player.h" />
     <ClInclude Include="..\..\include\ring.h" />
   </ItemGroup>
+  <ItemGroup>
+    <None Include="..\..\maps\testworld.json" />
+  </ItemGroup>
   <PropertyGroup Label="Globals">
     <VCProjectVersion>18.0</VCProjectVersion>
     <Keyword>Win32Proj</Keyword>

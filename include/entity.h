@@ -5,6 +5,8 @@
 #include "gfc_types.h"
 #include "gf2d_sprite.h"
 
+#include "level.h"
+
 /**
 *  @purpose whats the point of this file
 */
@@ -84,6 +86,8 @@ void entity_system_update();
 void entity_system_draw();
 
 void entity_check_collisions(Entity* player);
+
+void entity_surface_collision(World* world, Entity* player);
 
 /**
 * @brief applies gravity to the entity

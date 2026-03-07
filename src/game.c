@@ -88,9 +88,10 @@ int main(int argc, char * argv[])
         entity_system_think();
         entity_system_update();
 
-        apply_gravity(player, 0.016f);
+        //apply_gravity(player, 0.016f);
 
         entity_check_collisions(player);
+        entity_surface_collision(level, player);
 
         if (currentTime - lastSpawnTime >= spawnDelay)
         {
