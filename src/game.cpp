@@ -2,6 +2,7 @@
 
 #include "player.h"
 #include "enemy.h"
+#include "fly_enemy.h"
 
 /* Set up for C function definitions, even when using C++ */
 #ifdef __cplusplus
@@ -107,7 +108,7 @@ int main(int argc, char * argv[])
         if (currentTime - lastSpawnTime >= spawnDelay)
         {
             //enemy_new((rand() % 651 + 50), (rand() % 200 + 50));
-            Enemy* e = new Enemy((rand() % 651 + 50), (rand() % 200 + 50));
+            Enemy* e = new FlyEnemy((rand() % 651 + 50), (rand() % 200 + 50));
             lastSpawnTime = currentTime;
         }
         

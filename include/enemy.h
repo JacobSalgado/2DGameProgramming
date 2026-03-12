@@ -17,10 +17,10 @@ public:
 	Enemy(int x, int y ); // < constructor
 	virtual ~Enemy(); // < deconstructor
 
+	virtual void think() = 0;
+	virtual void update() = 0;
+
 	SDL_Rect rect();
-	virtual void think();
-	virtual void update()/* = 0*/;
-	//virtual void draw()/* = 0*/;
 };
 
 

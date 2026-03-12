@@ -20,6 +20,6 @@ extern "C"
 */
 //int check_collision(Entity* player, Entity* enemy);
 
-int check_surface_collision(World* world, Entity* player);
+//int check_surface_collision(World* world, Entity* player);
 
 #endif

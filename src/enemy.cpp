@@ -18,18 +18,6 @@ Enemy::Enemy(int x, int y)
 	entity->position.x = x;
 	entity->position.y = y;
 
-	/* TEMPORARY */
-	entity->width = 128;
-	entity->height = 128;
-
-	/* TEMPORARY */
-	entity->sprite = gf2d_sprite_load_all(
-		"images/space_bug.png",
-		128,
-		128,
-		16,
-		0
-	);
 	entity->frame = 0;
 	entity->data = this; // important to set so it doesn't crash
 

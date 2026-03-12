@@ -40,6 +40,7 @@ typedef struct Entity_S
 	float			mass; /*<mass of the entity>*/
 	Uint8			width; /*width of the entity*/
 	Uint8			height; /*height of the entity*/
+	Uint8			health; /* amount of health the entity has */
 
 	void (*think)(struct Entity_S* self); /*<function to call to make decisions*/
 	void (*update)(struct Entity_S* self); /*function to call to execute those decisions*/

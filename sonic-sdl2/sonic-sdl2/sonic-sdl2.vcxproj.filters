@@ -147,6 +147,9 @@
     <ClCompile Include="..\..\gfc\simple_logger\src\simple_logger.c">
       <Filter>Source Files\logger</Filter>
     </ClCompile>
+    <ClCompile Include="..\..\src\fly_enemy.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="..\..\include\camera.h">
@@ -268,6 +271,9 @@
     </ClInclude>
     <ClInclude Include="..\..\gfc\simple_logger\include\simple_logger.h">
       <Filter>Header FIles\logger</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\include\fly_enemy.h">
+      <Filter>Header FIles</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>
