@@ -5,7 +5,7 @@
 #include "gfc_types.h"
 #include "gf2d_sprite.h"
 
-#include "level.h"
+#include "world.h"
 
 /* Set up for C function definitions, even when using C++ */
 #ifdef __cplusplus
@@ -41,6 +41,7 @@ typedef struct Entity_S
 	Uint8			width; /*width of the entity*/
 	Uint8			height; /*height of the entity*/
 	Uint8			health; /* amount of health the entity has */
+	Uint8			onGround; /* <if the entity is on the ground >*/
 
 	void (*think)(struct Entity_S* self); /*<function to call to make decisions*/
 	void (*update)(struct Entity_S* self); /*function to call to execute those decisions*/

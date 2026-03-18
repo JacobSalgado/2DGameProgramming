@@ -9,6 +9,7 @@ extern "C"
 #include "simple_logger.h"
 #include "gfc_vector.h"
 #include "camera.h"
+#include "collision.h"
 #include "ring.h"
 }
 #endif
@@ -85,10 +86,9 @@ void Player::update()
 {
 	entity->frame += 0.2; // how fast the frame plays
 	if (entity->frame >= 13) entity->frame = 0;
-
-	gfc_vector2d_add(entity->position, entity->position, entity->velocity);
-
 	camera_center_on(entity->position);
+
+	//gfc_vector2d_add(entity->position, entity->position, entity->velocity);
 }
 
 void Player::handle_input(SDL_Event* event)

@@ -13,11 +13,12 @@ extern "C"
     #include "gf2d_graphics.h"
     #include "gf2d_sprite.h"
 
+    #include "font.h"
     #include "camera.h"
     #include "entity.h"
     #include "ring.h"
     #include "collision.h"
-    #include "level.h"
+    #include "world.h"
 }
 #endif
 
@@ -33,7 +34,7 @@ int main(int argc, char * argv[])
 
     World* level;
     
-    int mx,my;
+    //int mx,my;
     float mf = 0;
     Sprite *mouse;
     GFC_Color mouseGFC_Color = gfc_color8(100,180,250,200);
@@ -57,6 +58,7 @@ int main(int argc, char * argv[])
         0);
     gf2d_graphics_set_frame_delay(16);
     gf2d_sprite_init(1024);
+    font_init();
     entity_system_initialize(1024);
     //SDL_ShowCursor(SDL_DISABLE);
     camera_set_size(gfc_vector2d(1200, 720));
@@ -65,7 +67,8 @@ int main(int argc, char * argv[])
     //sprite = gf2d_sprite_load_image("images/backgrounds/puck_guts.jpg");
     //mouse = gf2d_sprite_load_all("images/pointer.png",32,32,16,0);
     //player = player_new(); /* initialize the player */
-    Player* sonic =  Player::create_instance(1000, 200);
+    Player::destroy_instance();
+    Player* sonic =  Player::create_instance(800, 500);
     level = world_load("maps/testworld.json");
     //enemy = enemy_new(1000, 200); /* initialize the enemy */
     //enemy = enemy_new(800, 300);
@@ -82,6 +85,7 @@ int main(int argc, char * argv[])
         SDL_Event event;
         //SDL_PumpEvents();   // update SDL's internal event structures
         keys = SDL_GetKeyboardState(NULL); // get the keyboard state for this frame
+        font_cleanup();
         /*update things here*/
         //SDL_GetMouseState(&mx,&my);
         mf+=0.1;
@@ -99,6 +103,12 @@ int main(int argc, char * argv[])
 
         entity_system_think();
         entity_system_update();
+
+        sonic->entity->position.x += sonic->entity->velocity.x;
+        resolveTileCollisionX(sonic->entity, level);
+
+        sonic->entity->position.y += sonic->entity->velocity.y;
+        resolveTileCollisionY(sonic->entity, level);
 
         //apply_gravity(player, 0.016f);
 
@@ -119,6 +129,8 @@ int main(int argc, char * argv[])
             draw_world(level);
 
             entity_system_draw();
+            
+            font_draw_text("Press ESC to Quit\nSonic the Hedgehog", FS_small, GFC_COLOR_LIGHTYELLOW, gfc_vector2d(10, 10));
             
             //UI elements last
             /*gf2d_sprite_draw(

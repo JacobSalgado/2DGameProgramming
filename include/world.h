@@ -1,5 +1,5 @@
-#ifndef __LEVEL_H__
-#define __LEVEL_H__
+#ifndef __WORLD_H__
+#define __WORLD_H__
 
 /* Set up for C function definitions, even when using C++ */
 #ifdef __cplusplus
@@ -24,7 +24,7 @@ World;
 
 void world_tile_layer_build(World* world);
 
-/**
+/**level
 * @brief load a world from a config file 
 * @param filename the name of the world file to load
 * @return NULL on error, or a usable world otherwise 

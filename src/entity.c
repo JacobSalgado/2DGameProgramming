@@ -1,7 +1,7 @@
 #include "simple_logger.h"
 
 #include "camera.h"
-#include "level.h"
+#include "world.h"
 #include "entity.h"
 #include "collision.h"
 
@@ -145,6 +145,7 @@ void entity_update(Entity* self)
 {
 	if (!self) return;
 	// any boilerplate update stuff here
+	apply_gravity(self, 0.016f);
 	if (self->update)self->update(self);
 }
 
@@ -194,4 +195,9 @@ void apply_gravity(Entity* self, float deltaTime)
 {
 	const float gravity = 9.81f; // constant gravity value
 	self->velocity.y += gravity * deltaTime; // Update vertical gravity
+
+	if (!self->onGround)
+		self->velocity.y += gravity * deltaTime;
+	else
+		self->velocity.y = 0; // stops entity from moving when grounded
 }

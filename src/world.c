@@ -4,7 +4,7 @@
 #include "gf2d_graphics.h"
 
 #include "camera.h"
-#include "level.h"
+#include "world.h"
 
 void world_tile_layer_build(World* world)
 {

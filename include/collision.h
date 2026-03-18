@@ -2,14 +2,14 @@
 #define __COLLISION_H__
 
 #include "SDL.h"
-#include "level.h"
+#include "world.h"
 #include "entity.h"
 
 /* Set up for C function definitions, even when using C++ */
 #ifdef __cplusplus
 extern "C" 
 {
-
+	#include "player.h"
 }
 #endif
 
@@ -21,5 +21,11 @@ extern "C"
 //int check_collision(Entity* player, Entity* enemy);
 
 //int check_surface_collision(World* world, Entity* player);
+
+void resolveTileCollisionX(Entity* entity, World* world);
+
+void resolveTileCollisionY(Entity* entity, World* world);
+
+Bool isTileSolid(World* world, int tX, int tY);
 
 #endif

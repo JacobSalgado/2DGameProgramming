@@ -28,6 +28,12 @@
     <Filter Include="Source Files\logger">
       <UniqueIdentifier>{a28e9d1d-9663-4078-9c6c-6df78df7c076}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Source Files\enemies">
+      <UniqueIdentifier>{546cb026-b3e9-4290-a7cf-722b01a3c111}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header FIles\enemies">
+      <UniqueIdentifier>{29cac43a-9cb5-4782-9efe-dd5efe2f545a}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="..\..\gfc\src\miniz.c">
@@ -39,16 +45,13 @@
     <ClCompile Include="..\..\src\collision.c">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="..\..\src\enemy.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
     <ClCompile Include="..\..\src\entity.c">
       <Filter>Source Files</Filter>
     </ClCompile>
     <ClCompile Include="..\..\src\game.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="..\..\src\level.c">
+    <ClCompile Include="..\..\src\world.c">
       <Filter>Source Files</Filter>
     </ClCompile>
     <ClCompile Include="..\..\src\player.cpp">
@@ -148,6 +151,24 @@
       <Filter>Source Files\logger</Filter>
     </ClCompile>
     <ClCompile Include="..\..\src\fly_enemy.cpp">
+      <Filter>Source Files\enemies</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\src\enemy.cpp">
+      <Filter>Source Files\enemies</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\src\ground_enemy.cpp">
+      <Filter>Source Files\enemies</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\src\turret_enemy.cpp">
+      <Filter>Source Files\enemies</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\src\bouncing_enemy.cpp">
+      <Filter>Source Files\enemies</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\src\shield_enemy.cpp">
+      <Filter>Source Files\enemies</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\src\font.c">
       <Filter>Source Files</Filter>
     </ClCompile>
   </ItemGroup>
@@ -158,13 +179,10 @@
     <ClInclude Include="..\..\include\collision.h">
       <Filter>Header FIles</Filter>
     </ClInclude>
-    <ClInclude Include="..\..\include\enemy.h">
-      <Filter>Header FIles</Filter>
-    </ClInclude>
     <ClInclude Include="..\..\include\entity.h">
       <Filter>Header FIles</Filter>
     </ClInclude>
-    <ClInclude Include="..\..\include\level.h">
+    <ClInclude Include="..\..\include\world.h">
       <Filter>Header FIles</Filter>
     </ClInclude>
     <ClInclude Include="..\..\include\player.h">
@@ -273,6 +291,24 @@
       <Filter>Header FIles\logger</Filter>
     </ClInclude>
     <ClInclude Include="..\..\include\fly_enemy.h">
+      <Filter>Header FIles\enemies</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\include\enemy.h">
+      <Filter>Header FIles\enemies</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\include\ground_enemy.h">
+      <Filter>Header FIles\enemies</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\include\turret_enemy.h">
+      <Filter>Header FIles\enemies</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\include\bouncing_enemy.h">
+      <Filter>Header FIles\enemies</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\include\shield_enemy.h">
+      <Filter>Header FIles\enemies</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\include\font.h">
       <Filter>Header FIles</Filter>
     </ClInclude>
   </ItemGroup>

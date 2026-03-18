@@ -47,16 +47,21 @@
     <ClCompile Include="..\..\gfc\src\gfc_types.c" />
     <ClCompile Include="..\..\gfc\src\gfc_vector.c" />
     <ClCompile Include="..\..\gfc\src\miniz.c" />
+    <ClCompile Include="..\..\src\bouncing_enemy.cpp" />
     <ClCompile Include="..\..\src\camera.c" />
     <ClCompile Include="..\..\src\collision.c" />
     <ClCompile Include="..\..\src\enemy.cpp" />
     <ClCompile Include="..\..\src\entity.c" />
     <ClCompile Include="..\..\src\fly_enemy.cpp" />
+    <ClCompile Include="..\..\src\font.c" />
     <ClCompile Include="..\..\src\game.cpp" />
     <ClCompile Include="..\..\src\gf2d_draw.c" />
     <ClCompile Include="..\..\src\gf2d_graphics.c" />
     <ClCompile Include="..\..\src\gf2d_sprite.c" />
-    <ClCompile Include="..\..\src\level.c" />
+    <ClCompile Include="..\..\src\ground_enemy.cpp" />
+    <ClCompile Include="..\..\src\shield_enemy.cpp" />
+    <ClCompile Include="..\..\src\turret_enemy.cpp" />
+    <ClCompile Include="..\..\src\world.c" />
     <ClCompile Include="..\..\src\player.cpp" />
     <ClCompile Include="..\..\src\ring.c" />
   </ItemGroup>
@@ -91,15 +96,20 @@
     <ClInclude Include="..\..\gfc\simple_json\include\simple_json_types.h" />
     <ClInclude Include="..\..\gfc\simple_json\include\simple_json_value.h" />
     <ClInclude Include="..\..\gfc\simple_logger\include\simple_logger.h" />
+    <ClInclude Include="..\..\include\bouncing_enemy.h" />
     <ClInclude Include="..\..\include\camera.h" />
     <ClInclude Include="..\..\include\collision.h" />
     <ClInclude Include="..\..\include\enemy.h" />
     <ClInclude Include="..\..\include\entity.h" />
     <ClInclude Include="..\..\include\fly_enemy.h" />
+    <ClInclude Include="..\..\include\font.h" />
     <ClInclude Include="..\..\include\gf2d_draw.h" />
     <ClInclude Include="..\..\include\gf2d_graphics.h" />
     <ClInclude Include="..\..\include\gf2d_sprite.h" />
-    <ClInclude Include="..\..\include\level.h" />
+    <ClInclude Include="..\..\include\ground_enemy.h" />
+    <ClInclude Include="..\..\include\shield_enemy.h" />
+    <ClInclude Include="..\..\include\turret_enemy.h" />
+    <ClInclude Include="..\..\include\world.h" />
     <ClInclude Include="..\..\include\player.h" />
     <ClInclude Include="..\..\include\ring.h" />
   </ItemGroup>
