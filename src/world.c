@@ -210,6 +210,6 @@ void world_setup_camera(World* world)
 	}
 
 	camera_set_bounds(gfc_rect(0,0, world->tileLayer->surface->w, world->tileLayer->surface->h));
-	camera_apply_bounds();
 	camera_enable_binding(1);
+	camera_apply_bounds();
 }

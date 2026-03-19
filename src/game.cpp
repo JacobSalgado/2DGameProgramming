@@ -77,6 +77,7 @@ int main(int argc, char * argv[])
     //ring  = ring_new(player->position.x, player->position.y); /* initialize rings */
 
     world_setup_camera(level);
+
     slog("press [escape] to quit");
     /*main game loop*/
     while(!done)
@@ -104,8 +105,6 @@ int main(int argc, char * argv[])
 
         entity_system_think();
         entity_system_update();
-        //resolveTileCollisionX(sonic->entity, level);
-        //resolveTileCollisionY(sonic->entity, level);
 
         //apply_gravity(player, 0.016f);
 

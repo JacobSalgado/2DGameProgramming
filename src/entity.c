@@ -182,7 +182,7 @@ void entity_draw(Entity* self)
 	{
 		gf2d_sprite_draw(
 			self->sprite,
-			self->position,
+			position,
 			&self->scale,
 			NULL,
 			NULL,
