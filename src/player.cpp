@@ -79,11 +79,35 @@ Player::~Player()
 
 void Player::think()
 {
-	GFC_Vector2D dir = { 0 };
+	//GFC_Vector2D dir = { 0 };
+
+	float jump_force = -10.0f;
+	float move_speed = 3.0f;
+	float friction = 0.75f;
+
+	// horizontal movement
+	if (input.left)
+		entity->velocity.x = -move_speed;
+	else if (input.right)
+		entity->velocity.x = move_speed;
+	else
+		entity->velocity.x *= friction; // to stop the player
+
+	// jumping
+	if (input.jump && entity->onGround)
+	{
+		entity->velocity.y = jump_force;
+		entity->onGround = 0;
+		input.jump = false;
+	}
 }
 
 void Player::update()
-{
+{	
+	//entity->position.x += entity->velocity.x;
+
+	//entity->position.y += entity->velocity.y;
+
 	entity->frame += 0.2; // how fast the frame plays
 	if (entity->frame >= 13) entity->frame = 0;
 	camera_center_on(entity->position);
@@ -101,16 +125,12 @@ void Player::handle_input(SDL_Event* event)
 		// SWITCH VELOCITY
 		switch (event->key.keysym.sym)
 		{
-		case SDLK_UP:
-			entity->velocity.y -= movementVelocity; break; // positive y is downwards
-		case SDLK_DOWN:
-			entity->velocity.y += movementVelocity; break;
-		case SDLK_LEFT:
-			entity->velocity.x -= movementVelocity; break;
-		case SDLK_RIGHT:
-			entity->velocity.x += movementVelocity; break;
-		case SDLK_SPACE:
-			ring_new(entity);
+		case SDLK_UP: //input.up = true; break; // positive y is downwards
+		//case SDLK_DOWN: input.down = true; break;
+		case SDLK_SPACE: input.jump = true; break;
+		case SDLK_LEFT: input.left = true; break;
+		case SDLK_RIGHT: input.right = true; break;
+		case SDLK_r: ring_new(entity); break;
 		}
 	}
 	// slow player down
@@ -118,14 +138,10 @@ void Player::handle_input(SDL_Event* event)
 	{
 		switch (event->key.keysym.sym)
 		{
-		case SDLK_UP:
-			entity->velocity.y += slowDown; break; // positive y is downwards
-		case SDLK_DOWN:
-			entity->velocity.y -= slowDown; break;
-		case SDLK_LEFT:
-			entity->velocity.x += slowDown; break;
-		case SDLK_RIGHT:
-			entity->velocity.x -= slowDown; break;
+		case SDLK_UP:  // positive y is downwards
+		case SDLK_SPACE: input.jump = false; break;
+		case SDLK_LEFT: input.left = false; break;
+		case SDLK_RIGHT: input.right = false; break;
 		}
 	}
 }

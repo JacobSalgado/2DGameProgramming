@@ -14,6 +14,7 @@ typedef struct
 void entity_system_close();
 
 static EntityManager _entity_manager = { 0 }; /**<initialize a LOCAL global entity manager*/
+static World* _active_world = NULL;
 
 void entity_system_initialize(Uint32 max)
 {
@@ -146,6 +147,16 @@ void entity_update(Entity* self)
 	if (!self) return;
 	// any boilerplate update stuff here
 	apply_gravity(self, 0.016f);
+
+	if (_active_world)
+	{
+		self->position.x += self->velocity.x;
+		resolveTileCollisionX(self, _active_world);
+
+		self->position.y += self->velocity.y;
+		resolveTileCollisionY(self, _active_world);
+	}
+
 	if (self->update)self->update(self);
 }
 
@@ -194,10 +205,12 @@ void entity_system_draw()
 void apply_gravity(Entity* self, float deltaTime)
 {
 	const float gravity = 9.81f; // constant gravity value
-	self->velocity.y += gravity * deltaTime; // Update vertical gravity
 
 	if (!self->onGround)
 		self->velocity.y += gravity * deltaTime;
-	else
-		self->velocity.y = 0; // stops entity from moving when grounded
+}
+
+void entity_system_set_world(World* world)
+{
+	_active_world = world;
 }

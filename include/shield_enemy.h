@@ -2,7 +2,7 @@
 #define __SHIELD_ENEMY_H__
 
 #include "enemy.h"
-#include "player.h"
+//#include "player.h"
 
 class ShieldEnemy : public Enemy
 {
@@ -12,7 +12,7 @@ public:
 
 	void think() override;
 	void update() override;
-	void onCollision(Player& player);
+	//void onCollision(Player& player);
 };
 
 #endif

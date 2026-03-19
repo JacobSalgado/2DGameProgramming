@@ -20,7 +20,7 @@ void BouncingEnemy::update()
 	Enemy::update(); // calling inherited
 }
 
-void BouncingEnemy::onCollision(Player& player)
+/*void BouncingEnemy::onCollision(Player& player)
 {
 
-}
+}*/

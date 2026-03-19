@@ -16,6 +16,15 @@ extern "C"
 class Player
 {
 public:
+	struct Inputs
+	{
+		bool left = false;
+		bool right = false;
+		bool up = false;
+		bool jump = false;
+	};
+	Inputs input;
+
 	Entity* entity; /// < pointer into existing C pool
 
 	/**

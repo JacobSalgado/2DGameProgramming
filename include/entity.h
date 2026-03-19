@@ -97,7 +97,7 @@ void entity_system_draw();
 
 void entity_check_collisions(Entity* player);
 
-void entity_surface_collision(World* world, Entity* player);
+//void entity_surface_collision(World* world, Entity* player);
 
 /**
 * @brief applies gravity to the entity
@@ -106,4 +106,6 @@ void entity_surface_collision(World* world, Entity* player);
 */
 void apply_gravity(Entity* self, float deltaTime);
 
-#endif#pragma once
+void entity_system_set_world(World* world);
+
+#endif

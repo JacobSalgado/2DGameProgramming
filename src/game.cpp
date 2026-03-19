@@ -70,6 +70,7 @@ int main(int argc, char * argv[])
     Player::destroy_instance();
     Player* sonic =  Player::create_instance(800, 500);
     level = world_load("maps/testworld.json");
+    entity_system_set_world(level);
     //enemy = enemy_new(1000, 200); /* initialize the enemy */
     //enemy = enemy_new(800, 300);
     //enemy = enemy_new(1000, 500);
@@ -103,12 +104,8 @@ int main(int argc, char * argv[])
 
         entity_system_think();
         entity_system_update();
-
-        sonic->entity->position.x += sonic->entity->velocity.x;
-        resolveTileCollisionX(sonic->entity, level);
-
-        sonic->entity->position.y += sonic->entity->velocity.y;
-        resolveTileCollisionY(sonic->entity, level);
+        //resolveTileCollisionX(sonic->entity, level);
+        //resolveTileCollisionY(sonic->entity, level);
 
         //apply_gravity(player, 0.016f);
 
