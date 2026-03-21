@@ -3,6 +3,7 @@
 #include "player.h"
 #include "enemy.h"
 #include "fly_enemy.h"
+#include "ground_enemy.h"
 
 /* Set up for C function definitions, even when using C++ */
 #ifdef __cplusplus
@@ -36,6 +37,8 @@ int main(int argc, char * argv[])
     
     //int mx,my;
     float mf = 0;
+    int lives = 3;
+    const char* uiText = "Sonic Health:";
     Sprite *mouse;
     GFC_Color mouseGFC_Color = gfc_color8(100,180,250,200);
     //Entity *player;
@@ -69,6 +72,7 @@ int main(int argc, char * argv[])
     //player = player_new(); /* initialize the player */
     Player::destroy_instance();
     Player* sonic =  Player::create_instance(800, 500);
+
     level = world_load("maps/testworld.json");
     entity_system_set_world(level);
     //enemy = enemy_new(1000, 200); /* initialize the enemy */
@@ -110,11 +114,14 @@ int main(int argc, char * argv[])
 
         //entity_check_collisions(sonic);
         //entity_surface_collision(level, player);
+        
+
 
         if (currentTime - lastSpawnTime >= spawnDelay)
         {
             //enemy_new((rand() % 651 + 50), (rand() % 200 + 50));
             Enemy* e = new FlyEnemy((rand() % 651 + 50), (rand() % 200 + 50));
+            //Enemy* g = new GroundEnemy(420, 300);
             lastSpawnTime = currentTime;
         }
         
@@ -126,7 +133,7 @@ int main(int argc, char * argv[])
 
             entity_system_draw();
             
-            font_draw_text("Press ESC to Quit\nSonic the Hedgehog", FS_small, GFC_COLOR_LIGHTYELLOW, gfc_vector2d(10, 10));
+            font_draw_text(uiText, FS_small, GFC_COLOR_LIGHTYELLOW, gfc_vector2d(10, 10));
             
             //UI elements last
             /*gf2d_sprite_draw(

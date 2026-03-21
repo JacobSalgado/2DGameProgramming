@@ -1,3 +1,6 @@
+#include <SDL.h>
+
+#include "simple_logger.h"
 #include "fly_enemy.h"
 
 FlyEnemy::FlyEnemy(int x, int y) : Enemy (x,y)
@@ -12,6 +15,12 @@ FlyEnemy::FlyEnemy(int x, int y) : Enemy (x,y)
 		16,
 		0
 	);
+
+	entity->gravityOn = false;
+
+	patrolTime = SDL_GetTicks();
+	turnAround = rand() % (6001 + 2000);
+	patrolDistance = 20;
 }
 
 FlyEnemy::~FlyEnemy()
@@ -27,6 +36,22 @@ void FlyEnemy:: think()
 void FlyEnemy:: update()  
 {
 	Enemy::update(); // calling inherited
+	Uint32 currentTime = SDL_GetTicks();
+
+	float move_speed = 2.0f;
+
+	entity->velocity.x = move_speed * direction;
+	//slog("X position:", entity->position.x);
+
+	slog("FlyEnemy velocity.x: %f, direction: %f, position.x: %f",
+		entity->velocity.x, direction, entity->position.x);
+
+	if (currentTime - patrolTime >= turnAround)
+	{
+		direction *= -1.0f;
+		patrolTime = SDL_GetTicks();
+		turnAround = rand() % (4001 + 2000); // 2 - 6 seconds
+	}
 }
 
 /*void BouncingEnemy::onCollision(Player& player)

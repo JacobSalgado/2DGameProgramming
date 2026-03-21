@@ -70,6 +70,8 @@ Player::Player(int x, int y)
 			Player* self = (Player*)e->data;
 			self->update();
 		};
+
+	entity->gravityOn = true;
 }
 
 Player::~Player()

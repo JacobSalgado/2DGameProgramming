@@ -8,9 +8,9 @@
 
 void resolveTileCollisionX(Entity* entity, World* world)
 {
-	int left = (int)(entity->position.x) / world->tileSet->frame_w;
+	int left = (int)(entity->position.x + 1) / world->tileSet->frame_w;
 	int right = (int)(entity->position.x + entity->width - 1) / world->tileSet->frame_w;
-	int top = (int)(entity->position.y) / world->tileSet->frame_h;
+	int top = (int)(entity->position.y + 1) / world->tileSet->frame_h;
 	int bottom = (int)(entity->position.y + entity->height - 1) / world->tileSet->frame_h;
 
 	for (int tY = top; tY <= bottom; tY++)
@@ -40,7 +40,7 @@ void resolveTileCollisionY(Entity* entity, World* world)
 {
 	int left = (int)(entity->position.x + 1) / world->tileSet->frame_w;
 	int right = (int)(entity->position.x + entity->width - 1) / world->tileSet->frame_w;
-	int top = (int)(entity->position.y) / world->tileSet->frame_h;
+	int top = (int)(entity->position.y + 1) / world->tileSet->frame_h;
 	int bottom = (int)(entity->position.y + entity->height - 1) / world->tileSet->frame_h;
 
 	entity->onGround = 0;

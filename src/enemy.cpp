@@ -51,7 +51,7 @@ void Enemy::update()
 	entity->frame += 0.1;
 	if (entity->frame >= 16) entity->frame = 0;
 
-	gfc_vector2d_add(entity->position, entity->position, entity->velocity);
+	//gfc_vector2d_add(entity->position, entity->position, entity->velocity);
 }
 
 SDL_Rect Enemy::rect()

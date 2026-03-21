@@ -1,0 +1,17 @@
+{
+  "powerups": [
+    {
+      "name": "shield",
+      "displayName": "Shield",
+      "type": "shield",
+      "defense": 10,
+      "cooldown": 20,
+      "sprite": {
+
+      }
+    },
+    {
+
+    }
+  ]
+}

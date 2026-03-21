@@ -148,6 +148,8 @@ void entity_update(Entity* self)
 	// any boilerplate update stuff here
 	apply_gravity(self, 0.016f);
 
+	if (self->update)self->update(self);
+
 	if (_active_world)
 	{
 		self->position.x += self->velocity.x;
@@ -156,8 +158,6 @@ void entity_update(Entity* self)
 		self->position.y += self->velocity.y;
 		resolveTileCollisionY(self, _active_world);
 	}
-
-	if (self->update)self->update(self);
 }
 
 void entity_system_update()
@@ -204,7 +204,10 @@ void entity_system_draw()
 
 void apply_gravity(Entity* self, float deltaTime)
 {
-	const float gravity = 9.81f; // constant gravity value
+	float gravity = 9.81f; // gravity value 
+
+	if (!self->gravityOn) // for flying entites
+		gravity = 0;
 
 	if (!self->onGround)
 		self->velocity.y += gravity * deltaTime;

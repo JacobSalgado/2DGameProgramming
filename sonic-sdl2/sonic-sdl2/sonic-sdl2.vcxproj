@@ -59,6 +59,7 @@
     <ClCompile Include="..\..\src\gf2d_graphics.c" />
     <ClCompile Include="..\..\src\gf2d_sprite.c" />
     <ClCompile Include="..\..\src\ground_enemy.cpp" />
+    <ClCompile Include="..\..\src\powerups.c" />
     <ClCompile Include="..\..\src\shield_enemy.cpp" />
     <ClCompile Include="..\..\src\turret_enemy.cpp" />
     <ClCompile Include="..\..\src\world.c" />
@@ -107,6 +108,7 @@
     <ClInclude Include="..\..\include\gf2d_graphics.h" />
     <ClInclude Include="..\..\include\gf2d_sprite.h" />
     <ClInclude Include="..\..\include\ground_enemy.h" />
+    <ClInclude Include="..\..\include\powerups.h" />
     <ClInclude Include="..\..\include\shield_enemy.h" />
     <ClInclude Include="..\..\include\turret_enemy.h" />
     <ClInclude Include="..\..\include\world.h" />
@@ -115,6 +117,7 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="..\..\maps\testworld.json" />
+    <None Include="..\..\pickups\powerups.json" />
   </ItemGroup>
   <PropertyGroup Label="Globals">
     <VCProjectVersion>18.0</VCProjectVersion>
