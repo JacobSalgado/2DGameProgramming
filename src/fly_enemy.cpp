@@ -43,8 +43,8 @@ void FlyEnemy:: update()
 	entity->velocity.x = move_speed * direction;
 	//slog("X position:", entity->position.x);
 
-	slog("FlyEnemy velocity.x: %f, direction: %f, position.x: %f",
-		entity->velocity.x, direction, entity->position.x);
+	//slog("FlyEnemy velocity.x: %f, direction: %f, position.x: %f",
+		//entity->velocity.x, direction, entity->position.x);
 
 	if (currentTime - patrolTime >= turnAround)
 	{

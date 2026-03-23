@@ -132,7 +132,7 @@ void Player::handle_input(SDL_Event* event)
 		case SDLK_SPACE: input.jump = true; break;
 		case SDLK_LEFT: input.left = true; break;
 		case SDLK_RIGHT: input.right = true; break;
-		case SDLK_r: ring_new(entity); break;
+		//case SDLK_r: ring_new(entity); break;
 		}
 	}
 	// slow player down

@@ -18,6 +18,7 @@ extern "C"
     #include "camera.h"
     #include "entity.h"
     #include "ring.h"
+    #include "spring.h"
     #include "collision.h"
     #include "world.h"
 }
@@ -38,12 +39,17 @@ int main(int argc, char * argv[])
     //int mx,my;
     float mf = 0;
     int lives = 3;
+    int enemyCount = 0;
+    int enemyMax = 15;
     const char* uiText = "Sonic Health:";
+    const char* ringText = "Rings: ";
     Sprite *mouse;
-    GFC_Color mouseGFC_Color = gfc_color8(100,180,250,200);
+    //GFC_Color mouseGFC_Color = gfc_color8(100,180,250,200);
     //Entity *player;
     //Entity* enemy;
     //Enemy* e;
+    Entity* ring;
+    Entity* spring;
 
     Uint32 lastSpawnTime = SDL_GetTicks();
     Uint32 spawnDelay = 3000; // 3 seconds in milliseconds
@@ -71,7 +77,7 @@ int main(int argc, char * argv[])
     //mouse = gf2d_sprite_load_all("images/pointer.png",32,32,16,0);
     //player = player_new(); /* initialize the player */
     Player::destroy_instance();
-    Player* sonic =  Player::create_instance(800, 500);
+    Player* sonic =  Player::create_instance(800, 2000);
 
     level = world_load("maps/testworld.json");
     entity_system_set_world(level);
@@ -79,6 +85,8 @@ int main(int argc, char * argv[])
     //enemy = enemy_new(800, 300);
     //enemy = enemy_new(1000, 500);
     //ring  = ring_new(player->position.x, player->position.y); /* initialize rings */
+    ring = ring_new(700, 300);
+    spring = spring_new(600, 1600);
 
     world_setup_camera(level);
 
@@ -114,13 +122,17 @@ int main(int argc, char * argv[])
 
         //entity_check_collisions(sonic);
         //entity_surface_collision(level, player);
-        
+        if (ring && ring_collect(ring, sonic->entity))
+        {
+            ring = NULL;
+        }
+        if (spring) spring_activate(spring, sonic->entity);
 
-
-        if (currentTime - lastSpawnTime >= spawnDelay)
+        if ((currentTime - lastSpawnTime >= spawnDelay) && enemyCount <= enemyMax)
         {
             //enemy_new((rand() % 651 + 50), (rand() % 200 + 50));
-            Enemy* e = new FlyEnemy((rand() % 651 + 50), (rand() % 200 + 50));
+            Enemy* e = new FlyEnemy((rand() % 1001 + 50), (rand() % 251 + 50));
+            enemyCount++;
             //Enemy* g = new GroundEnemy(420, 300);
             lastSpawnTime = currentTime;
         }
@@ -133,7 +145,8 @@ int main(int argc, char * argv[])
 
             entity_system_draw();
             
-            font_draw_text(uiText, FS_small, GFC_COLOR_LIGHTYELLOW, gfc_vector2d(10, 10));
+            font_draw_text(uiText, FS_small, GFC_COLOR_DARKBLUE, gfc_vector2d(10, 10));
+            font_draw_text(ringText, FS_small, GFC_COLOR_DARKYELLOW, gfc_vector2d(10, 100));
             
             //UI elements last
             /*gf2d_sprite_draw(

@@ -1,15 +1,36 @@
 #ifndef __WORLD_H__
 #define __WORLD_H__
 
-/* Set up for C function definitions, even when using C++ */
-#ifdef __cplusplus
-extern "C" 
-{
-	
-}
-#endif
+#include "gfc_shape.h"
 #include "gf2d_sprite.h"
 
+typedef enum {
+	TERRAIN_SOLID = 0,
+	TERRAIN_ONEWAY = 1,
+	TERRAIN_MOVING = 2
+} TerrainType;
+
+typedef struct 
+{
+	GFC_Rect bounds;
+	TerrainType type;
+
+	/* Moving Platform data */
+	GFC_Vector2D moveDistance;
+	float moveSpeed;
+	int moveDirection;
+	Uint32 spriteFrame;
+} Platform;
+
+typedef struct
+{
+	GFC_Vector2D p1;
+	GFC_Vector2D p2;
+	float thickness;
+	GFC_Vector2D normal;
+	float length;
+	Uint32 spriteFrame;
+}Slope;
 
 typedef struct
 {
@@ -19,6 +40,11 @@ typedef struct
 	Uint8* tileMap;			/**<the tiles that make up the world>*/
 	Uint32 tileHeight;		/**<how many tiles tall the map is>*/
 	Uint32 tileWidth;		/**<how many tiles wide the map is>*/
+
+	Platform* platforms;
+	Uint32 platformCount;
+	Slope* slopes;
+	Uint32 slopeCount;
 }
 World;
 

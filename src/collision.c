@@ -79,3 +79,8 @@ Bool isTileSolid(World* world, int tX, int tY)
 	return (world->tileMap[tY * world->tileWidth + tX] != 0) ? 1 : 0;
 }
 
+Bool check_entity_overlap(Entity* a, Entity* b)
+{
+	if (!a || !b) return 0;
+}
+

@@ -28,4 +28,8 @@ void resolveTileCollisionY(Entity* entity, World* world);
 
 Bool isTileSolid(World* world, int tX, int tY);
 
+Bool check_entity_overlap(Entity* a, Entity* b);
+
+void check_spring_collision(Entity* player);
+
 #endif

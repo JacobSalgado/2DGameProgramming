@@ -4,6 +4,7 @@
 #include "world.h"
 #include "entity.h"
 #include "collision.h"
+#include "spring.h"
 
 typedef struct
 {
@@ -216,4 +217,22 @@ void apply_gravity(Entity* self, float deltaTime)
 void entity_system_set_world(World* world)
 {
 	_active_world = world;
+}
+
+void check_spring_collision(Entity* player)
+{
+	int i;
+	Entity* ent;
+
+	for (i = 0; i < _entity_manager.entity_max; i++)
+	{
+		ent = &_entity_manager.entity_list[i];
+		if (!ent->_inuse) continue;
+		if (ent->type != ENTITY_TYPE_SPRING) continue;
+		if (!check_entity_overlap(player, ent)) continue;
+
+		SpringData* data = (SpringData*)ent->data;
+		player->velocity.y = data->launch_velocity;
+		player->onGround = 0;
+	}
 }

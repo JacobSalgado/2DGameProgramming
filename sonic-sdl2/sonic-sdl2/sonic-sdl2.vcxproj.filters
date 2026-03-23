@@ -28,9 +28,6 @@
     <Filter Include="Source Files\logger">
       <UniqueIdentifier>{a28e9d1d-9663-4078-9c6c-6df78df7c076}</UniqueIdentifier>
     </Filter>
-    <Filter Include="Header FIles\enemies">
-      <UniqueIdentifier>{29cac43a-9cb5-4782-9efe-dd5efe2f545a}</UniqueIdentifier>
-    </Filter>
     <Filter Include="pickups">
       <UniqueIdentifier>{6730957d-819b-4bb7-b28c-98d67698e8ae}</UniqueIdentifier>
     </Filter>
@@ -39,6 +36,12 @@
     </Filter>
     <Filter Include="Source Files\entities\enemies">
       <UniqueIdentifier>{546cb026-b3e9-4290-a7cf-722b01a3c111}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header FIles\entities">
+      <UniqueIdentifier>{57249483-2490-4634-adc7-90baf8a3e9f4}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header FIles\entities\enemies">
+      <UniqueIdentifier>{29cac43a-9cb5-4782-9efe-dd5efe2f545a}</UniqueIdentifier>
     </Filter>
   </ItemGroup>
   <ItemGroup>
@@ -55,9 +58,6 @@
       <Filter>Source Files</Filter>
     </ClCompile>
     <ClCompile Include="..\..\src\world.c">
-      <Filter>Source Files</Filter>
-    </ClCompile>
-    <ClCompile Include="..\..\src\ring.c">
       <Filter>Source Files</Filter>
     </ClCompile>
     <ClCompile Include="..\..\src\gf2d_draw.c">
@@ -180,6 +180,12 @@
     <ClCompile Include="..\..\src\player.cpp">
       <Filter>Source Files\entities</Filter>
     </ClCompile>
+    <ClCompile Include="..\..\src\spring.c">
+      <Filter>Source Files\entities</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\src\ring.c">
+      <Filter>Source Files\entities</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="..\..\include\camera.h">
@@ -188,16 +194,7 @@
     <ClInclude Include="..\..\include\collision.h">
       <Filter>Header FIles</Filter>
     </ClInclude>
-    <ClInclude Include="..\..\include\entity.h">
-      <Filter>Header FIles</Filter>
-    </ClInclude>
     <ClInclude Include="..\..\include\world.h">
-      <Filter>Header FIles</Filter>
-    </ClInclude>
-    <ClInclude Include="..\..\include\player.h">
-      <Filter>Header FIles</Filter>
-    </ClInclude>
-    <ClInclude Include="..\..\include\ring.h">
       <Filter>Header FIles</Filter>
     </ClInclude>
     <ClInclude Include="..\..\gfc\include\miniz.h">
@@ -300,28 +297,40 @@
       <Filter>Header FIles\logger</Filter>
     </ClInclude>
     <ClInclude Include="..\..\include\fly_enemy.h">
-      <Filter>Header FIles\enemies</Filter>
+      <Filter>Header FIles\entities\enemies</Filter>
     </ClInclude>
     <ClInclude Include="..\..\include\enemy.h">
-      <Filter>Header FIles\enemies</Filter>
+      <Filter>Header FIles\entities\enemies</Filter>
     </ClInclude>
     <ClInclude Include="..\..\include\ground_enemy.h">
-      <Filter>Header FIles\enemies</Filter>
+      <Filter>Header FIles\entities\enemies</Filter>
     </ClInclude>
     <ClInclude Include="..\..\include\turret_enemy.h">
-      <Filter>Header FIles\enemies</Filter>
+      <Filter>Header FIles\entities\enemies</Filter>
     </ClInclude>
     <ClInclude Include="..\..\include\bouncing_enemy.h">
-      <Filter>Header FIles\enemies</Filter>
+      <Filter>Header FIles\entities\enemies</Filter>
     </ClInclude>
     <ClInclude Include="..\..\include\shield_enemy.h">
-      <Filter>Header FIles\enemies</Filter>
+      <Filter>Header FIles\entities\enemies</Filter>
     </ClInclude>
     <ClInclude Include="..\..\include\font.h">
       <Filter>Header FIles</Filter>
     </ClInclude>
     <ClInclude Include="..\..\include\powerups.h">
       <Filter>Header FIles</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\include\entity.h">
+      <Filter>Header FIles\entities</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\include\player.h">
+      <Filter>Header FIles\entities</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\include\ring.h">
+      <Filter>Header FIles\entities</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\include\spring.h">
+      <Filter>Header FIles\entities</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>

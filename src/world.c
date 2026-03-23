@@ -59,6 +59,57 @@ void world_tile_layer_build(World* world)
 				world->tileLayer->surface);
 		}
 	}
+
+	for (i = 0; i < (int)world->platformCount; i++)
+	{
+		int x, y;
+		GFC_Rect r = world->platforms[i].bounds;
+		int tilesWide = (int)(r.w / world->tileSet->frame_w);
+		int tilesTall = (int)(r.h / world->tileSet->frame_h);
+
+		for (y = 0; y < tilesTall; y++)
+		{
+			for (x = 0; x < tilesWide; x++)
+			{
+				position.x = r.x + (x * world->tileSet->frame_w);
+				position.y = r.y + (y * world->tileSet->frame_h);
+
+				gf2d_sprite_draw_to_surface(
+					world->tileSet,
+					position,
+					NULL,
+					NULL,
+					world->platforms[i].spriteFrame,
+					world->tileLayer->surface
+				);
+			}
+		}
+	}
+
+	for (i = 0; i < (int)world->slopeCount; i++)
+	{
+		float x = world->slopes[i].p2.x - world->slopes[i].p1.x;
+		float y = world->slopes[i].p2.y - world->slopes[i].p1.y;
+		float length = world->slopes[i].length;
+		int steps = (int)(length / world->tileSet->frame_w) + 1;
+		int s;
+
+		for (s = 0; s <= steps; s++)
+		{
+			float t = (steps > 0) ? (float)s / (float)steps : 0.0f;
+			position.x = world->slopes[i].p1.x + t * x;
+			position.y = world->slopes[i].p1.y + t * y;
+
+			gf2d_sprite_draw_to_surface(
+				world->tileSet,
+				position,
+				NULL,
+				NULL,
+				world->slopes[i].spriteFrame,
+				world->tileLayer->surface);
+		}
+	}
+
 	world->tileLayer->texture = SDL_CreateTextureFromSurface(gf2d_graphics_get_renderer(), world->tileLayer->surface);
 	if (!world->tileLayer->texture)
 	{
@@ -133,6 +184,70 @@ World* world_load(const char* filename)
 			world->tileMap[i+(j*w)] = tile;
 		}
 	}
+
+	SJson* terrainsArray = sj_object_get_value(wjson, "terrains");
+	if (terrainsArray)
+	{
+		world->platformCount = sj_array_get_count(terrainsArray);
+		world->platforms = gfc_allocate_array(sizeof(Platform), world->platformCount);
+
+		for (int i = 0; i < (int)world->platformCount; i++)
+		{
+			SJson* j = sj_array_get_nth(terrainsArray, i);
+			int frame = 0;
+			int x = 0, y = 0, w = 0, h = 0;
+			sj_object_get_value_as_int(j, "x", &x);
+			sj_object_get_value_as_int(j, "y", &y);
+			sj_object_get_value_as_int(j, "w", &w);
+			sj_object_get_value_as_int(j, "h", &h);
+			sj_object_get_value_as_int(j, "frame", &frame);
+			world->platforms[i].bounds = gfc_rect(x, y, w, h);
+			world->platforms[i].spriteFrame = (Uint32)frame;
+
+			const char* type = sj_object_get_value_as_string(j, "type");
+			if (type)
+			{
+				if (strcmp(type, "oneway") == 0)
+					world->platforms[i].type = TERRAIN_ONEWAY;
+				else if (strcmp(type, "moving") == 0)
+					world->platforms[i].type = TERRAIN_MOVING;
+				else
+					world->platforms[i].type = TERRAIN_SOLID;
+			}
+		}
+	}
+
+	SJson* slopesArray = sj_object_get_value(wjson, "slopes");
+	if (slopesArray)
+	{
+		world->slopeCount = sj_array_get_count(slopesArray);
+		world->slopes = gfc_allocate_array(sizeof(Slope), world->slopeCount);
+
+		for (int i = 0; i < (int)world->slopeCount; i++)
+		{
+			SJson* j = sj_array_get_nth(slopesArray, i);
+			int frame = 0;
+			float x = 0, y = 0, x2 = 0, y2 = 0, thickness = 16;
+
+			sj_object_get_value_as_float(j, "x", &x);
+			sj_object_get_value_as_float(j, "y", &y);
+			sj_object_get_value_as_float(j, "x2", &x2);
+			sj_object_get_value_as_float(j, "y2", &y2);
+			sj_object_get_value_as_int(j, "frame", &frame);
+			sj_object_get_value_as_float(j, "thickness", &thickness);
+
+			world->slopes[i].p1 = gfc_vector2d(x, y);
+			world->slopes[i].p2 = gfc_vector2d(x2, y2);
+			world->slopes[i].thickness = thickness;
+
+			float dx = x2 - x, dy = y2 - y;
+			world->slopes[i].length = sqrt(dx * dx + dy * dy);
+
+			world->slopes[i].normal = gfc_vector2d(dy, -dx);
+			gfc_vector2d_normalize(&world->slopes[i].normal);
+		}
+	}
+
 	background = sj_object_get_value_as_string(wjson, "background");
 	world->background = gf2d_sprite_load_image(background);
 
@@ -184,6 +299,9 @@ void free_world(World* world)
 	gf2d_sprite_free(world->tileSet);
 	gf2d_sprite_free(world->tileLayer);
 	free(world->tileMap);
+	free(world->platforms);
+	free(world->slopes);
+
 	free(world);
 }
 

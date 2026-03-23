@@ -1,8 +1,10 @@
 #include "simple_logger.h"
 
+#include "gfc_shape.h"
+
 #include "ring.h"
 
-Entity* ring_new(Entity* player)
+Entity* ring_new(float x, float y)
 {
 	//GFC_Color ringColor = gfc_color8();
 
@@ -25,17 +27,43 @@ Entity* ring_new(Entity* player)
 
 	ring->type = ENTITY_TYPE_RING;
 	ring->frame = 0; /*<the current frame of animation for the sprite>*/
-	ring->position = gfc_vector2d(player->position.x, player->position.y);
+	ring->position = gfc_vector2d(x, y);
+	ring->velocity = gfc_vector2d(0, 0);
 
 	ring->update = ring_update;
 	ring->free = ring_free;
+	ring->gravityOn = false;
 
 	return ring;
 }
 
-SDL_Rect ring_rect(Entity* ring)
+int ring_collect(Entity* ring, Entity* player)
 {
-	if (!ring) return;
+	GFC_Shape ring_circle;
+	GFC_Shape player_rect;
+
+	if (!ring || !player)
+	{
+		slog("no ring or player");
+		return 0;
+	}
+
+	if (!ring->_inuse) return 0;
+
+	float ring_radius = (ring->sprite->frame_w / 2.0f) * 0.5f;
+
+	ring_circle = gfc_shape_circle(ring->position.x, ring->position.y, ring_radius);
+	player_rect = gfc_shape_rect(player->position.x, player->position.y, player->sprite->frame_w, player->sprite->frame_h);
+
+	if (gfc_shape_overlap(ring_circle, player_rect))
+	{
+		slog("player overlapping with ring");
+		ring->_inuse = 0;
+		entity_destroy(ring);
+		return 1;
+	}
+	return 0;
+
 }
 
 void ring_update(Entity* ring)
@@ -44,7 +72,7 @@ void ring_update(Entity* ring)
 
 	ring->frame += 0;
 	if (ring->frame >= 10) ring->frame = 0;
-	ring->velocity.x += 0.1;
+	//ring->velocity.x += 0.1;
 
 	gfc_vector2d_add(ring->position, ring->position, ring->velocity);
 }

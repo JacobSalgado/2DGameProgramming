@@ -17,13 +17,13 @@ extern "C"
 * @param posX the x-coordinate spawn position
 * @param posY the y-coordinate spawn position
 */
-Entity* ring_new(Entity* player);
+Entity* ring_new(float x, float y);
 
 /**
 * @brief obtains the rect size of the ring
 * @return the ring's collision box
 */
-SDL_Rect ring_rect(Entity* ring);
+//SDL_Rect ring_rect(Entity* ring);
 
 /**
 * @brief the ring to update. Mainly for animation
@@ -40,5 +40,13 @@ void ring_destroy(Entity* ring);
 * @brief the ring to free/destroy
 */
 void ring_free(Entity* ring);
+
+/**
+* @brief check if the player is overlapping the ring
+* @param ring the ring to collect
+* @param player the player collecting the ring
+* @return 1 if collecting, 0 otherwise
+*/
+int ring_collect(Entity* ring, Entity* player);
 
 #endif

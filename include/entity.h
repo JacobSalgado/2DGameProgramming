@@ -24,6 +24,7 @@ typedef enum
 	ENTITY_TYPE_PLAYER,
 	ENTITY_TYPE_ENEMY,
 	ENTITY_TYPE_RING,
+	ENTITY_TYPE_SPRING
 }EntityType;
 
 typedef struct Entity_S
