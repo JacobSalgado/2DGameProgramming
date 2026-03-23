@@ -19,6 +19,7 @@ extern "C"
     #include "entity.h"
     #include "ring.h"
     #include "spring.h"
+    #include "speedpad.h"
     #include "collision.h"
     #include "world.h"
 }
@@ -50,6 +51,7 @@ int main(int argc, char * argv[])
     //Enemy* e;
     Entity* ring;
     Entity* spring;
+    Entity* speedpad;
 
     Uint32 lastSpawnTime = SDL_GetTicks();
     Uint32 spawnDelay = 3000; // 3 seconds in milliseconds
@@ -87,6 +89,7 @@ int main(int argc, char * argv[])
     //ring  = ring_new(player->position.x, player->position.y); /* initialize rings */
     ring = ring_new(700, 300);
     spring = spring_new(600, 1600);
+    speedpad = speedpad_new(1400, 1750);
 
     world_setup_camera(level);
 
@@ -127,6 +130,7 @@ int main(int argc, char * argv[])
             ring = NULL;
         }
         if (spring) spring_activate(spring, sonic->entity);
+        if (speedpad) speedpad_activate(speedpad, sonic->entity);
 
         if ((currentTime - lastSpawnTime >= spawnDelay) && enemyCount <= enemyMax)
         {

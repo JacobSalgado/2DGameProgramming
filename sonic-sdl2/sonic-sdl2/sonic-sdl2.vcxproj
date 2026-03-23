@@ -61,6 +61,7 @@
     <ClCompile Include="..\..\src\ground_enemy.cpp" />
     <ClCompile Include="..\..\src\powerups.c" />
     <ClCompile Include="..\..\src\shield_enemy.cpp" />
+    <ClCompile Include="..\..\src\speedpad.c" />
     <ClCompile Include="..\..\src\spring.c" />
     <ClCompile Include="..\..\src\turret_enemy.cpp" />
     <ClCompile Include="..\..\src\world.c" />
@@ -111,6 +112,7 @@
     <ClInclude Include="..\..\include\ground_enemy.h" />
     <ClInclude Include="..\..\include\powerups.h" />
     <ClInclude Include="..\..\include\shield_enemy.h" />
+    <ClInclude Include="..\..\include\speedpad.h" />
     <ClInclude Include="..\..\include\spring.h" />
     <ClInclude Include="..\..\include\turret_enemy.h" />
     <ClInclude Include="..\..\include\world.h" />

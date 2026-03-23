@@ -74,6 +74,9 @@ private:
 	Player(int x, int y);	
 
 	static Player* _instance; /// < the single instance of the player
+
+	bool moving = false; // for player animation
+	bool running = false; // running animation
 };
 
 #endif

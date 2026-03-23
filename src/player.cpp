@@ -89,15 +89,29 @@ void Player::think()
 
 	// horizontal movement
 	if (input.left)
+	{
+		moving = true;
+		//running = true;
+		//entity->frame = 21;
+		entity->scale.x = -fabs(entity->scale.x);
 		entity->velocity.x = -move_speed;
+	}
 	else if (input.right)
+	{
+		moving = true;
+		//running = true;
+		//entity->frame = 21;
+		entity->scale.x = fabs(entity->scale.x);
 		entity->velocity.x = move_speed;
+	}
 	else
 		entity->velocity.x *= friction; // to stop the player
 
 	// jumping
 	if (input.jump && entity->onGround)
 	{
+		moving = true;
+		entity->frame = 9;
 		entity->velocity.y = jump_force;
 		entity->onGround = 0;
 		input.jump = false;
@@ -110,8 +124,17 @@ void Player::update()
 
 	//entity->position.y += entity->velocity.y;
 
-	entity->frame += 0.2; // how fast the frame plays
-	if (entity->frame >= 13) entity->frame = 0;
+	entity->frame += 0.1; // how fast the frame plays
+	if (!entity->onGround && moving)
+	{
+		if (entity->frame >= 13) entity->frame = 9;
+	}
+	else if (entity->onGround)
+	{
+		entity->frame = 0;
+	}
+	
+	//if (entity->frame >= 26) entity->frame = 0;
 	camera_center_on(entity->position);
 
 	//gfc_vector2d_add(entity->position, entity->position, entity->velocity);

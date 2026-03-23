@@ -65,6 +65,8 @@ int spring_activate(Entity* spring, Entity* player)
 	if (!spring || !player) return 0;
 	if (!spring->_inuse) return 0;
 
+	spring->frame = 0;
+
 	spring_rect = gfc_shape_rect(spring->position.x, spring->position.y, spring->sprite->frame_w, spring->sprite->frame_h);
 	player_rect = gfc_shape_rect(player->position.x, player->position.y, player->sprite->frame_w, player->sprite->frame_h);
 
