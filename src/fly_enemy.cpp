@@ -49,6 +49,7 @@ void FlyEnemy:: update()
 	if (currentTime - patrolTime >= turnAround)
 	{
 		direction *= -1.0f;
+		entity->scale.x = -fabs(entity->scale.x);
 		patrolTime = SDL_GetTicks();
 		turnAround = rand() % (4001 + 2000); // 2 - 6 seconds
 	}

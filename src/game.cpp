@@ -40,10 +40,13 @@ int main(int argc, char * argv[])
     //int mx,my;
     float mf = 0;
     int lives = 3;
+    int ringCount = 0;
     int enemyCount = 0;
     int enemyMax = 15;
     const char* uiText = "Sonic Health:";
-    const char* ringText = "Rings: ";
+    GFC_TextLine ringText;
+    gfc_line_sprintf(ringText, "Rings: %d", ringCount);
+    //const char* ringText = "Rings: ";
     Sprite *mouse;
     //GFC_Color mouseGFC_Color = gfc_color8(100,180,250,200);
     //Entity *player;
@@ -87,7 +90,7 @@ int main(int argc, char * argv[])
     //enemy = enemy_new(800, 300);
     //enemy = enemy_new(1000, 500);
     //ring  = ring_new(player->position.x, player->position.y); /* initialize rings */
-    ring = ring_new(700, 300);
+    ring = ring_new(1400, 400);
     spring = spring_new(600, 1600);
     speedpad = speedpad_new(1400, 1750);
 
@@ -127,6 +130,8 @@ int main(int argc, char * argv[])
         //entity_surface_collision(level, player);
         if (ring && ring_collect(ring, sonic->entity))
         {
+            ringCount++;
+            gfc_line_sprintf(ringText, "Rings: %d", ringCount);
             ring = NULL;
         }
         if (spring) spring_activate(spring, sonic->entity);
