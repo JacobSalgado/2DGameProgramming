@@ -5,7 +5,7 @@
 #include "gfc_types.h"
 #include "gf2d_sprite.h"
 
-#include "world.h"
+//#include "world.h"
 
 /* Set up for C function definitions, even when using C++ */
 #ifdef __cplusplus
@@ -14,6 +14,9 @@ extern "C"
 	
 }
 #endif
+
+struct World_S;
+typedef struct World_S World;
 
 /**
 *  @purpose whats the point of this file
@@ -115,5 +118,9 @@ void apply_gravity(Entity* self, float deltaTime);
 void entity_system_set_world(World* world);
 
 int enemy_collide_check(Entity* player);
+
+Uint32 entity_system_get_max();
+
+Entity* entity_system_get(int index);
 
 #endif

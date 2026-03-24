@@ -51,6 +51,7 @@
     <ClCompile Include="..\..\src\camera.c" />
     <ClCompile Include="..\..\src\collision.c" />
     <ClCompile Include="..\..\src\enemy.cpp" />
+    <ClCompile Include="..\..\src\enemy_spawn.cpp" />
     <ClCompile Include="..\..\src\entity.c" />
     <ClCompile Include="..\..\src\fly_enemy.cpp" />
     <ClCompile Include="..\..\src\font.c" />
@@ -104,6 +105,7 @@
     <ClInclude Include="..\..\include\camera.h" />
     <ClInclude Include="..\..\include\collision.h" />
     <ClInclude Include="..\..\include\enemy.h" />
+    <ClInclude Include="..\..\include\enemy_spawn.h" />
     <ClInclude Include="..\..\include\entity.h" />
     <ClInclude Include="..\..\include\fly_enemy.h" />
     <ClInclude Include="..\..\include\font.h" />

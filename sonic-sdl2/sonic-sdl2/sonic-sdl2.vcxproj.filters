@@ -192,6 +192,9 @@
     <ClCompile Include="..\..\src\projectile.c">
       <Filter>Source Files\entities</Filter>
     </ClCompile>
+    <ClCompile Include="..\..\src\enemy_spawn.cpp">
+      <Filter>Source Files\entities\enemies</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="..\..\include\camera.h">
@@ -343,6 +346,9 @@
     </ClInclude>
     <ClInclude Include="..\..\include\projectile.h">
       <Filter>Header FIles\entities</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\include\enemy_spawn.h">
+      <Filter>Header FIles\entities\enemies</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>

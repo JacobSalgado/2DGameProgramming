@@ -77,6 +77,43 @@
         "thickness": 16,
         "frame": 0
       }
+    ],
+    "entities": [
+      {
+        "type": "ring",
+        "x": 1400,
+        "y": 400
+      },
+      {
+        "type": "ring",
+        "x": 1500,
+        "y": 1450
+      },
+      {
+        "type": "ring",
+        "x": 1600,
+        "y": 1450
+      },
+      {
+        "type": "spring",
+        "x": 600,
+        "y": 1050
+      },
+      {
+        "type": "speedpad",
+        "x": 2000,
+        "y": 1350
+      },
+      {
+        "type": "fly_enemy",
+        "x": 800,
+        "y": 200
+      },
+      {
+        "type": "turret",
+        "x": 2000,
+        "y": 1400
+      }
     ]
   }
 }

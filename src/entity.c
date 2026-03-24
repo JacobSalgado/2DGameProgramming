@@ -272,3 +272,14 @@ int enemy_collide_check(Entity* player)
 	}
 	return 0;
 }
+
+Uint32 entity_system_get_max()
+{
+	return _entity_manager.entity_max;
+}
+
+Entity* entity_system_get(int index)
+{
+	if (index < 0 || index >= _entity_manager.entity_max) return NULL;
+	return &_entity_manager.entity_list[index];
+}

@@ -1,5 +1,7 @@
 #include "simple_logger.h"
 
+#include "gfc_shape.h"
+
 #include "entity.h"
 #include "speedpad.h"
 

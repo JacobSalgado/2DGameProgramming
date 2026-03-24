@@ -3,6 +3,11 @@
 
 #include "gfc_shape.h"
 #include "gf2d_sprite.h"
+#include "simple_json.h"
+//#include "entity.h"
+
+struct Entity_S;
+typedef struct Entity_S Entity;
 
 typedef enum {
 	TERRAIN_SOLID = 0,
@@ -34,7 +39,7 @@ typedef struct
 	Uint32 spriteFrame;
 }Slope;
 
-typedef struct
+typedef struct World_S
 {
 	Sprite* background;		/**<background image for the world>*/
 	Sprite* tileLayer;		/**<prerendered sprite layer>*/
@@ -47,6 +52,9 @@ typedef struct
 	Uint32 platformCount;
 	Slope* slopes;
 	Uint32 slopeCount;
+
+	SJson* entitiesJson;
+	SJson* _json;
 }
 World;
 
@@ -89,5 +97,7 @@ void draw_world(World* world);
 * @param world the world to update
 */
 void world_update_moving_platforms(World* world);
+
+void world_spawn_entities(World* world, Entity* player);
 
 #endif

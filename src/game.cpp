@@ -54,8 +54,8 @@ int main(int argc, char * argv[])
     //Entity* enemy;
     //Enemy* e;
     //Entity* ring;
-    Entity* spring;
-    Entity* speedpad;
+    //Entity* spring;
+    //Entity* speedpad;
 
     Uint32 lastSpawnTime = SDL_GetTicks();
     Uint32 spawnDelay = 3000; // 3 seconds in milliseconds
@@ -89,16 +89,17 @@ int main(int argc, char * argv[])
 
     level = world_load("maps/testworld.json");
     entity_system_set_world(level);
+    world_spawn_entities(level, sonic->entity);
     //enemy = enemy_new(1000, 200); /* initialize the enemy */
     //enemy = enemy_new(800, 300);
     //enemy = enemy_new(1000, 500);
     //ring  = ring_new(player->position.x, player->position.y); /* initialize rings */
     //ring = ring_new(1400, 400);
-    ring_new(1400, 400);
-    ring_new(1600, 1500);
-    ring_new(600, 1400);
-    spring = spring_new(600, 1000);
-    speedpad = speedpad_new(2000, 1350);
+    //ring_new(1400, 400);
+    //ring_new(1600, 1400);
+    //ring_new(600, 1400);
+    //spring = spring_new(600, 1000);
+    //speedpad = speedpad_new(2000, 1350);
 
     world_setup_camera(level);
 
@@ -145,11 +146,21 @@ int main(int argc, char * argv[])
                 gfc_line_sprintf(ringText, "Rings: %d", ringCount);
             }
         }
-        if (spring) spring_activate(spring, sonic->entity);
-        if (speedpad) speedpad_activate(speedpad, sonic->entity);
+        //if (spring) spring_activate(spring, sonic->entity);
+        //if (speedpad) speedpad_activate(speedpad, sonic->entity);
+
+        for (int i = 0; i < entity_system_get_max(); i++)
+        {
+            Entity* ent = entity_system_get(i);
+            if (!ent || !ent->_inuse) continue;
+            if (ent->type == ENTITY_TYPE_SPRING)
+                spring_activate(ent, sonic->entity);
+            else if (ent->type == ENTITY_TYPE_SPEEDPAD)
+                speedpad_activate(ent, sonic->entity);
+        }
         enemy_collide_check(sonic->entity);
 
-        if ((currentTime - lastSpawnTime >= spawnDelay) && enemyCount <= enemyMax)
+        /*if ((currentTime - lastSpawnTime >= spawnDelay) && enemyCount <= enemyMax)
         {
             //enemy_new((rand() % 651 + 50), (rand() % 200 + 50));
             Enemy* e = new FlyEnemy((rand() % 1001 + 50), (rand() % 251 + 50));
@@ -158,7 +169,7 @@ int main(int argc, char * argv[])
             enemyCount++;
             //Enemy* g = new GroundEnemy(420, 300);
             lastSpawnTime = currentTime;
-        }
+        }*/
         
         gf2d_graphics_clear_screen();// clears drawing buffers
         // all drawing should happen betweem clear_screen and next_frame

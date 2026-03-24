@@ -5,6 +5,14 @@
 
 #include "camera.h"
 #include "world.h"
+#include "entity.h"
+
+#include "ring.h"
+#include "spring.h"
+//#include "turret_enemy.h"
+//#include "fly_enemy.h"
+#include "speedpad.h"
+#include "enemy_spawn.h"
 
 void world_tile_layer_build(World* world)
 {
@@ -264,6 +272,12 @@ World* world_load(const char* filename)
 		}
 	}
 
+	SJson* entitiesArray = sj_object_get_value(wjson, "entities");
+	if (entitiesArray)
+	{
+		world->entitiesJson = entitiesArray;
+	}
+
 	background = sj_object_get_value_as_string(wjson, "background");
 	world->background = gf2d_sprite_load_image(background);
 
@@ -279,7 +293,8 @@ World* world_load(const char* filename)
 		1);
 	world_tile_layer_build(world);
 
-	sj_free(json);
+	//sj_free(json);
+	world->_json = json;
 	return world;
 }
 
@@ -318,6 +333,7 @@ void free_world(World* world)
 	free(world->platforms);
 	free(world->slopes);
 
+	sj_free(world->_json);
 	free(world);
 }
 
@@ -419,5 +435,43 @@ void world_update_moving_platforms(World* world)
 				p->bounds.y = p->origin.y + p->moveDistance.y;
 			}*/
 		}
+	}
+}
+
+void world_spawn_entities(World* world, Entity* player)
+{
+	SJson* j;
+	SJson* w;
+	const char* type;
+	float x, y;
+	int count, i;
+
+	if (!world || !world->entitiesJson) return;
+	j = world->entitiesJson;
+	count = sj_array_get_count(j);
+
+	for (i = 0; i < count; i++)
+	{
+		w = sj_array_get_nth(j, i);
+		if (!w) continue;
+
+		x = 0; y = 0;
+		sj_object_get_value_as_float(w, "x", &x);
+		sj_object_get_value_as_float(w, "y", &y);
+		type = sj_object_get_value_as_string(w, "type");
+		if (!type) continue;
+
+		if (strcmp(type, "ring") == 0)
+			ring_new(x, y);
+		else if (strcmp(type, "spring") == 0)
+			spring_new(x, y);
+		else if (strcmp(type, "speedpad") == 0)
+			speedpad_new(x, y);
+		else if (strcmp(type, "fly_enemy") == 0)
+			spawn_fly_enemy(x, y);
+		else if (strcmp(type, "turret") == 0)
+			spawn_turret_enemy(x, y, player);
+		else
+			slog("unknown entity type attempting to be spawned");
 	}
 }
