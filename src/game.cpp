@@ -82,7 +82,7 @@ int main(int argc, char * argv[])
     //mouse = gf2d_sprite_load_all("images/pointer.png",32,32,16,0);
     //player = player_new(); /* initialize the player */
     Player::destroy_instance();
-    Player* sonic =  Player::create_instance(800, 2000);
+    Player* sonic =  Player::create_instance(800, 1500);
 
     level = world_load("maps/testworld.json");
     entity_system_set_world(level);
@@ -91,8 +91,8 @@ int main(int argc, char * argv[])
     //enemy = enemy_new(1000, 500);
     //ring  = ring_new(player->position.x, player->position.y); /* initialize rings */
     ring = ring_new(1400, 400);
-    spring = spring_new(600, 1600);
-    speedpad = speedpad_new(1400, 1750);
+    spring = spring_new(600, 1000);
+    speedpad = speedpad_new(1700, 1350);
 
     world_setup_camera(level);
 
@@ -108,8 +108,8 @@ int main(int argc, char * argv[])
         font_cleanup();
         /*update things here*/
         //SDL_GetMouseState(&mx,&my);
-        mf+=0.1;
-        if (mf >= 16.0)mf = 0;
+        //mf+=0.1;
+        //if (mf >= 16.0)mf = 0;
 
         while (SDL_PollEvent(&event))
         {
@@ -123,6 +123,7 @@ int main(int argc, char * argv[])
 
         entity_system_think();
         entity_system_update();
+        world_update_moving_platforms(level);
 
         //apply_gravity(player, 0.016f);
 

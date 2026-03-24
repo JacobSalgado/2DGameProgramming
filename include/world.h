@@ -17,6 +17,8 @@ typedef struct
 
 	/* Moving Platform data */
 	GFC_Vector2D moveDistance;
+	GFC_Vector2D origin;
+	GFC_Vector2D currentVelocity;
 	float moveSpeed;
 	int moveDirection;
 	Uint32 spriteFrame;
@@ -81,5 +83,11 @@ void free_world(World* world);
 * @return world the world to draw
 */
 void draw_world(World* world);
+
+/**
+* @brief updates the position of any moving platforms in the scene
+* @param world the world to update
+*/
+void world_update_moving_platforms(World* world);
 
 #endif

@@ -82,9 +82,11 @@ int speedpad_activate(Entity* speedpad, Entity* player)
 	{
 		slog("OVERLAP ON SPEED BOOST - speeding player up");
 		data->direction = 1;
-		slog("player velocity before: %.2f", player->velocity.x);
-		player->velocity.x = data->launch_velocity * data->direction;
-		slog("player velocity before: %.2f", player->velocity.x);
+		player->boost_timer = 0.5f;
+		player->boost_velocity = data->launch_velocity * data->direction;
+		//slog("player velocity before: %.2f", player->velocity.x);
+		//player->velocity.x = data->launch_velocity * data->direction;
+		//slog("player velocity before: %.2f", player->velocity.x);
 		data->triggered = 1;
 		data->cooldown_timer = 0.5f;
 		//speedpad->frame = ;

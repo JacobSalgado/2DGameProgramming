@@ -71,6 +71,141 @@ void resolveTileCollisionY(Entity* entity, World* world)
 	}
 }
 
+void resolveTerrainCollisionX(Entity* entity, World* world)
+{
+	if (!world->platforms) return;
+
+	for (int i = 0; i < (int)world->platformCount; i++)
+	{
+		Platform* p =  &world->platforms[i];
+
+		if (p->type == TERRAIN_ONEWAY) continue;
+
+		float pLeft = p->bounds.x;
+		float pRight = p->bounds.x + p->bounds.w;
+		float pTop = p->bounds.y;
+		float pBottom = p->bounds.y + p->bounds.h;
+
+		if (entity->position.y + entity->height <= pTop || entity->position.y >= pBottom) continue;
+
+		if (entity->position.x > 0 && entity->position.x + entity->width > pLeft && entity->position.x < pLeft)
+		{
+			entity->position.x = pLeft - entity->width;
+			entity->velocity.x = 0;
+		}
+		else if (entity->velocity.x < 0 && entity->position.x < pRight && entity->position.x + entity->width > pRight)
+		{
+			entity->position.x = pRight;
+			entity->velocity.x = 0;
+		}
+	}
+}
+
+void resolveTerrainCollisionY(Entity* entity, World* world)
+{
+	if (!world->platforms) return;
+
+	for (int i = 0; i < (int)world->platformCount; i++)
+	{
+		Platform* p = &world->platforms[i];
+
+		float pLeft = p->bounds.x;
+		float pRight = p->bounds.x + p->bounds.w;
+		float pTop = p->bounds.y;
+		float pBottom = p->bounds.y + p->bounds.h;
+
+		if (entity->position.x + entity->width <= pLeft || entity->position.x >= pRight)  continue;
+
+		if (p->type == TERRAIN_SOLID)
+		{
+			// land on top of the terrain
+			if (entity->velocity.y > 0 && entity->position.y + entity->height > pTop && entity->position.y < pTop)
+			{
+				entity->position.y = pTop - entity->height;
+				entity->velocity.y = 0;
+				entity->onGround = 1;
+			}
+			// ceiling collisionss
+			else if (entity->velocity.y < 0 && entity->position.y < pBottom && entity->position.y + entity->height > pBottom)
+			{
+				entity->position.y = pBottom;
+				entity->velocity.y = 0;
+			}
+		}
+		else if (p->type == TERRAIN_ONEWAY)
+		{
+			float previousBottom = (entity->position.y + entity->height) - entity->velocity.y;
+			if (entity->velocity.y > 0 && previousBottom <= pTop && entity->position.y + entity->height >= pTop)
+			{
+				entity->position.y = pTop - entity->height;
+				entity->velocity.y = 0;
+				entity->onGround = 1;
+			}
+		}
+		else if (p->type == TERRAIN_MOVING)
+		{
+			float previousBottom = (entity->position.y + entity->height) - entity->velocity.y;
+			if (entity->velocity.y >= 0 && previousBottom <= pTop && entity->position.y + entity->height >= pTop)
+			{
+				entity->position.y = pTop - entity->height;
+				entity->velocity.y = 0;
+				entity->onGround = 1;
+
+				// carry sonic
+				entity->position.x += p->currentVelocity.x;
+				entity->position.y += p->currentVelocity.y;
+			}
+		}
+	}
+}
+
+void resolveSlopeCollision(Entity* entity, World* world)
+{
+	if (!world->slopes) return;
+
+	float footX = entity->position.x + entity->width * 0.5f;
+	float footY = entity->position.y + entity->height;
+
+	for (int i = 0; i < (int)world->slopeCount; i++)
+	{
+		Slope* s = &world->slopes[i];
+
+		float sx1 = s->p1.x, sy1 = s->p1.y;
+		float sx2 = s->p2.x, sy2 = s->p2.y;
+
+		float minX, maxX;
+
+		if (sx1 < sx2)
+		{
+			minX = sx1;
+			maxX = sx2;
+		}
+		else
+		{
+			minX = sx2;
+			maxX = sx1;
+		}
+
+		if (footX < minX || footX > maxX) continue;
+
+		if (sx2 == sx1) continue;
+
+		// check to see if sonic is close enough to land on the slope surface
+		float t = (footX - sx1) / (sx2 - sx1);
+		float slopeY = sy1 + t * (sy2 - sy1);
+
+		float snapRange = s->thickness + fabsf(entity->velocity.y) + 1.0f;
+
+		if (footY >= slopeY && footY <= slopeY + snapRange && entity->velocity.y >= 0)
+		{
+			// snaps player to slope
+			entity->position.y = slopeY - entity->height;
+			entity->velocity.y = 0;
+			entity->onGround = 1;
+		}
+	}
+}
+
 Bool isTileSolid(World* world, int tX, int tY)
 {
 	if (tX < 0 || tY < 0 || tX >= world->tileWidth || tY >= world->tileHeight)

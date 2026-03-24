@@ -155,9 +155,12 @@ void entity_update(Entity* self)
 	{
 		self->position.x += self->velocity.x;
 		resolveTileCollisionX(self, _active_world);
+		resolveTerrainCollisionX(self, _active_world);
 
 		self->position.y += self->velocity.y;
 		resolveTileCollisionY(self, _active_world);
+		resolveTerrainCollisionY(self, _active_world);
+		resolveSlopeCollision(self, _active_world);
 	}
 }
 

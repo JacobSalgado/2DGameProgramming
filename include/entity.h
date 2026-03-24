@@ -45,6 +45,8 @@ typedef struct Entity_S
 	Uint8			health; /* amount of health the entity has */
 	Uint8			onGround; /* <if the entity is on the ground >*/
 	Uint8			gravityOn; /* < not all entities will be bound by gravity >*/
+	float			boost_timer;
+	float			boost_velocity;
 
 	void (*think)(struct Entity_S* self); /*<function to call to make decisions*/
 	void (*update)(struct Entity_S* self); /*function to call to execute those decisions*/

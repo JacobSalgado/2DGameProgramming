@@ -26,6 +26,12 @@ void resolveTileCollisionX(Entity* entity, World* world);
 
 void resolveTileCollisionY(Entity* entity, World* world);
 
+void resolveTerrainCollisionX(Entity* entity, World* world);
+
+void resolveTerrainCollisionY(Entity* entity, World* world);
+
+void resolveSlopeCollision(Entity* entity, World* world);
+
 Bool isTileSolid(World* world, int tX, int tY);
 
 Bool check_entity_overlap(Entity* a, Entity* b);

@@ -87,6 +87,13 @@ void Player::think()
 	float move_speed = 3.0f;
 	float friction = 0.75f;
 
+	if (entity->boost_timer > 0)
+	{
+		entity->boost_timer -= 0.016f;
+		entity->velocity.x = entity->boost_velocity;
+		return;
+	}
+
 	// horizontal movement
 	if (input.left)
 	{

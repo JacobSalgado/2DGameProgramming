@@ -62,6 +62,8 @@ void world_tile_layer_build(World* world)
 
 	for (i = 0; i < (int)world->platformCount; i++)
 	{
+		if (world->platforms[i].type == TERRAIN_MOVING) continue;
+
 		int x, y;
 		GFC_Rect r = world->platforms[i].bounds;
 		int tilesWide = (int)(r.w / world->tileSet->frame_w);
@@ -210,7 +212,21 @@ World* world_load(const char* filename)
 				if (strcmp(type, "oneway") == 0)
 					world->platforms[i].type = TERRAIN_ONEWAY;
 				else if (strcmp(type, "moving") == 0)
+				{
 					world->platforms[i].type = TERRAIN_MOVING;
+
+					//int x = 0, y = 0;
+					float dx = 0, dy = 0, speed = 2.0f;
+					//sj_object_get_value_as_float(j, "x", &x);
+					//sj_object_get_value_as_float(j, "y", &y);
+					sj_object_get_value_as_float(j, "moveDX", &dx);
+					sj_object_get_value_as_float(j, "moveDY", &dy);
+					sj_object_get_value_as_float(j, "moveSpeed", &speed);
+					world->platforms[i].moveDistance = gfc_vector2d(dx, dy);
+					world->platforms[i].moveSpeed = speed;
+					world->platforms[i].moveDirection = 1;
+					world->platforms[i].origin = gfc_vector2d(x, y);
+				}
 				else
 					world->platforms[i].type = TERRAIN_SOLID;
 			}
@@ -229,8 +245,8 @@ World* world_load(const char* filename)
 			int frame = 0;
 			float x = 0, y = 0, x2 = 0, y2 = 0, thickness = 16;
 
-			sj_object_get_value_as_float(j, "x", &x);
-			sj_object_get_value_as_float(j, "y", &y);
+			sj_object_get_value_as_float(j, "x1", &x);
+			sj_object_get_value_as_float(j, "y1", &y);
 			sj_object_get_value_as_float(j, "x2", &x2);
 			sj_object_get_value_as_float(j, "y2", &y2);
 			sj_object_get_value_as_int(j, "frame", &frame);
@@ -316,6 +332,28 @@ void draw_world(World* world)
 
 	gf2d_sprite_draw_image(world->background, gfc_vector2d(0, 0));
 	gf2d_sprite_draw_image(world->tileLayer, offset);
+
+	// moving platforms
+	for (int i = 0; i < (int)world->platformCount; i++)
+	{
+		Platform* p = &world->platforms[i];
+		if (p->type != TERRAIN_MOVING) continue;
+
+		GFC_Vector2D pos;
+		pos.x = p->bounds.x + offset.x;
+		pos.y = p->bounds.y + offset.y;
+
+		gf2d_sprite_draw(
+			world->tileSet,
+			pos,
+			NULL,
+			NULL,
+			NULL,
+			NULL,
+			NULL,
+			p->spriteFrame
+		);
+	}
 }
 
 void world_setup_camera(World* world)
@@ -330,4 +368,56 @@ void world_setup_camera(World* world)
 	camera_set_bounds(gfc_rect(0,0, world->tileLayer->surface->w, world->tileLayer->surface->h));
 	camera_enable_binding(1);
 	camera_apply_bounds();
+}
+
+void world_update_moving_platforms(World* world)
+{
+	if (!world->platforms) return;
+
+	for (int i = 0; i < (int)world->platformCount; i++)
+	{
+		Platform* p = &world->platforms[i];
+		if (p->type != TERRAIN_MOVING) continue;
+
+		float length = sqrtf(p->moveDistance.x * p->moveDistance.x + p->moveDistance.y * p->moveDistance.y);
+		if (length == 0) continue;
+
+		float dirX = (p->moveDistance.x / length) * p->moveSpeed * p->moveDirection;
+		float dirY = (p->moveDistance.y / length) * p->moveSpeed * p->moveDirection;
+
+		p->bounds.x += dirX;
+		p->bounds.y += dirY;
+		p->currentVelocity = gfc_vector2d(dirX, dirY);
+
+		float travelX = p->bounds.x - p->origin.x;
+		float travelY = p->bounds.y - p->origin.y;
+		float traveled = sqrtf(travelX * travelX + travelY * travelY);
+
+		// reverse movement of the platform
+		if (traveled >= length)
+		{
+			if (p->moveDirection == 1)
+			{
+				p->bounds.x = p->origin.x + p->moveDistance.x;
+				p->bounds.y = p->origin.y + p->moveDistance.y;
+			}
+			else
+			{
+				p->bounds.x = p->origin.x;
+				p->bounds.y = p->origin.y;
+			}
+			p->moveDirection *= -1;
+			/* not working
+			if (p->moveDirection == 1)
+			{
+				p->bounds.x = p->origin.x;
+				p->bounds.y = p->origin.y;
+			}
+			else
+			{
+				p->bounds.x = p->origin.x + p->moveDistance.x;
+				p->bounds.y = p->origin.y + p->moveDistance.y;
+			}*/
+		}
+	}
 }
