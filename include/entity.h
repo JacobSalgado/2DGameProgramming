@@ -25,7 +25,8 @@ typedef enum
 	ENTITY_TYPE_ENEMY,
 	ENTITY_TYPE_RING,
 	ENTITY_TYPE_SPRING,
-	ENTITY_TYPE_SPEEDPAD
+	ENTITY_TYPE_SPEEDPAD,
+	ENTITY_TYPE_PROJECTILE
 }EntityType;
 
 typedef struct Entity_S
@@ -112,5 +113,7 @@ void entity_check_collisions(Entity* player);
 void apply_gravity(Entity* self, float deltaTime);
 
 void entity_system_set_world(World* world);
+
+int enemy_collide_check(Entity* player);
 
 #endif

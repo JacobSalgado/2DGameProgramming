@@ -3,6 +3,7 @@
 #include "player.h"
 #include "enemy.h"
 #include "fly_enemy.h"
+#include "turret_enemy.h"
 #include "ground_enemy.h"
 
 /* Set up for C function definitions, even when using C++ */
@@ -52,7 +53,7 @@ int main(int argc, char * argv[])
     //Entity *player;
     //Entity* enemy;
     //Enemy* e;
-    Entity* ring;
+    //Entity* ring;
     Entity* spring;
     Entity* speedpad;
 
@@ -74,6 +75,7 @@ int main(int argc, char * argv[])
     gf2d_sprite_init(1024);
     font_init();
     entity_system_initialize(1024);
+    ring_system_init(35);
     //SDL_ShowCursor(SDL_DISABLE);
     camera_set_size(gfc_vector2d(1200, 720));
     
@@ -83,6 +85,7 @@ int main(int argc, char * argv[])
     //player = player_new(); /* initialize the player */
     Player::destroy_instance();
     Player* sonic =  Player::create_instance(800, 1500);
+    //TurretEnemy* turret = new TurretEnemy(1600.0f, 1400.0f);
 
     level = world_load("maps/testworld.json");
     entity_system_set_world(level);
@@ -90,9 +93,12 @@ int main(int argc, char * argv[])
     //enemy = enemy_new(800, 300);
     //enemy = enemy_new(1000, 500);
     //ring  = ring_new(player->position.x, player->position.y); /* initialize rings */
-    ring = ring_new(1400, 400);
+    //ring = ring_new(1400, 400);
+    ring_new(1400, 400);
+    ring_new(1600, 1500);
+    ring_new(600, 1400);
     spring = spring_new(600, 1000);
-    speedpad = speedpad_new(1700, 1350);
+    speedpad = speedpad_new(2000, 1350);
 
     world_setup_camera(level);
 
@@ -129,19 +135,26 @@ int main(int argc, char * argv[])
 
         //entity_check_collisions(sonic);
         //entity_surface_collision(level, player);
-        if (ring && ring_collect(ring, sonic->entity))
+        for (int i = 0; i < ring_system_get_max(); i++)
         {
-            ringCount++;
-            gfc_line_sprintf(ringText, "Rings: %d", ringCount);
-            ring = NULL;
+            Entity* ring = ring_system_get(i);
+            if (!ring || !ring->_inuse) continue;
+            if (ring_collect(ring, sonic->entity))
+            {
+                ringCount++;
+                gfc_line_sprintf(ringText, "Rings: %d", ringCount);
+            }
         }
         if (spring) spring_activate(spring, sonic->entity);
         if (speedpad) speedpad_activate(speedpad, sonic->entity);
+        enemy_collide_check(sonic->entity);
 
         if ((currentTime - lastSpawnTime >= spawnDelay) && enemyCount <= enemyMax)
         {
             //enemy_new((rand() % 651 + 50), (rand() % 200 + 50));
             Enemy* e = new FlyEnemy((rand() % 1001 + 50), (rand() % 251 + 50));
+            enemyCount++;
+            Enemy* t = new TurretEnemy(1600, 1400, sonic->entity);
             enemyCount++;
             //Enemy* g = new GroundEnemy(420, 300);
             lastSpawnTime = currentTime;
@@ -154,6 +167,7 @@ int main(int argc, char * argv[])
             draw_world(level);
 
             entity_system_draw();
+            ring_system_draw();
             
             font_draw_text(uiText, FS_small, GFC_COLOR_DARKBLUE, gfc_vector2d(10, 10));
             font_draw_text(ringText, FS_small, GFC_COLOR_DARKYELLOW, gfc_vector2d(10, 100));

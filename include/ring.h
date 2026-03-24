@@ -11,6 +11,20 @@ extern "C"
 }
 #endif
 
+typedef struct
+{
+	Entity* ring_list;
+	Uint32	ring_max;
+}RingManager;
+
+void ring_system_init(Uint32 max);
+
+void ring_draw(Entity* self);
+
+void ring_system_draw();
+
+void ring_system_close();
+
 /**
 * @brief spawn a ring in a specific position
 * @return NULL on error, or a pointer to a ring
@@ -48,5 +62,9 @@ void ring_free(Entity* ring);
 * @return 1 if collecting, 0 otherwise
 */
 int ring_collect(Entity* ring, Entity* player);
+
+Uint32 ring_system_get_max();
+
+Entity* ring_system_get(int index);
 
 #endif

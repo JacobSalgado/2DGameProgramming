@@ -6,6 +6,8 @@
 #include "collision.h"
 #include "spring.h"
 
+extern int player_is_jumping(Entity* player);
+
 typedef struct
 {
 	Entity *entity_list;
@@ -238,4 +240,35 @@ void check_spring_collision(Entity* player)
 		player->velocity.y = data->launch_velocity;
 		player->onGround = 0;
 	}
+}
+
+int enemy_collide_check(Entity* player)
+{
+	int i;
+	GFC_Shape player_rect, enemy_rect;
+	Entity* enemy;
+
+	if (!player) return 0;
+	if (!player_is_jumping(player)) return 0; // collision will only work if player is jumping
+
+	for (i = 0; i < _entity_manager.entity_max; i++)
+	{
+		enemy = &_entity_manager.entity_list[i];
+
+		if (!enemy->_inuse) continue;
+		if (enemy->type != ENTITY_TYPE_ENEMY) continue;
+
+		player_rect = gfc_shape_rect(player->position.x, player->position.y, player->sprite->frame_w, player->sprite->frame_h);
+		enemy_rect = gfc_shape_rect(enemy->position.x, enemy->position.y, enemy->sprite->frame_w, enemy->sprite->frame_h);
+
+		if (!gfc_shape_overlap(player_rect, enemy_rect)) continue;
+
+		// bounce mechanic lol
+		player->velocity.y = -7.0f;
+		player->onGround = 0;
+
+		entity_destroy(enemy);
+		return 1;
+	}
+	return 0;
 }

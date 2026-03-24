@@ -6,6 +6,8 @@
 extern "C" 
 {
 	#include "entity.h"
+
+	int player_is_jumping(Entity* player);
 }
 #endif
 
@@ -26,6 +28,8 @@ public:
 	Inputs input;
 
 	Entity* entity; /// < pointer into existing C pool
+
+	Uint8 jumping = false;
 
 	/**
 	* @brief deconstructor, cleans up the player entity and frees the singleton instance

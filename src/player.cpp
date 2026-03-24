@@ -118,6 +118,7 @@ void Player::think()
 	if (input.jump && entity->onGround)
 	{
 		moving = true;
+		jumping = true;
 		entity->frame = 9;
 		entity->velocity.y = jump_force;
 		entity->onGround = 0;
@@ -138,6 +139,7 @@ void Player::update()
 	}
 	else if (entity->onGround)
 	{
+		jumping = false;
 		entity->frame = 0;
 	}
 	
@@ -176,6 +178,16 @@ void Player::handle_input(SDL_Event* event)
 		case SDLK_RIGHT: input.right = false; break;
 		}
 	}
+}
+
+extern "C" int player_is_jumping(Entity* player)
+{
+	if (!player || !player->data) return 0;
+	Player* self = (Player*)player->data;
+	if (self->jumping)
+		return 1;
+	else
+		return 0;
 }
 
 SDL_Rect Player::rect()

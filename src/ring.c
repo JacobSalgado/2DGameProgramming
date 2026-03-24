@@ -2,20 +2,121 @@
 
 #include "gfc_shape.h"
 
+#include "camera.h"
+
 #include "ring.h"
+
+static RingManager _ring_manager = { 0 }; /**<initialize a LOCAL global ring manager*/
+
+void ring_system_init(Uint32 max)
+{
+	if (_ring_manager.ring_list)
+	{
+		slog("ring system already initialized");
+		return;
+	}
+	if (!max)
+	{
+		slog("cannot allocate 0 rings");
+		return;
+	}
+	_ring_manager.ring_list = gfc_allocate_array(sizeof(Entity), max);
+	if (!_ring_manager.ring_list)
+	{
+		slog("failed to allocate ring list");
+		return;
+	}
+	_ring_manager.ring_max = max;
+	slog("ring system initialized");
+	atexit(ring_system_close);
+}
+
+void ring_draw(Entity* self)
+{
+	GFC_Vector2D offset, position;
+
+	if (!self) return;
+	offset = camera_get_offset();
+	gfc_vector2d_add(position, self->position, offset);
+
+	if (self->sprite)
+	{
+		gf2d_sprite_draw(
+			self->sprite,
+			position,
+			&self->scale,
+			NULL,
+			NULL,
+			NULL,
+			NULL,
+			(Uint32)self->frame);
+	}
+}
+
+void ring_system_draw()
+{
+	/*Entity* ring;
+	GFC_Vector2D drawPosition;
+	GFC_Vector2D camera = camera_get_position();
+	for (int i = 0; i < _ring_manager.ring_max; i++)
+	{
+		ring = &_ring_manager.ring_list[i];
+		if (!ring->_inuse || !ring->sprite) continue;
+
+		drawPosition.x = ring->position.x - camera.x;
+		drawPosition.y = ring->position.y - camera.y;
+
+		gf2d_sprite_draw(
+			ring->sprite,
+			ring->position,
+			NULL,
+			NULL,
+			NULL,
+			NULL,
+			NULL,
+			(int)ring->frame
+		);
+	}*/
+	int i;
+	for (i = 0; i < _ring_manager.ring_max; i++)
+	{
+		if (!_ring_manager.ring_list[i]._inuse) continue; // skip any inactive rings
+		ring_draw(&_ring_manager.ring_list[i]);
+	}
+}
+
+void ring_system_close()
+{
+	if (_ring_manager.ring_list)
+	{
+		free(_ring_manager.ring_list);
+	}
+	memset(&_ring_manager, 0, sizeof(RingManager));
+}
 
 Entity* ring_new(float x, float y)
 {
 	//GFC_Color ringColor = gfc_color8();
 
-	Entity* ring;
-	ring = entity_new();
+	Entity* ring = NULL;
 
+	for (int i = 0; i < _ring_manager.ring_max; i++)
+	{
+		if (!_ring_manager.ring_list[i]._inuse)
+		{
+			ring = &_ring_manager.ring_list[i];
+			break;
+		}
+	}
 	if (!ring)
 	{
-		slog("failed to return ring");
+		slog("no free ring slots available");
 		return NULL;
 	}
+
+	memset(ring, 0, sizeof(Entity));
+	ring->_inuse = 1;
+	ring->scale = gfc_vector2d(1, 1);
 
 	ring->sprite = gf2d_sprite_load_all(
 		"images/ring.png",
@@ -70,8 +171,8 @@ void ring_update(Entity* ring)
 {
 	if (!ring) return;
 
-	ring->frame += 0;
-	if (ring->frame >= 10) ring->frame = 0;
+	//ring->frame += 0;
+	//if (ring->frame >= 8) ring->frame = 1;
 	//ring->velocity.x += 0.1;
 
 	gfc_vector2d_add(ring->position, ring->position, ring->velocity);
@@ -86,4 +187,15 @@ void ring_destroy(Entity* ring)
 void ring_free(Entity* ring)
 {
 	if (!ring) return;
+}
+
+Uint32 ring_system_get_max()
+{
+	return _ring_manager.ring_max;
+}
+
+Entity* ring_system_get(int index)
+{
+	if (index < 0 || index >= _ring_manager.ring_max) return NULL;
+	return &_ring_manager.ring_list[index];
 }

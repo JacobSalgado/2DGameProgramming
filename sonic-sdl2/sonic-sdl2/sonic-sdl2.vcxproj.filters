@@ -189,6 +189,9 @@
     <ClCompile Include="..\..\src\speedpad.c">
       <Filter>Source Files\entities</Filter>
     </ClCompile>
+    <ClCompile Include="..\..\src\projectile.c">
+      <Filter>Source Files\entities</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="..\..\include\camera.h">
@@ -336,6 +339,9 @@
       <Filter>Header FIles\entities</Filter>
     </ClInclude>
     <ClInclude Include="..\..\include\speedpad.h">
+      <Filter>Header FIles\entities</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\include\projectile.h">
       <Filter>Header FIles\entities</Filter>
     </ClInclude>
   </ItemGroup>
