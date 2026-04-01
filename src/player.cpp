@@ -94,32 +94,45 @@ void Player::think()
 		return;
 	}
 
+	Uint8 was_moving_last = moving;
+
 	// horizontal movement
 	if (input.left)
 	{
-		moving = true;
-		//running = true;
-		//entity->frame = 21;
 		entity->scale.x = -fabs(entity->scale.x);
 		entity->velocity.x = -move_speed;
+		if (!moving)
+		{
+			entity->sprite->frame_w = 106;
+			entity->frame = 25;
+		}
+		moving = true;
 	}
 	else if (input.right)
 	{
-		moving = true;
-		//running = true;
-		//entity->frame = 21;
 		entity->scale.x = fabs(entity->scale.x);
 		entity->velocity.x = move_speed;
+		// previous issue is that think is a continuous check so frame would stay still if input is being pressed
+		if (!moving) // this helps reset frame when sonic starts to move
+		{
+			entity->sprite->frame_w = 106;
+			entity->frame = 25;
+		}
+		moving = true;
 	}
 	else
+	{
+		entity->sprite->frame_w = 94;
 		entity->velocity.x *= friction; // to stop the player
+		moving = false;
+	}
 
 	// jumping
 	if (input.jump && entity->onGround)
 	{
-		moving = true;
+		entity->sprite->frame_w = 94;
 		jumping = true;
-		entity->frame = 9;
+		entity->frame = 9; // p
 		entity->velocity.y = jump_force;
 		entity->onGround = 0;
 		input.jump = false;
@@ -128,19 +141,23 @@ void Player::think()
 
 void Player::update()
 {	
-	//entity->position.x += entity->velocity.x;
-
-	//entity->position.y += entity->velocity.y;
-
 	entity->frame += 0.1; // how fast the frame plays
-	if (!entity->onGround && moving)
+	if (!entity->onGround && jumping)
 	{
 		if (entity->frame >= 13) entity->frame = 9;
 	}
 	else if (entity->onGround)
 	{
 		jumping = false;
-		entity->frame = 0;
+		if (!moving)
+		{
+			entity->frame = 0;
+		}
+		was_moving = moving;
+		if (moving)
+		{
+			if (entity->frame >= 28) entity->frame = 25;
+		}
 	}
 	
 	//if (entity->frame >= 26) entity->frame = 0;

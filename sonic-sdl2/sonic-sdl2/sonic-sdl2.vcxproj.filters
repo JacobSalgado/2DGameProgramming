@@ -195,6 +195,9 @@
     <ClCompile Include="..\..\src\enemy_spawn.cpp">
       <Filter>Source Files\entities\enemies</Filter>
     </ClCompile>
+    <ClCompile Include="..\..\src\audio.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="..\..\include\camera.h">
@@ -349,6 +352,9 @@
     </ClInclude>
     <ClInclude Include="..\..\include\enemy_spawn.h">
       <Filter>Header FIles\entities\enemies</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\include\audio.h">
+      <Filter>Header FIles</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>
