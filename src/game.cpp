@@ -100,10 +100,6 @@ int main(int argc, char * argv[])
                 done = true;
             }
             sonic->handle_input(&event);
-
-            if (event.type == SDL_JOYAXISMOTION)
-            {
-            }
         }
 
         entity_system_think();

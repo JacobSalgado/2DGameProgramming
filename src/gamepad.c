@@ -2,8 +2,8 @@
 
 #include "gamepad.h"
 
-int xDirection = 0;
-int yDirection = 0;
+static int xDirection = 0;
+static int yDirection = 0;
 
 void gamepad_init(SDL_GameController** controller)
 {
@@ -41,38 +41,39 @@ void gamepad_cleanup()
 {
 }
 
-void handle_input(SDL_Event* event)
+void gamepad_update(SDL_Event* event)
 {
-	if (event->jaxis.which == 0)
+	if (event->type == SDL_CONTROLLERAXISMOTION)
 	{
 		// x-axis
-		if (event->jaxis.axis == 0)
+		if (event->caxis.axis == SDL_CONTROLLER_AXIS_LEFTX)
 		{
-			if (event->jaxis.axis == 0)
-			{
-				slog("%d xAxis:", event->jaxis.value);
-				if (event->jaxis.value > DEAD_ZONE)
-					xDirection = 1;
-				else if (event->jaxis.value < -DEAD_ZONE)
-					xDirection = -1;
-				else
-					xDirection = 0;
-			}
+			if (event->caxis.value > DEAD_ZONE)
+				xDirection = 1;
+			else if (event->caxis.value < -DEAD_ZONE)
+				xDirection = -1;
+			else
+				xDirection;
 		}
-
 		// y-axis
-		if (event->jaxis.axis == 1)
+		if (event->caxis.axis == SDL_CONTROLLER_AXIS_LEFTY)
 		{
-			if (event->jaxis.axis == 1)
-			{
-				slog("%d yAxis:", event->jaxis.value);
-				if (event->jaxis.value > DEAD_ZONE)
-					yDirection = 1;
-				else if (event->jaxis.value < -DEAD_ZONE)
-					yDirection = -1;
-				else
-					yDirection = 0;
-			}
+			if (event->caxis.value > DEAD_ZONE)
+				yDirection = 1;
+			else if (event->caxis.value < -DEAD_ZONE)
+				yDirection = -1;
+			else
+				yDirection;
 		}
 	}
+}
+
+int get_gamepad_x_direction()
+{
+	return xDirection;
+}
+
+int get_gamepad_y_direction()
+{
+	return yDirection;
 }

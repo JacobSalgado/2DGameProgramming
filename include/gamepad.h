@@ -17,4 +17,13 @@ void gamepad_cleanup();
 
 void handle_input(SDL_Event* event);
 
+void gamepad_update(SDL_Event* event);
+
+// getters
+int get_gamepad_x_direction();
+
+int get_gamepad_y_direction();
+
+int gamepad_button_pressed(SDL_GameControllerButton button);
+
 #endif

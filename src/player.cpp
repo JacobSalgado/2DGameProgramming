@@ -9,6 +9,7 @@ extern "C"
 #include "simple_logger.h"
 #include "gfc_vector.h"
 #include "camera.h"
+#include "gamepad.h"
 #include "collision.h"
 #include "ring.h"
 }
@@ -181,6 +182,26 @@ void Player::handle_input(SDL_Event* event)
 	int movementVelocity = 5;
 	int slowDown = 4;
 
+	gamepad_update(event);
+
+	int gamepadX = get_gamepad_x_direction();
+	int gamepadY = get_gamepad_y_direction();
+
+	// analog stick movement
+	if (gamepadX > 0)
+	{
+		input.right = true;
+	}
+	else if (gamepadX < 0)
+	{
+		input.left = true;
+	}
+	else if (gamepadX == 0)
+	{
+		input.right = false;
+		input.left = false;
+	}
+
 	if (event->type == SDL_KEYDOWN && event->key.repeat == 0)
 	{
 		// SWITCH VELOCITY
@@ -203,6 +224,24 @@ void Player::handle_input(SDL_Event* event)
 		case SDLK_SPACE: input.jump = false; break;
 		case SDLK_LEFT: input.left = false; break;
 		case SDLK_RIGHT: input.right = false; break;
+		}
+	}
+	else if (event->type == SDL_CONTROLLERBUTTONDOWN)
+	{
+		switch (event->cbutton.button)
+		{
+		case SDL_CONTROLLER_BUTTON_A: 
+			input.jump = true; 
+			break;
+		}
+	}
+	else if (event->type == SDL_CONTROLLERBUTTONUP)
+	{
+		switch (event->cbutton.button)
+		{
+		case SDL_CONTROLLER_BUTTON_A: 
+			input.jump = false; 
+			break;
 		}
 	}
 }
