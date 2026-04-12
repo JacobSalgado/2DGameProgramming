@@ -188,19 +188,21 @@ void Player::handle_input(SDL_Event* event)
 	int gamepadY = get_gamepad_y_direction();
 
 	// analog stick movement
-	if (gamepadX > 0)
+	/*if (gamepadX > 0)
 	{
 		input.right = true;
+		input.left = false;
 	}
 	else if (gamepadX < 0)
 	{
 		input.left = true;
+		input.right = false;
 	}
-	else if (gamepadX == 0)
+	else
 	{
 		input.right = false;
 		input.left = false;
-	}
+	}*/
 
 	if (event->type == SDL_KEYDOWN && event->key.repeat == 0)
 	{
@@ -230,18 +232,18 @@ void Player::handle_input(SDL_Event* event)
 	{
 		switch (event->cbutton.button)
 		{
-		case SDL_CONTROLLER_BUTTON_A: 
-			input.jump = true; 
-			break;
+		case SDL_CONTROLLER_BUTTON_A: input.jump = true; break;
+		case SDL_CONTROLLER_BUTTON_DPAD_LEFT: input.left = true; break;
+		case SDL_CONTROLLER_BUTTON_DPAD_RIGHT: input.right = true; break;
 		}
 	}
 	else if (event->type == SDL_CONTROLLERBUTTONUP)
 	{
 		switch (event->cbutton.button)
 		{
-		case SDL_CONTROLLER_BUTTON_A: 
-			input.jump = false; 
-			break;
+		case SDL_CONTROLLER_BUTTON_A: input.jump = false; break;
+		case SDL_CONTROLLER_BUTTON_DPAD_LEFT: input.left = false; break;
+		case SDL_CONTROLLER_BUTTON_DPAD_RIGHT: input.right = false; break;
 		}
 	}
 }
