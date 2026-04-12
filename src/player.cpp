@@ -16,6 +16,7 @@ extern "C"
 
 Player* Player::_instance = nullptr;
 
+
 Player* Player::create_instance(int x, int y)
 {
 	if (!_instance)
@@ -45,15 +46,17 @@ Player::Player(int x, int y)
 
 	/* TEMPORARY */
 	entity->width = 94;
-	entity->height = 130;
-	entity->velocity = gfc_vector2d(0, 0);
+	entity->height = 118;
+	entity->velocity = gfc_vector2d(2, 2);
+
+	entity->scale = gfc_vector2d(1, 1);
 
 	/* TEMPORARY */
 	entity->sprite = gf2d_sprite_load_all(
-		"images/sonic.png",
+		"images/sonic_idle.png",
 		94,
-		130,
-		13,
+		118,
+		1,
 		0
 	);
 	entity->frame = 0;
@@ -72,6 +75,13 @@ Player::Player(int x, int y)
 		};
 
 	entity->gravityOn = true;
+
+	static const AnimationDef anim_defs[ANIM_COUNT] =
+	{
+		{
+			// "images/sonic.png"
+		}
+	};
 }
 
 Player::~Player()
@@ -103,8 +113,8 @@ void Player::think()
 		entity->velocity.x = -move_speed;
 		if (!moving)
 		{
-			entity->sprite->frame_w = 106;
-			entity->frame = 25;
+			//entity->sprite->frame_w = 106;
+			//entity->frame = 25;
 		}
 		moving = true;
 	}
@@ -115,14 +125,14 @@ void Player::think()
 		// previous issue is that think is a continuous check so frame would stay still if input is being pressed
 		if (!moving) // this helps reset frame when sonic starts to move
 		{
-			entity->sprite->frame_w = 106;
-			entity->frame = 25;
+			//entity->sprite->frame_w = 106;
+			//entity->frame = 25;
 		}
 		moving = true;
 	}
 	else
 	{
-		entity->sprite->frame_w = 94;
+		//entity->sprite->frame_w = 94;
 		entity->velocity.x *= friction; // to stop the player
 		moving = false;
 	}
@@ -130,7 +140,7 @@ void Player::think()
 	// jumping
 	if (input.jump && entity->onGround)
 	{
-		entity->sprite->frame_w = 94;
+		//entity->sprite->frame_w = 94;
 		jumping = true;
 		entity->frame = 9; // p
 		entity->velocity.y = jump_force;
@@ -144,7 +154,7 @@ void Player::update()
 	entity->frame += 0.1; // how fast the frame plays
 	if (!entity->onGround && jumping)
 	{
-		if (entity->frame >= 13) entity->frame = 9;
+		//if (entity->frame >= 13) entity->frame = 9;
 	}
 	else if (entity->onGround)
 	{
@@ -156,7 +166,7 @@ void Player::update()
 		was_moving = moving;
 		if (moving)
 		{
-			if (entity->frame >= 28) entity->frame = 25;
+			//if (entity->frame >= 28) entity->frame = 25;
 		}
 	}
 	
@@ -205,11 +215,4 @@ extern "C" int player_is_jumping(Entity* player)
 		return 1;
 	else
 		return 0;
-}
-
-SDL_Rect Player::rect()
-{
-	SDL_Rect playerRect = { entity->position.x, entity->position.y, 128, 128 };
-
-	return playerRect;
 }

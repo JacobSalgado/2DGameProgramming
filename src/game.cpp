@@ -17,6 +17,7 @@ extern "C"
 
     #include "font.h"
     #include "camera.h"
+    #include "gamepad.h" 
     #include "entity.h"
     #include "ring.h"
     #include "spring.h"
@@ -34,6 +35,8 @@ int main(int argc, char * argv[])
     int done = 0;
     const Uint8 * keys;
     const char* windowName = "Sonic";
+
+    SDL_GameController* controller = NULL;
 
     World* level;
     
@@ -69,12 +72,15 @@ int main(int argc, char * argv[])
     
     /*demo setup*/
     Player::destroy_instance();
-    Player* sonic =  Player::create_instance(800, 1500);
+    Player* sonic =  Player::create_instance(800, 1300);
 
     level = world_load("maps/testworld.json");
     entity_system_set_world(level);
     world_spawn_entities(level, sonic->entity);
     world_setup_camera(level);
+
+    // controller setup
+    gamepad_init(&controller);
 
     slog("press [escape] to quit");
     /*main game loop*/
@@ -94,6 +100,10 @@ int main(int argc, char * argv[])
                 done = true;
             }
             sonic->handle_input(&event);
+
+            if (event.type == SDL_JOYAXISMOTION)
+            {
+            }
         }
 
         entity_system_think();
@@ -140,6 +150,7 @@ int main(int argc, char * argv[])
         //slog("Rendering at %f FPS",gf2d_graphics_get_frames_per_second());
     }
     sonic->~Player();
+    gamepad_close(&controller);
     free_world(level);
     slog("---==== END ====---");
     return 0;

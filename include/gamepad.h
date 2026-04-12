@@ -1,0 +1,20 @@
+#ifndef __GAMEPAD_H__
+#define __GAMEPAD_H__
+
+#include "SDL_gamecontroller.h"
+#include "SDL_events.h"
+
+// Deadzone values - this is so the controller is not too sensitive
+const int DEAD_ZONE = 8000;
+extern int xDirection;
+extern int yDirection;
+
+void gamepad_init(SDL_GameController** controller);
+
+void gamepad_close(SDL_GameController** controller);
+
+void gamepad_cleanup();
+
+void handle_input(SDL_Event* event);
+
+#endif

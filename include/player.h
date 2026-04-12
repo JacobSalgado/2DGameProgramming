@@ -47,6 +47,9 @@ public:
 
 	Entity* entity; /// < pointer into existing C pool
 
+	Uint8 moving = false;
+	Uint8 jumping = false;
+
 	/**
 	* @brief deconstructor, cleans up the player entity and frees the singleton instance
 	*/
@@ -88,9 +91,6 @@ private:
 	Player(int x, int y);	
 
 	static Player* _instance; /// < the single instance of the player
-
-	Uint8 moving = false;
-	Uint8 jumping = false;
 
 	Uint8 was_moving = false;
 	Uint8 was_jumping = false;

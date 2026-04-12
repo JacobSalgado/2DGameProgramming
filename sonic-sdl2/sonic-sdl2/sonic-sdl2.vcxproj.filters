@@ -198,6 +198,9 @@
     <ClCompile Include="..\..\src\audio.c">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="..\..\src\gamepad.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="..\..\include\camera.h">
@@ -354,6 +357,9 @@
       <Filter>Header FIles\entities\enemies</Filter>
     </ClInclude>
     <ClInclude Include="..\..\include\audio.h">
+      <Filter>Header FIles</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\include\gamepad.h">
       <Filter>Header FIles</Filter>
     </ClInclude>
   </ItemGroup>
