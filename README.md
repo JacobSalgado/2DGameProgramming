@@ -1,3 +1,11 @@
+# Sonic the Hedgehog - Made in C/C++ and SDL2
+
+## Credits
+- [**Sonic Spritesheet**](https://www.deviantart.com/pkgsonic/art/sonic-the-hedgehog-sprite-sheet-954267733)
+- [**In-Game Font - Andes Font - Used in the Sonic the Hedgehog 3 Cutscenes**](https://www.sonicscene.net/media-and-downloads/fonts)
+- 
+
+---
 # gameframework2d (GF2D)
 a collection of utlitity functions designed to facilitate creating 2D games with SDL2
 This project is specifically intended to function as an educational tool for my students taking 2D Game Programming.
