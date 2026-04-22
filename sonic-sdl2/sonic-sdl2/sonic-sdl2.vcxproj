@@ -120,6 +120,7 @@
     <ClInclude Include="..\..\include\powerups.h" />
     <ClInclude Include="..\..\include\projectile.h" />
     <ClInclude Include="..\..\include\shield_enemy.h" />
+    <ClInclude Include="..\..\include\sonic.h" />
     <ClInclude Include="..\..\include\speedpad.h" />
     <ClInclude Include="..\..\include\spring.h" />
     <ClInclude Include="..\..\include\turret_enemy.h" />

@@ -15,6 +15,13 @@ extern "C"
 }
 #endif
 
+static const AnimationDef anim_defs[ANIM_COUNT] =
+{	// filename					w,	h,	fpr,s, end
+	{"images/sonic_genesis.png", 97, 81, 9, 0, 3}, // idle
+	{"images/sonic_genesis.png", 97, 81, 9, 4, 9}, // run
+	{"images/sonic_genesis.png", 97, 81, 9, 28, 31}, // Jump
+};
+
 Player* Player::_instance = nullptr;
 
 
@@ -46,21 +53,37 @@ Player::Player(int x, int y)
 	entity->position.y = y;
 
 	/* TEMPORARY */
-	entity->width = 94;
-	entity->height = 118;
+	entity->width = 97;
+	entity->height = 81;
 	entity->velocity = gfc_vector2d(2, 2);
 
 	entity->scale = gfc_vector2d(1, 1);
 
+	for (int i = 0; i < ANIM_COUNT; i++)
+	{
+		const AnimationDef& def = anim_defs[i];
+		sprites[i] = gf2d_sprite_load_all(
+			def.filename,
+			def.frame_w,
+			def.frame_h,
+			def.frames_per_row,
+			0
+		);
+	}
+	current_anim = ANIM_Idle;
+	previous_anim = ANIM_Idle;
+	entity->sprite = sprites[ANIM_Idle];
+	entity->frame = 0;
+
 	/* TEMPORARY */
-	entity->sprite = gf2d_sprite_load_all(
+	/*entity->sprite = gf2d_sprite_load_all(
 		"images/sonic_idle.png",
 		94,
 		118,
 		1,
 		0
 	);
-	entity->frame = 0;
+	entity->frame = 0;*/
 	entity->data = this; // important to set so it doesn't crash
 
 	entity->think = [](Entity* e)
@@ -112,23 +135,12 @@ void Player::think()
 	{
 		entity->scale.x = -fabs(entity->scale.x);
 		entity->velocity.x = -move_speed;
-		if (!moving)
-		{
-			//entity->sprite->frame_w = 106;
-			//entity->frame = 25;
-		}
 		moving = true;
 	}
 	else if (input.right)
 	{
 		entity->scale.x = fabs(entity->scale.x);
 		entity->velocity.x = move_speed;
-		// previous issue is that think is a continuous check so frame would stay still if input is being pressed
-		if (!moving) // this helps reset frame when sonic starts to move
-		{
-			//entity->sprite->frame_w = 106;
-			//entity->frame = 25;
-		}
 		moving = true;
 	}
 	else
@@ -150,25 +162,35 @@ void Player::think()
 	}
 }
 
+void Player::set_animation(PlayerAnimation anim)
+{
+	if (anim == current_anim) return;
+
+	previous_anim = current_anim;
+	current_anim = anim;
+	entity->sprite = sprites[anim];
+	entity->frame = anim_defs[anim].start_frame;
+}
+
 void Player::update()
 {	
-	entity->frame += 0.1; // how fast the frame plays
 	if (!entity->onGround && jumping)
-	{
-		//if (entity->frame >= 13) entity->frame = 9;
-	}
-	else if (entity->onGround)
+		set_animation(ANIM_Jump);
+	else if (moving)
+		set_animation(ANIM_Run);
+	else
+		set_animation(ANIM_Idle);
+
+	entity->frame += 0.1; // how fast the frame plays
+
+	// only within animation range
+	const AnimationDef& def = anim_defs[current_anim];
+	if (entity->frame >= def.end_frame)
+		entity->frame = def.start_frame;
+	
+	if (entity->onGround)
 	{
 		jumping = false;
-		if (!moving)
-		{
-			entity->frame = 0;
-		}
-		was_moving = moving;
-		if (moving)
-		{
-			//if (entity->frame >= 28) entity->frame = 25;
-		}
 	}
 	
 	//if (entity->frame >= 26) entity->frame = 0;
@@ -187,7 +209,7 @@ void Player::handle_input(SDL_Event* event)
 	int gamepadX = get_gamepad_x_direction();
 	int gamepadY = get_gamepad_y_direction();
 
-	// analog stick movement
+	// analog stick movement - drift occurs
 	/*if (gamepadX > 0)
 	{
 		input.right = true;
