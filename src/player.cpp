@@ -11,6 +11,7 @@ extern "C"
 #include "camera.h"
 #include "gamepad.h"
 #include "collision.h"
+#include "audio.h"
 #include "ring.h"
 }
 #endif
@@ -107,6 +108,8 @@ Player::Player(int x, int y/*, const AnimationDef& def*/)
 			// "images/sonic.png"
 		}
 	};
+
+	jump_sound = audio_load_sound("audio/jump.wav");
 }
 
 Player::~Player()
@@ -156,6 +159,7 @@ void Player::think()
 	{
 		//entity->sprite->frame_w = 94;
 		jumping = true;
+		audio_play_sound(jump_sound);
 		entity->frame = 9; // p
 		entity->velocity.y = jump_force;
 		entity->onGround = 0;

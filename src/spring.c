@@ -3,6 +3,7 @@
 #include "gfc_shape.h"
 
 #include "entity.h"
+#include "audio.h"
 #include "spring.h"
 
 #define SPRING_LAUNCH_VELOCITY -12.0f
@@ -34,6 +35,7 @@ Entity* spring_new(float x, float y)
 
 	SpringData* data = gfc_allocate_array(sizeof(SpringData), 1);
 	data->launch_velocity = SPRING_LAUNCH_VELOCITY;
+	data->spring_sound = audio_load_sound("audio/spring.wav");
 
 	spring->type = ENTITY_TYPE_SPRING;
 	spring->frame = 0; /*<the current frame of animation for the sprite>*/
@@ -79,6 +81,7 @@ int spring_activate(Entity* spring, Entity* player)
 		player->onGround = 0;
 
 		data->triggered = 1;
+		audio_play_sound(data->spring_sound);
 		spring->frame = 1;
 		return 1;
 	}

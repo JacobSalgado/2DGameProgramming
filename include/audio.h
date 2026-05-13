@@ -8,7 +8,7 @@ typedef enum
 	
 }AudioType;
 
-int volume;
+extern int volume;
 
 /**
 * @brief initializes audio system

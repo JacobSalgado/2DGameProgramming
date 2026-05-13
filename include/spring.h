@@ -7,6 +7,7 @@ typedef struct
 {
 	float launch_velocity;
 	Uint8 triggered;
+	int spring_sound;
 }SpringData;
 
 /**

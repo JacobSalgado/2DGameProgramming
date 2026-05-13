@@ -64,6 +64,8 @@ public:
 	Uint8 moving = false;
 	Uint8 jumping = false;
 
+	int jump_sound;
+
 	/**
 	* @brief deconstructor, cleans up the player entity and frees the singleton instance
 	*/

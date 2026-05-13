@@ -18,6 +18,8 @@ typedef struct
 
 static AudioManager _audio_manager = { 0 };
 
+int volume = 0;
+
 void audio_init()
 {
 	_audio_manager.backgroundMusicList = gfc_list_new();
