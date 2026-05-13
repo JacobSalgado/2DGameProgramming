@@ -35,6 +35,20 @@ struct AnimationDef
 */
 class Player
 {
+protected:
+	/**
+	* @brief private constructor, prevents direct instantiation
+	* @note use get_instance() instead
+	* @param x the starting x position
+	* @param y the starting y position
+	* @param def the animation file for the player
+	*/
+	Player(int x, int y/*, const AnimationDef& def*/);
+
+	Sprite* sprites[ANIM_COUNT];
+	PlayerAnimation current_anim;
+	PlayerAnimation previous_anim;
+
 public:
 	struct Inputs
 	{
@@ -58,7 +72,7 @@ public:
 	/**
 	* @brief destroys the singleton instance and frees all associated memory
 	*/
-	static Player* create_instance(int x, int y);
+	static Player* create_instance(int x, int y/*, const AnimationDef& def*/);
 
 	/**
 	* @brief destroys the singleton instance and frees all associated memory
@@ -81,26 +95,14 @@ public:
 	*/
 	virtual void handle_input(SDL_Event* event);
 
-private:
-	/**
-	* @brief private constructor, prevents direct instantiation
-	* @note use get_instance() instead
-	* @param x the starting x position
-	* @param y the starting y position
-	*/
-	Player(int x, int y);	
+	void set_animation(PlayerAnimation anim);
 
+private:	
 	static Player* _instance; /// < the single instance of the player
 
 	Uint8 was_moving = false;
 	Uint8 was_jumping = false;
 	Uint8 was_on_ground = false;
-
-	Sprite* sprites[ANIM_COUNT];
-	PlayerAnimation current_anim;
-	PlayerAnimation previous_anim;
-
-	void set_animation(PlayerAnimation anim);
 };
 
 #endif

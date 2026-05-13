@@ -25,11 +25,11 @@ static const AnimationDef anim_defs[ANIM_COUNT] =
 Player* Player::_instance = nullptr;
 
 
-Player* Player::create_instance(int x, int y)
+Player* Player::create_instance(int x, int y/*, const AnimationDef& def*/)
 {
 	if (!_instance)
 	{
-		_instance = new Player(x, y);
+		_instance = new Player(x, y/*, def*/);
 	}
 	return _instance;
 }
@@ -43,7 +43,7 @@ void Player::destroy_instance()
 	}
 }
 
-Player::Player(int x, int y)
+Player::Player(int x, int y/*, const AnimationDef& def*/)
 {
 	entity = entity_new();
 
@@ -62,6 +62,7 @@ Player::Player(int x, int y)
 	for (int i = 0; i < ANIM_COUNT; i++)
 	{
 		const AnimationDef& def = anim_defs[i];
+		//def = anim_defs[i];
 		sprites[i] = gf2d_sprite_load_all(
 			def.filename,
 			def.frame_w,

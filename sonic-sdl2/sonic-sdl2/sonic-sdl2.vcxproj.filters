@@ -43,6 +43,12 @@
     <Filter Include="Header FIles\entities\enemies">
       <UniqueIdentifier>{29cac43a-9cb5-4782-9efe-dd5efe2f545a}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Header FIles\entities\players">
+      <UniqueIdentifier>{d3edc103-f9d4-44bf-b170-3dfab4a85f93}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\entities\players">
+      <UniqueIdentifier>{55976a3d-0cf6-4f25-830f-9bbd0a17f6b4}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="..\..\gfc\src\miniz.c">
@@ -177,9 +183,6 @@
     <ClCompile Include="..\..\src\entity.c">
       <Filter>Source Files\entities</Filter>
     </ClCompile>
-    <ClCompile Include="..\..\src\player.cpp">
-      <Filter>Source Files\entities</Filter>
-    </ClCompile>
     <ClCompile Include="..\..\src\spring.c">
       <Filter>Source Files\entities</Filter>
     </ClCompile>
@@ -200,6 +203,15 @@
     </ClCompile>
     <ClCompile Include="..\..\src\gamepad.c">
       <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\src\leveleditor.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\src\player.cpp">
+      <Filter>Source Files\entities\players</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\src\tails.cpp">
+      <Filter>Source Files\entities\players</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
@@ -338,9 +350,6 @@
     <ClInclude Include="..\..\include\entity.h">
       <Filter>Header FIles\entities</Filter>
     </ClInclude>
-    <ClInclude Include="..\..\include\player.h">
-      <Filter>Header FIles\entities</Filter>
-    </ClInclude>
     <ClInclude Include="..\..\include\ring.h">
       <Filter>Header FIles\entities</Filter>
     </ClInclude>
@@ -362,8 +371,14 @@
     <ClInclude Include="..\..\include\gamepad.h">
       <Filter>Header FIles</Filter>
     </ClInclude>
-    <ClInclude Include="..\..\include\sonic.h">
-      <Filter>Header FIles\entities</Filter>
+    <ClInclude Include="..\..\include\leveleditor.h">
+      <Filter>Header FIles</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\include\player.h">
+      <Filter>Header FIles\entities\players</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\include\tails.h">
+      <Filter>Header FIles\entities\players</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>

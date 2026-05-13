@@ -117,6 +117,10 @@ void apply_gravity(Entity* self, float deltaTime);
 
 void entity_system_set_world(World* world);
 
+/**
+* @brief checks if an enemy type is colliding while the player is jumping
+* @param player the player colliding with
+*/
 int enemy_collide_check(Entity* player);
 
 Uint32 entity_system_get_max();

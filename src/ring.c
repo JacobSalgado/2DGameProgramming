@@ -4,6 +4,8 @@
 
 #include "camera.h"
 
+#include "audio.h"
+
 #include "ring.h"
 
 static RingManager _ring_manager = { 0 }; /**<initialize a LOCAL global ring manager*/
@@ -26,7 +28,10 @@ void ring_system_init(Uint32 max)
 		slog("failed to allocate ring list");
 		return;
 	}
+	//audio_init();
 	_ring_manager.ring_max = max;
+	_ring_manager.ring_sound = audio_load_sound("audio/ring_sound.wav");
+	slog("ring_sound index: %d", _ring_manager.ring_sound);
 	slog("ring system initialized");
 	atexit(ring_system_close);
 }
@@ -160,6 +165,10 @@ int ring_collect(Entity* ring, Entity* player)
 	{
 		slog("player overlapping with ring");
 		ring->_inuse = 0;
+		if (_ring_manager.ring_sound >= 0)
+			audio_play_sound(_ring_manager.ring_sound);
+		else
+			slog("ring_sound not loaded, skipping audio");
 		entity_destroy(ring);
 		return 1;
 	}

@@ -16,6 +16,7 @@ extern "C"
     #include "gf2d_sprite.h"
 
     #include "font.h"
+    #include "audio.h"
     #include "camera.h"
     #include "gamepad.h" 
     #include "entity.h"
@@ -63,6 +64,7 @@ int main(int argc, char * argv[])
         gfc_vector4d(0,0,0,255),
         0);
     gf2d_graphics_set_frame_delay(16);
+    audio_init();
     gf2d_sprite_init(1024);
     font_init();
     entity_system_initialize(1024);
@@ -73,6 +75,9 @@ int main(int argc, char * argv[])
     /*demo setup*/
     Player::destroy_instance();
     Player* sonic =  Player::create_instance(800, 1300);
+
+    int song = audio_load_music("audio/Emerald_Hill_Zone.mp3");
+    audio_play_music(song);
 
     level = world_load("maps/testworld.json");
     entity_system_set_world(level);
@@ -148,6 +153,7 @@ int main(int argc, char * argv[])
     sonic->~Player();
     gamepad_close(&controller);
     free_world(level);
+    audio_close();
     slog("---==== END ====---");
     return 0;
 }

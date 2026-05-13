@@ -15,6 +15,7 @@ typedef struct
 {
 	Entity* ring_list;
 	Uint32	ring_max;
+	int ring_sound;
 }RingManager;
 
 void ring_system_init(Uint32 max);
