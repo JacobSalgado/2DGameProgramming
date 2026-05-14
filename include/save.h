@@ -5,6 +5,7 @@ typedef struct {
 	int rings;
 	int current_level;
 	char current_level_path[256];
+	char music_path[256];
 } SaveData;
 
 /**

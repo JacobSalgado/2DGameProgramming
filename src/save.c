@@ -27,6 +27,7 @@ void save_data_write(SaveData* data)
 	sj_object_insert(root, "rings", sj_new_int(data->rings));
 	sj_object_insert(root, "current_level", sj_new_int(data->current_level));
 	sj_object_insert(root, "current_level_path", sj_new_str(data->current_level_path));
+	sj_object_insert(root, "music_path", sj_new_str(data->music_path));
 
 	sj_save(root, SAVE_FILE);
 	sj_free(root);
@@ -49,6 +50,9 @@ SaveData save_data_read()
 
 	const char* path = sj_get_string_value(sj_object_get_value(root, "current_level_path"));
 	if (path) gfc_line_sprintf(data.current_level_path, "%s", path);
+
+	const char* music = sj_get_string_value(sj_object_get_value(root, "music_path"));
+	if (music) snprintf(data.music_path, 256, "%s", music);
 
 	sj_free(root);
 	return data;
