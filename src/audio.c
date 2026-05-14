@@ -33,7 +33,7 @@ void audio_init()
 		slog("SDL_Mixer couldn't initialize. Error: %s\n", Mix_GetError());
 		return;
 	}
-	set_volume(50);
+	set_volume(10);
 }
 
 int audio_load_music(const char* filename)

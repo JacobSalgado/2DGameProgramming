@@ -39,6 +39,7 @@ extern "C" void request_transition(const char* next_level)
 typedef enum
 {
     STATE_MENU,
+    STATE_PAUSED,
     STATE_GAME,
     STATE_QUIT
 } GameState;
@@ -47,6 +48,7 @@ typedef struct
 {
     int selected;
     bool has_save;
+    bool is_paused;
     Sprite* background;
 } MenuState;
 
@@ -79,19 +81,42 @@ void menu_draw(MenuState* menu)
     // draw title
     font_draw_text("Sonic the Hedgehog", FS_large, GFC_COLOR_YELLOW, gfc_vector2d(500,150));
 
-    // draw menu options
-    GFC_Color start_color = (menu->selected == 0) ? GFC_COLOR_YELLOW : GFC_COLOR_WHITE;
-    GFC_Color continue_color = (menu->selected == 1) ? GFC_COLOR_YELLOW : (menu->has_save ? GFC_COLOR_WHITE : GFC_COLOR_DARKGREY);
-    GFC_Color quit_color = (menu->selected == 2) ? GFC_COLOR_YELLOW : GFC_COLOR_WHITE;
+    //int y_offset = 300;
 
-    font_draw_text("Start Game", FS_medium, start_color, gfc_vector2d(500,300));
-    font_draw_text("Continue", FS_medium, continue_color, gfc_vector2d(500, 370));
-    font_draw_text("Quit", FS_medium, quit_color, gfc_vector2d(500, 440));
+    if (menu->is_paused)
+    {
+        GFC_Color c = (menu->selected == 0) ? GFC_COLOR_YELLOW : GFC_COLOR_WHITE;
+        //font_draw_text("Resume", FS_medium, c, gfc_vector2d(500, y_offset));
+        //y_offset += 70;
+        font_draw_text("Resume", FS_medium, menu->selected == 0 ? GFC_COLOR_YELLOW : GFC_COLOR_WHITE, gfc_vector2d(500, 280));
+        font_draw_text("Start New", FS_medium, menu->selected == 1 ? GFC_COLOR_YELLOW : GFC_COLOR_WHITE, gfc_vector2d(500, 350));
+        font_draw_text("Continue", FS_medium, menu->selected == 2 ? GFC_COLOR_YELLOW : (menu->has_save ? GFC_COLOR_WHITE : GFC_COLOR_DARKGREY), gfc_vector2d(500, 420));
+        font_draw_text("Quit", FS_medium, menu->selected == 3 ? GFC_COLOR_YELLOW : GFC_COLOR_WHITE, gfc_vector2d(500, 490));
+    }
+    else
+    {
+        font_draw_text("Start Game", FS_medium, menu->selected == 0 ? GFC_COLOR_YELLOW : GFC_COLOR_WHITE, gfc_vector2d(500, 300));
+        font_draw_text("Continue", FS_medium, menu->selected == 2 ? GFC_COLOR_YELLOW : (menu->has_save ? GFC_COLOR_WHITE : GFC_COLOR_DARKGREY), gfc_vector2d(500, 370));
+        font_draw_text("Quit", FS_medium, menu->selected == 3 ? GFC_COLOR_YELLOW : GFC_COLOR_WHITE, gfc_vector2d(500, 440));
+    }
+
+    int start_idx = menu->is_paused ? 1 : 0;
+    int continue_idx = menu->is_paused ? 2 : 1;
+    int quit_idx = menu->is_paused ? 3 : 2;
+
+    // draw menu options
+    //GFC_Color start_color = (menu->selected == 0) ? GFC_COLOR_YELLOW : GFC_COLOR_WHITE;
+    //GFC_Color continue_color = (menu->selected == 1) ? GFC_COLOR_YELLOW : (menu->has_save ? GFC_COLOR_WHITE : GFC_COLOR_DARKGREY);
+    //GFC_Color quit_color = (menu->selected == 2) ? GFC_COLOR_YELLOW : GFC_COLOR_WHITE;
+
+    
 }
 
 GameState menu_handle_input(SDL_Event* event, MenuState* menu)
 {
     if (!event || !menu) return STATE_MENU;
+
+    int max_option = menu->is_paused ? 3 : 2;
 
     if (event->type == SDL_KEYDOWN)
     {
@@ -99,30 +124,49 @@ GameState menu_handle_input(SDL_Event* event, MenuState* menu)
         {
         case SDL_SCANCODE_UP:
             menu->selected--;
-            // skip continue if no save
-            if (menu->selected == 1 && !menu->has_save)
+            if (menu->selected < 0) menu->selected = max_option;
+            // skip continue if no save (index 2 paused, index 1 normal)
+            if (menu->is_paused && menu->selected == 2 && !menu->has_save)
                 menu->selected--;
-            if (menu->selected < 0) menu->selected = 2;
+            if (!menu->is_paused && menu->selected == 1 && !menu->has_save)
+                menu->selected--;
             break;
+
         case SDL_SCANCODE_DOWN:
             menu->selected++;
+            if (menu->selected > max_option) menu->selected = 0;
             // skip continue if no save
-            if (menu->selected == 1 && !menu->has_save)
+            if (menu->is_paused && menu->selected == 2 && !menu->has_save)
                 menu->selected++;
-            if (menu->selected > 2) menu->selected = 0;
+            if (!menu->is_paused && menu->selected == 1 && !menu->has_save)
+                menu->selected++;
             break;
 
         case SDL_SCANCODE_RETURN:
         case SDL_SCANCODE_SPACE:
-            if (menu->selected == 0) return STATE_GAME; // start
-            if (menu->selected == 1 && menu->has_save) return STATE_GAME;
-            if (menu->selected == 2) return STATE_QUIT;
+            if (menu->is_paused)
+            {
+                if (menu->selected == 0) return STATE_GAME;  // Resume
+                if (menu->selected == 1) return STATE_GAME;  // Start New
+                if (menu->selected == 2 && menu->has_save) return STATE_GAME; // Continue
+                if (menu->selected == 3) return STATE_QUIT;  // Quit
+            }
+            else
+            {
+                if (menu->selected == 0) return STATE_GAME;  // Start
+                if (menu->selected == 1 && menu->has_save) return STATE_GAME; // Continue
+                if (menu->selected == 2) return STATE_QUIT;  // Quit
+            }
+            break;
+
+        case SDL_SCANCODE_ESCAPE:
+            if (menu->is_paused) return STATE_GAME; // escape resumes
             break;
 
         default: break;
         }
     }
-    return STATE_MENU;
+    return menu->is_paused ? STATE_PAUSED : STATE_MENU;
 }
 
 World* level_transition(World* current_level, Player* sonic, const char* next_level_path, int& ringCount)
@@ -292,6 +336,19 @@ int main(int argc, char * argv[])
             {
                 sonic->handle_input(&event);
             }
+            else if (state == STATE_PAUSED)
+            {
+                GameState new_state = menu_handle_input(&event, &menu);
+                if (new_state == STATE_GAME)
+                {
+                    menu.is_paused = false;
+                    state = STATE_GAME;
+                }
+                else if (new_state == STATE_QUIT)
+                {
+                    done = true;
+                }
+            }
         }
 
         if (state == STATE_QUIT) done = 1;
@@ -346,8 +403,17 @@ int main(int argc, char * argv[])
 
             if (keys[SDL_SCANCODE_ESCAPE])
             {
-                done = 1;
+                menu.is_paused = true;
+                menu.selected = 0;
+                state = STATE_PAUSED;
             }
+        }
+        else if (state == STATE_PAUSED)
+        {
+            draw_world(level);
+            entity_system_draw();
+            ring_system_draw();
+            menu_draw(&menu);
         }
 
         gf2d_graphics_next_frame();
