@@ -196,6 +196,9 @@ World* world_load(const char* filename)
 		}
 	}
 
+	const char* music = sj_object_get_value_as_string(wjson, "music");
+	if (music) snprintf(world->music_path, 256, "%s", music);
+
 	SJson* terrainsArray = sj_object_get_value(wjson, "terrains");
 	if (terrainsArray)
 	{
@@ -283,6 +286,8 @@ World* world_load(const char* filename)
 	world->background = gf2d_sprite_load_image(background);
 
 	tileSet = sj_object_get_value_as_string(wjson, "tileSet");
+	sj_object_get_value_as_float(wjson, "player_start_x", &world->player_start_x);
+	sj_object_get_value_as_float(wjson, "player_start_y", &world->player_start_y);
 	sj_object_get_value_as_int(wjson, "frame_w", &frame_w);
 	sj_object_get_value_as_int(wjson, "frame_h", &frame_h);
 	sj_object_get_value_as_int(wjson, "frames_per_line", &frames_per_line);

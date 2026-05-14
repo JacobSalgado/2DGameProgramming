@@ -66,7 +66,16 @@ World* level_transition(World* current_level, Player* sonic, const char* next_le
     // respawn entities
     entity_system_set_world(next);
     world_spawn_entities(next, sonic->entity);
+    sonic->entity->position = gfc_vector2d(next->player_start_x, next->player_start_y);
+    sonic->entity->velocity = gfc_vector2d(0, 0);
     world_setup_camera(next);
+
+    audio_stop_music();
+    if (strlen(next->music_path) > 0)
+    {
+        int song = audio_load_music(next->music_path);
+        audio_play_music(song);
+    }
 
     // restore rings
     ringCount = save.rings;

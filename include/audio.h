@@ -29,6 +29,8 @@ void set_volume(int volume);
 
 void audio_play();
 
+void audio_stop_music();
+
 /**
 * @brief cleans up any internal cache
 */

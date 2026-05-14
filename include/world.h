@@ -55,6 +55,11 @@ typedef struct World_S
 
 	SJson* entitiesJson;
 	SJson* _json;
+
+	float player_start_x;
+	float player_start_y;
+
+	char music_path[256];
 }
 World;
 
