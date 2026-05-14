@@ -5,11 +5,15 @@
 #ifdef __cplusplus
 extern "C" 
 {
+#endif
 	#include "entity.h"
 
 	int player_is_jumping(Entity* player);
+	void entity_set_player(Entity* player);
+
+#ifdef __cplusplus
 }
-#endif
+
 
 enum PlayerAnimation
 {
@@ -107,4 +111,5 @@ private:
 	Uint8 was_on_ground = false;
 };
 
+#endif
 #endif

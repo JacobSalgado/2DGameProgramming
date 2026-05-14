@@ -29,7 +29,8 @@ typedef enum
 	ENTITY_TYPE_RING,
 	ENTITY_TYPE_SPRING,
 	ENTITY_TYPE_SPEEDPAD,
-	ENTITY_TYPE_PROJECTILE
+	ENTITY_TYPE_PROJECTILE,
+	ENTITY_TYPE_GOALPOST
 }EntityType;
 
 typedef struct Entity_S
@@ -126,5 +127,10 @@ int enemy_collide_check(Entity* player);
 Uint32 entity_system_get_max();
 
 Entity* entity_system_get(int index);
+
+void entity_set_player(Entity* player);
+
+Entity* entity_get_player();
+
 
 #endif

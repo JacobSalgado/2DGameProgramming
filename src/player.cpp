@@ -47,6 +47,7 @@ void Player::destroy_instance()
 Player::Player(int x, int y/*, const AnimationDef& def*/)
 {
 	entity = entity_new();
+	entity_set_player(entity);
 
 	entity->type = ENTITY_TYPE_PLAYER;
 

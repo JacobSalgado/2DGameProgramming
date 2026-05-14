@@ -11,6 +11,7 @@
 #include "spring.h"
 //#include "turret_enemy.h"
 //#include "fly_enemy.h"
+#include "goalpost.h"
 #include "speedpad.h"
 #include "enemy_spawn.h"
 
@@ -471,6 +472,11 @@ void world_spawn_entities(World* world, Entity* player)
 			spawn_fly_enemy(x, y);
 		else if (strcmp(type, "turret") == 0)
 			spawn_turret_enemy(x, y, player);
+		else if (strcmp(type, "goal_post") == 0)
+		{
+			const char* next = sj_object_get_value_as_string(w, "next_level");
+			if (next) goalpost_new(x, y, next);
+		}
 		else
 			slog("unknown entity type attempting to be spawned");
 	}

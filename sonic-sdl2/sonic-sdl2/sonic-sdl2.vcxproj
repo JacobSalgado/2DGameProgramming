@@ -61,6 +61,7 @@
     <ClCompile Include="..\..\src\gf2d_draw.c" />
     <ClCompile Include="..\..\src\gf2d_graphics.c" />
     <ClCompile Include="..\..\src\gf2d_sprite.c" />
+    <ClCompile Include="..\..\src\goalpost.c" />
     <ClCompile Include="..\..\src\ground_enemy.cpp" />
     <ClCompile Include="..\..\src\leveleditor.c" />
     <ClCompile Include="..\..\src\powerups.c" />
@@ -119,6 +120,7 @@
     <ClInclude Include="..\..\include\gf2d_draw.h" />
     <ClInclude Include="..\..\include\gf2d_graphics.h" />
     <ClInclude Include="..\..\include\gf2d_sprite.h" />
+    <ClInclude Include="..\..\include\goalpost.h" />
     <ClInclude Include="..\..\include\ground_enemy.h" />
     <ClInclude Include="..\..\include\leveleditor.h" />
     <ClInclude Include="..\..\include\powerups.h" />

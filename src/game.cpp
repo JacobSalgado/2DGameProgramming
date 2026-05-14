@@ -29,6 +29,13 @@ extern "C"
 }
 #endif
 
+static char _pending_transition[256] = {0};
+
+extern "C" void request_transition(const char* next_level)
+{
+    snprintf(_pending_transition, 256, "%s", next_level);
+}
+
 World* level_transition(World* current_level, Player* sonic, const char* next_level_path, int& ringCount)
 {
     if (!next_level_path)
@@ -147,6 +154,13 @@ int main(int argc, char * argv[])
         }
 
         entity_system_think();
+        if (_pending_transition[0] != '\0')
+        {
+            level = level_transition(level, sonic, _pending_transition, ringCount);
+            gfc_line_sprintf(ringText, "Rings: %d", ringCount);
+            _pending_transition[0] = '\0';
+        }
+
         entity_system_update();
         world_update_moving_platforms(level);
 
@@ -171,13 +185,6 @@ int main(int argc, char * argv[])
                 speedpad_activate(ent, sonic->entity);
         }
         enemy_collide_check(sonic->entity);
-
-        // BIG TODO: replace with goal post collision
-        if (keys[SDL_SCANCODE_T])
-        {
-            level = level_transition(level, sonic, "maps/level2.json", ringCount);
-            gfc_line_sprintf(ringText, "Rings: %d", ringCount);
-        }
         
         gf2d_graphics_clear_screen();// clears drawing buffers
         // all drawing should happen betweem clear_screen and next_frame

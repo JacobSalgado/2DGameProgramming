@@ -180,8 +180,14 @@
       },
       {
         "type": "turret",
-        "x": 3500,
+        "x": 3400,
         "y": 1350
+      },
+      {
+        "type": "goal_post",
+        "x": 3600,
+        "y": 1300,
+        "next_level": "maps/level2.json"
       }
     ]
   }

@@ -19,6 +19,18 @@ void entity_system_close();
 static EntityManager _entity_manager = { 0 }; /**<initialize a LOCAL global entity manager*/
 static World* _active_world = NULL;
 
+static Entity* _player = NULL;
+
+void entity_set_player(Entity* player)
+{
+	_player = player;
+}
+
+Entity* entity_get_player()
+{
+	return _player;
+}
+
 void entity_system_initialize(Uint32 max)
 {
 	if (_entity_manager.entity_list)
