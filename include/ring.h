@@ -26,6 +26,8 @@ void ring_system_draw();
 
 void ring_system_close();
 
+void ring_system_clear();
+
 /**
 * @brief spawn a ring in a specific position
 * @return NULL on error, or a pointer to a ring

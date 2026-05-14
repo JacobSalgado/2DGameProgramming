@@ -213,6 +213,9 @@
     <ClCompile Include="..\..\src\tails.cpp">
       <Filter>Source Files\entities\players</Filter>
     </ClCompile>
+    <ClCompile Include="..\..\src\save.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="..\..\include\camera.h">
@@ -380,6 +383,10 @@
     <ClInclude Include="..\..\include\tails.h">
       <Filter>Header FIles\entities\players</Filter>
     </ClInclude>
+    <ClInclude Include="..\..\include\save.h">
+      <Filter>Header FIles</Filter>
+    </ClInclude>
+    <ClInclude Include="resource.h" />
   </ItemGroup>
   <ItemGroup>
     <None Include="..\..\maps\testworld.json">
@@ -388,5 +395,11 @@
     <None Include="..\..\pickups\powerups.json">
       <Filter>pickups</Filter>
     </None>
+    <None Include="..\..\maps\level2.json">
+      <Filter>maps</Filter>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <ResourceCompile Include="sonic-sdl2.rc" />
   </ItemGroup>
 </Project>

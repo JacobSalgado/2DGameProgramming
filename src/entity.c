@@ -58,6 +58,7 @@ void entity_clear_all(Entity* ignore)
 		if (&_entity_manager.entity_list[i] == ignore) continue;
 		if (!_entity_manager.entity_list[i]._inuse) continue; // skip this iteration of the loop
 		entity_free(&_entity_manager.entity_list[i]);
+		_entity_manager.entity_list[i]._inuse = 0;
 	}
 }
 

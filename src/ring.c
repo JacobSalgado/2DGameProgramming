@@ -198,6 +198,17 @@ void ring_free(Entity* ring)
 	if (!ring) return;
 }
 
+void ring_system_clear()
+{
+	int i;
+	for (i = 0; i < _ring_manager.ring_max; i++)
+	{
+		if (!_ring_manager.ring_list[i]._inuse) continue;
+		gf2d_sprite_free(_ring_manager.ring_list[i].sprite);
+		_ring_manager.ring_list[i]._inuse = 0;
+	}
+}
+
 Uint32 ring_system_get_max()
 {
 	return _ring_manager.ring_max;

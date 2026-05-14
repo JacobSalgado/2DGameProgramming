@@ -25,10 +25,49 @@ extern "C"
     #include "speedpad.h"
     #include "collision.h"
     #include "world.h"
+    #include "save.h"
 }
 #endif
 
+World* level_transition(World* current_level, Player* sonic, const char* next_level_path, int& ringCount)
+{
+    if (!next_level_path)
+    {
+        slog("level_transition: null level path");
+        return current_level;
+    }
 
+    // saves rings
+    SaveData save = save_data_default();
+    save.rings = ringCount;
+    snprintf(save.current_level_path, 256, next_level_path);
+    save_data_write(&save);
+
+    // clear entity and ring pools before freeing the world
+    entity_clear_all(sonic->entity);
+    ring_system_clear();
+    free_world(current_level);
+
+    // load new world
+    World* next = world_load(next_level_path);
+    if (!next)
+    {
+        slog("level transition: failed to load %s", next_level_path);
+        return NULL;
+    }
+
+    // respawn entities
+    entity_system_set_world(next);
+    world_spawn_entities(next, sonic->entity);
+    world_setup_camera(next);
+
+    // restore rings
+    ringCount = save.rings;
+    //gfc_line_sprintf(ringText, "Rings: %d", ringCount); //updates display
+
+    slog("level_transition: loaded %s, rings=%d", next_level_path, ringCount);
+    return next;
+}
 
 int main(int argc, char * argv[])
 {
@@ -132,6 +171,13 @@ int main(int argc, char * argv[])
                 speedpad_activate(ent, sonic->entity);
         }
         enemy_collide_check(sonic->entity);
+
+        // BIG TODO: replace with goal post collision
+        if (keys[SDL_SCANCODE_T])
+        {
+            level = level_transition(level, sonic, "maps/level2.json", ringCount);
+            gfc_line_sprintf(ringText, "Rings: %d", ringCount);
+        }
         
         gf2d_graphics_clear_screen();// clears drawing buffers
         // all drawing should happen betweem clear_screen and next_frame

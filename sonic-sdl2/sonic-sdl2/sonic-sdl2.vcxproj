@@ -65,6 +65,7 @@
     <ClCompile Include="..\..\src\leveleditor.c" />
     <ClCompile Include="..\..\src\powerups.c" />
     <ClCompile Include="..\..\src\projectile.c" />
+    <ClCompile Include="..\..\src\save.c" />
     <ClCompile Include="..\..\src\shield_enemy.cpp" />
     <ClCompile Include="..\..\src\speedpad.c" />
     <ClCompile Include="..\..\src\spring.c" />
@@ -122,6 +123,7 @@
     <ClInclude Include="..\..\include\leveleditor.h" />
     <ClInclude Include="..\..\include\powerups.h" />
     <ClInclude Include="..\..\include\projectile.h" />
+    <ClInclude Include="..\..\include\save.h" />
     <ClInclude Include="..\..\include\shield_enemy.h" />
     <ClInclude Include="..\..\include\speedpad.h" />
     <ClInclude Include="..\..\include\spring.h" />
@@ -130,10 +132,15 @@
     <ClInclude Include="..\..\include\world.h" />
     <ClInclude Include="..\..\include\player.h" />
     <ClInclude Include="..\..\include\ring.h" />
+    <ClInclude Include="resource.h" />
   </ItemGroup>
   <ItemGroup>
+    <None Include="..\..\maps\level2.json" />
     <None Include="..\..\maps\testworld.json" />
     <None Include="..\..\pickups\powerups.json" />
+  </ItemGroup>
+  <ItemGroup>
+    <ResourceCompile Include="sonic-sdl2.rc" />
   </ItemGroup>
   <PropertyGroup Label="Globals">
     <VCProjectVersion>18.0</VCProjectVersion>
